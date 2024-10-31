@@ -151,7 +151,7 @@ function kubio_post_edit_add_button() {
 				?>
 			 <style>
 					a.components-button.edit-in-kubio.is-primary {
-					
+
 						margin-right: 30px;
 					}
 				</style>
@@ -169,7 +169,7 @@ function kubio_post_edit_add_button() {
 			const icon = <?php echo wp_json_encode( base64_encode( KUBIO_LOGO_SVG ) ); ?>;
 			const label = <?php echo wp_json_encode( '<span>' . esc_html__( 'Edit with Kubio', 'kubio' ) . '</span>' ); ?>;
 			let unsubscribe = null;
-			
+
 			const createButton = () => {
 
 				if (unsubscribe) {
@@ -218,13 +218,13 @@ function kubio_post_edit_add_button() {
 								url,
 							});
 						}
-					} 
+					}
 				}, 2000);
 			};
 
 			unsubscribe = wp.data.subscribe(createButton);
 		})(
-		
+
 			);
 	</script>
 	<?php
@@ -279,6 +279,14 @@ function kubio_frontend_get_editor_url() {
 
 				$block_template = $query->have_posts() ? _kubio_build_template_result_from_post( $query->next_post() ) : null;
 			}
+
+			//for 404 if you try to use the current_url it crashes the editor so we have a special case for it
+			if(is_404()) {
+				$block_template = resolve_block_template('404', array('404.php'), null);
+			}
+
+
+
 
 			if ( $block_template ) {
 				$args = array(

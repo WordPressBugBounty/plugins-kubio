@@ -173,7 +173,7 @@ class Activation {
 			}
 		}
 
-		Flags::set( 'kubio_f', get_option( 'fresh_site' ));
+		Flags::set( 'kubio_f', get_option( 'fresh_site' ) );
 		Flags::set( 'kubio_activation_time', time() );
 		Flags::set( 'stylesheet', get_stylesheet() );
 
@@ -187,9 +187,9 @@ class Activation {
 		}
 
 		if ( $this->activeWithFrontpage() ) {
-			add_filter( 'kubio/activation/force_front_page_creation',  '__return_true');
+			add_filter( 'kubio/activation/force_front_page_creation', '__return_true' );
 		}
-		
+
 		wp_cache_flush();
 		$this->importDesign();
 		$this->importTemplates();
@@ -414,7 +414,7 @@ class Activation {
 			$content = Importer::getTemplateContent( 'page', 'front-page' );
 		}
 
-		if ( $query->have_posts() && !apply_filters( 'kubio/activation/force_front_page_creation', false )) {
+		if ( $query->have_posts() && ! apply_filters( 'kubio/activation/force_front_page_creation', false ) ) {
 			if ( apply_filters( 'kubio/activation/override_front_page_content', false ) ) {
 				wp_update_post(
 					array(
@@ -504,7 +504,7 @@ class Activation {
 
 					if ( ! $has_front_page ) {
 						$menu_item_object_is_front_page = $menu_item->type === 'post_type' && $menu_item->object === 'page' && intval( $menu_item->object_id ) === intval( get_option( 'page_on_front' ) );
-						$custom_url                     = $menu_item->type === 'custom' ? $menu_item->url : null;
+						$custom_url                     = $menu_item->type === 'custom' ? $menu_item->url : '';
 						$menu_item_link_is_front_page   = false;
 						$parsed_url                     = parse_url( $custom_url );
 

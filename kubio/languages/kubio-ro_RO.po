@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-28T14:18:27+03:00\n"
+"POT-Creation-Date: 2024-10-18T10:10:43+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.11.0\n"
@@ -118,7 +118,7 @@ msgstr "Arie widget nu a fost găsită"
 
 #: lib/add-edit-in-kubio.php:78
 #: lib/add-edit-in-kubio.php:170
-#: lib/add-edit-in-kubio.php:314
+#: lib/add-edit-in-kubio.php:322
 #: lib/filters/default-editor-overlay.php:147
 #: lib/kubio-editor.php:960
 #: build/block-library/index.js:13

@@ -57,14 +57,14 @@ class NotificationsManager {
 			function () {
 				$fetch_url = add_query_arg(
 					array(
-							'action' => 'kubio-remote-notifications-retrieve',
-							'_wpnonce' => wp_create_nonce( 'kubio-remote-notifications-retrieve-nonce' )
+						'action'   => 'kubio-remote-notifications-retrieve',
+						'_wpnonce' => wp_create_nonce( 'kubio-remote-notifications-retrieve-nonce' ),
 
 					),
 					admin_url( 'admin-ajax.php' )
 				); ?>
 					<script>
-						window.fetch("<?php echo esc_url_raw($fetch_url ); ?>")
+						window.fetch("<?php echo esc_url_raw( $fetch_url ); ?>")
 					</script>
 					<?php
 			}
@@ -77,22 +77,22 @@ class NotificationsManager {
 	 * @return void
 	 */
 	public static function updateNotificationsData() {
-		check_ajax_referer('kubio-remote-notifications-retrieve-nonce');
-		
+		check_ajax_referer( 'kubio-remote-notifications-retrieve-nonce' );
+
 		$url = add_query_arg(
 			array(
-				'_fields'          => 'acf,id',
-				'meta_key'         => 'license_type',
-				'meta_value'       => kubio_is_pro() ? 'pro' : 'free',
-				'kubio_version'    => KUBIO_VERSION,
-				'kubio_build'      => KUBIO_BUILD_NUMBER,
-				'kubio_theme_version'         => wp_get_theme()->get( 'Version' ),
-				'template'         => get_template(),
-				'stylesheet'       => get_stylesheet(),
-				'source'           => Flags::get( 'start_source', 'other' ),
-				'f' => Flags::get( 'kubio_f'),
-				'activated_on'     => Flags::get( 'kubio_activation_time', '' ),
-				'pro_activated_on' => Flags::get( 'kubio_pro_activation_time', '' ),
+				'_fields'             => 'acf,id',
+				'meta_key'            => 'license_type',
+				'meta_value'          => kubio_is_pro() ? 'pro' : 'free',
+				'kubio_version'       => KUBIO_VERSION,
+				'kubio_build'         => KUBIO_BUILD_NUMBER,
+				'kubio_theme_version' => wp_get_theme()->get( 'Version' ),
+				'template'            => get_template(),
+				'stylesheet'          => get_stylesheet(),
+				'source'              => Flags::get( 'start_source', 'other' ),
+				'f'                   => Flags::get( 'kubio_f' ),
+				'activated_on'        => Flags::get( 'kubio_activation_time', '' ),
+				'pro_activated_on'    => Flags::get( 'kubio_pro_activation_time', '' ),
 			),
 			self::$remote_data_url_base
 		);
@@ -175,6 +175,24 @@ class NotificationsManager {
 	public static function displayNotification( $params ) {
 		$link  = $params['primary_link'];
 		$slink = $params['secondary_link'];
+
+		$args = array(
+			'utm_theme'            => get_template(),
+			'utm_childtheme'       => get_stylesheet(),
+			'utm_install_source'   => Flags::get( 'start_source', 'other' ),
+			'utm_activated_on'     => Flags::get( 'kubio_activation_time', '' ),
+			'utm_pro_activated_on' => Flags::get( 'kubio_pro_activation_time', '' ),
+			'utm_campaign'         => 'wp-notice',
+			'utm_medium'           => 'wp',
+		);
+
+		if ( ! empty( $link ) ) {
+			$link['url'] = add_query_arg( $args, $link['url'] );
+		}
+
+		if ( ! empty( $slink ) ) {
+			$slink['url'] = add_query_arg( $args, $slink['url'] );
+		}
 
 		wp_enqueue_script( 'wp-util' ); // make sure to enqueue the admin ajax functions
 		?>

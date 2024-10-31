@@ -410,6 +410,7 @@ class BlockBase extends DataHelper {
 	public function getBlockInnerHtml() {
 
 		$content = trim( $this->block_data['innerHTML'] );
+		$content = str_replace( array("\r\n", "\r", "\n", "\\n"), '<br/>', $content );
 
 		return $content;
 	}

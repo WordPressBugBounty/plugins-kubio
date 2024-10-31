@@ -380,6 +380,12 @@ class CustomizerImporter {
 			Arr::forget( $style, 'descendants.frameImage.zIndex' );
 		}
 
+		// Check - image has border style from design (https://mantis.iconvert.pro/view.php?id=55688)
+		$image_border_style = Arr::get( $parsed_block, 'attrs.kubio.style.descendants.image.border' );
+		if ( $image_border_style ) {
+			Arr::set( $style, 'descendants.image.border', $image_border_style );
+		}
+
 		Arr::set( $parsed_block, 'attrs.kubio.style', $style );
 		Arr::set(
 			$parsed_block,
@@ -776,11 +782,13 @@ class CustomizerImporter {
 			Arr::set( $data, 'style.descendants.outer.background.image.0.source.gradient', $this->composeGradient( $gradient_bg ) );
 		}
 
-		if ( $bg_type === 'image' ) {
-			Arr::set( $data, 'style.descendants.outer.background.image.0.source.type', $bg_type );
-		}
-
-		if ( $bg_type === 'gradient' ) {
+		if ( $bg_type === 'color' ) {
+			Arr::set(
+				$data,
+				'style.descendants.outer.background.type',
+				'none'
+			);
+		} else if ( $bg_type === 'image' || $bg_type === 'gradient' ) {
 			Arr::set( $data, 'style.descendants.outer.background.image.0.source.type', $bg_type );
 		}
 
