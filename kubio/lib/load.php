@@ -12,6 +12,7 @@ use Kubio\DemoSites\DemoSites;
 use Kubio\GoogleFontsLocalLoader;
 use Kubio\Migrations;
 use Kubio\NotificationsManager;
+use Kubio\GutenbergControls;
 
 require_once __DIR__ . '/env.php';
 require_once __DIR__ . '/filters.php';
@@ -82,6 +83,10 @@ License::load( KUBIO_ROOT_DIR );
 
 kubio_load_integrations();
 
+if ( file_exists( __DIR__ . '/pro/index.php' ) ) {
+	require_once __DIR__ . '/pro/index.php';
+}
+
 Activation::load();
 Deactivation::load();
 DemoSites::load();
@@ -89,4 +94,4 @@ NotificationsManager::load();
 GoogleFontsLocalLoader::registerFontResolver();
 Migrations::load();
 CLI::load();
-
+GutenbergControls::load();

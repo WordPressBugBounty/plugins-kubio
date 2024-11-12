@@ -10,6 +10,8 @@ class PostCommentsBlock extends BlockBase {
 
 	const CONTAINER = 'commentsContainer';
 
+
+
 	static function getPostCommentsTemplate() {
 		return KUBIO_ROOT_DIR . '/lib/blog/comments.php';
 	}
@@ -37,14 +39,21 @@ class PostCommentsBlock extends BlockBase {
 
 		$atts = array_merge(
 			array(
-				'none'        => 'No responses yet',
-				'one'         => 'One response',
-				'multiple'    => '{COMMENTS-COUNT} Responses',
-				'disabled'    => 'Comments are closed',
+				'none'        => __('No responses yet', 'kubio'),
+				'one'         => __('One response', 'kubio'),
+				'multiple'    => __('{COMMENTS-COUNT} Responses', 'kubio'),
+				'disabled'    => __('Comments are closed', 'kubio'),
 				'avatar_size' => 32,
 			),
 			$attrs
 		);
+
+		if(kubio_wpml_is_active()) {
+			foreach($atts as $key => $value) {
+				$atts[$key] = kubio_wpml_get_translated_string($value);
+			}
+		}
+
 
 		global $kubio_comments_data;
 		$kubio_comments_data = $atts;

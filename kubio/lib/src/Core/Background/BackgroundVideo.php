@@ -2,7 +2,6 @@
 
 namespace Kubio\Core\Background;
 
-use Kubio\Config;
 use Kubio\Core\Element;
 use Kubio\Core\ElementBase;
 use Kubio\Core\Utils;
@@ -16,6 +15,7 @@ class BackgroundVideo extends ElementBase {
 
 	function wrapperComputedStyle() {
 		$url   = $this->get( 'poster.url' );
+		$url   = kubio_wpml_get_translated_media_url( $url );
 		$style = array(
 			'backgroundImage' => "url(\"$url\")",
 		);
@@ -34,6 +34,7 @@ class BackgroundVideo extends ElementBase {
 		}
 
 		$url       = $this->get( "{$videoType}.url" );
+		$url       = kubio_wpml_get_translated_media_url( $url );
 		$positionX = floatval( $position['x'] );
 		$positionY = floatval( $position['y'] );
 

@@ -5,12 +5,6 @@
 		"kubio": {
 			"type": "object"
 		},
-		"imageUrl": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "img",
-			"attribute": "src"
-		},
 		"linkTo": {
 			"type": "string",
 			"default": "homePage"

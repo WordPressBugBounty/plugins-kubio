@@ -461,6 +461,11 @@ add_action(
 	100
 );
 
+add_action( 'enqueue_block_editor_assets', function() {
+	$style = kubio_render_global_colors();
+
+	wp_add_inline_style( 'wp-block-library', $style );
+} );
 
 add_filter(
 	'rest_prepare_' . kubio_global_data_post_type(),

@@ -26,8 +26,8 @@ class SearchForm extends BlockBase {
 		return $computedProps;
 	}
 	public function mapPropsToElements() {
-		$inputPlaceholder = $this->getAttribute( 'placeholderText' );
-		$buttonText       = $this->getProp( 'buttonText' );
+		$inputPlaceholder = kubio_wpml_get_translated_string($this->getAttribute( 'placeholderText' ));
+		$buttonText       = kubio_wpml_get_translated_string($this->getProp( 'buttonText' ));
 		$button           = array( 'className' => array( 'search-button' ) );
 		$iconButton       = $this->getAttribute( 'iconName' );
 

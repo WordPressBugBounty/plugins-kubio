@@ -32,6 +32,10 @@ function kubio_maintainable_page_editor_blog() {
 function kubio_maintainable_page_editor( $editor = '', $skip_default_editor = false ) {
 	global $post;
 
+	if ( ! $post ) {
+		return $editor;
+	}
+
 	$is_blog_page = (int) get_option( 'page_for_posts' ) === $post->ID && empty( $post->post_content );
 
 	$edit_with_default_url = add_query_arg(
@@ -142,7 +146,7 @@ function kubio_maintainable_page_editor( $editor = '', $skip_default_editor = fa
 	<div class="kubio-classic-editor-overlay <?php echo ( $is_blog_page ? 'kubio-blog-page' : '' ); ?>">
 		<div class="middle-align">
 			<div>
-				<button onclick="window.location.replace(cp_open_page_in_kubio('<?php echo $post->ID; ?>', '<?php echo get_post_type( $post->ID ); ?>')); return false;" class="button button-hero button-primary kubio-overlay-edit-with-kubio">
+				<button onclick="window.location.replace(cp_open_page_in_kubio('<?php echo kubio_wpml_get_original_language_post_id($post->ID,$post->post_type); ?>', '<?php echo get_post_type( $post->ID ); ?>')); return false;" class="button button-hero button-primary kubio-overlay-edit-with-kubio">
 					<?php echo KUBIO_LOGO_SVG; ?>
 					<?php _e( 'Edit with Kubio', 'kubio' ); ?>
 				</button>

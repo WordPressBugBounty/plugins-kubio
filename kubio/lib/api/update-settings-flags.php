@@ -45,6 +45,21 @@ function kubio_api_update_excluded_section_categories( WP_REST_Request $request 
 	return array( 'value' => $value );
 }
 
+function kubio_api_update_flag_settings( WP_REST_Request $request ) {
+	$path = $request['path'];
+	$value = $request['value'];
+
+	if ( gettype($path) === 'string' ) {
+		Flags::setSetting( $path, $value );
+	} else {
+		return new WP_Error( 'kubio_invalid_value' );
+	}
+
+	return array(
+		'path'  => $path,
+		'value' => $value
+	);
+}
 
 add_action(
 	'rest_api_init',
@@ -96,6 +111,19 @@ add_action(
 			array(
 				'methods'             => 'POST',
 				'callback'            => 'kubio_api_update_excluded_section_categories',
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				},
+
+			)
+		);
+
+		register_rest_route(
+			$namespace,
+			'/update-flag-settings',
+			array(
+				'methods'             => 'POST',
+				'callback'            => 'kubio_api_update_flag_settings',
 				'permission_callback' => function () {
 					return current_user_can( 'edit_theme_options' );
 				},

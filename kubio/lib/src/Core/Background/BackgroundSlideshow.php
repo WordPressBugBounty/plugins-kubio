@@ -25,7 +25,7 @@ class BackgroundSlideshow extends ElementBase {
 
 
 	function __toString() {
-		$slides      = $this->get( 'slides' );
+		$slides       = $this->get( 'slides' );
 		$duration_str = ParserUtils::toValueUnitString( $this->get( 'duration' ) );
 		$speed_str    = ParserUtils::toValueUnitString( $this->get( 'speed' ) );
 
@@ -65,6 +65,7 @@ class BackgroundSlideshow extends ElementBase {
 
 	function getSlideStyle( $slide, $index ) {
 		$url   = $slide['url'];
+		$url   = kubio_wpml_get_translated_media_url( $url );
 		$style = array(
 			'backgroundImage' => "url(\"$url\")",
 			'zIndex'          => $index,

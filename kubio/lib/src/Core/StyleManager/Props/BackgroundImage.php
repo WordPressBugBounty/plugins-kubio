@@ -164,6 +164,12 @@ class BackgroundImage extends Property {
 				'backgroundAttachment' => 'attachment',
 			);
 		}
+
+		$bgImage = $source['url'];
+		if ( ! empty( $bgImage ) ) {
+			$translatedImageUrl           = kubio_wpml_get_translated_media_url( $bgImage );
+			$this->value['source']['url'] = $translatedImageUrl;
+		}
 		foreach ( $map as $name => $property ) {
 			if ( isset( $this->properties[ $property ] ) ) {
 				$propertyDefinition     = $this->properties[ $property ];

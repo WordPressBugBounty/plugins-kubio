@@ -6,7 +6,7 @@
  * Description: Using the power of AI, Kubio gives you a head start by generating a first draft of your website, which you can further customize to your liking.
  * Author: ExtendThemes
  * Author URI: https://extendthemes.com
- * Version: 2.3.4
+ * Version: 2.4.0
  * License: GPL3+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: kubio
@@ -50,8 +50,8 @@ if ( defined( 'KUBIO_VERSION' ) ) {
 	return;
 }
 
-define( 'KUBIO_VERSION', '2.3.4' );
-define( 'KUBIO_BUILD_NUMBER', '325' );
+define( 'KUBIO_VERSION', '2.4.0' );
+define( 'KUBIO_BUILD_NUMBER', '330' );
 
 define( 'KUBIO_ENTRY_FILE', __FILE__ );
 define( 'KUBIO_ROOT_DIR', plugin_dir_path( __FILE__ ) );
@@ -62,6 +62,7 @@ define( 'KUBIO_LOGO_URL', plugins_url( '/static/kubio-logo.svg', __FILE__ ) );
 define( 'KUBIO_LOGO_PATH', plugin_dir_path( __FILE__ ) . '/static/kubio-logo.svg' );
 define( 'KUBIO_LOGO_SVG', file_get_contents( KUBIO_LOGO_PATH ) );
 
+define('KUBIO_WPML_BLOCK_DEFAULTS_ID', 'Kubio Defaults');
 
 if ( ! defined( 'KUBIO_CLOUD_URL' ) ) {
 	define( 'KUBIO_CLOUD_URL', 'https://cloud.kubiobuilder.com' );
@@ -73,7 +74,7 @@ if ( ! defined( 'KUBIO_INCLUDE_TEST_SNIPPETS' ) ) {
 
 
 if ( ! defined( 'KUBIO_MINIMUM_WP_VERSION' ) ) {
-	define( 'KUBIO_MINIMUM_WP_VERSION', '6.4' );
+	define( 'KUBIO_MINIMUM_WP_VERSION', '6.5' );
 }
 
 

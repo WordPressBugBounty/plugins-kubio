@@ -50,7 +50,7 @@ class QueryLoopBase extends BlockContainerBase {
 				$not_found_text = __( 'No {post_title} found!', 'kubio' );
 			}
 
-			$content .= '<h2 class="kubio-empty-query-result">' . str_replace( '{post_title}', $label, $not_found_text ) . '</h2>';
+			$content .= '<h2 class="kubio-empty-query-result">' . str_replace( '{post_title}', $label, kubio_wpml_get_translated_string($not_found_text) ) . '</h2>';
 		} else {
 			foreach ( (array) $posts as $post ) {
 				foreach ( $this->block_data['innerBlocks'] as $inner_block ) {

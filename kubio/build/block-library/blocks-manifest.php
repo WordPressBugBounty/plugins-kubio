@@ -9,29 +9,17 @@ return array(
 		),
 		'rel' => 'accordion/blocks/accordion/index.php'
 	),
-	'button-group' => array(
-		'classes' => array(
-			'ButtonGroupBlock'
-		),
-		'rel' => 'button-group/index.php'
-	),
-	'contact-form' => array(
-		'classes' => array(
-			'ContactFormBlock'
-		),
-		'rel' => 'contact-form/index.php'
-	),
 	'button' => array(
 		'classes' => array(
 			'ButtonBlock'
 		),
 		'rel' => 'button/index.php'
 	),
-	'copyright' => array(
+	'button-group' => array(
 		'classes' => array(
-			'CopyrightBlock'
+			'ButtonGroupBlock'
 		),
-		'rel' => 'copyright/index.php'
+		'rel' => 'button-group/index.php'
 	),
 	'column' => array(
 		'classes' => array(
@@ -39,11 +27,17 @@ return array(
 		),
 		'rel' => 'column/index.php'
 	),
-	'divider' => array(
+	'contact-form' => array(
 		'classes' => array(
-			'DividerBlock'
+			'ContactFormBlock'
 		),
-		'rel' => 'divider/index.php'
+		'rel' => 'contact-form/index.php'
+	),
+	'copyright' => array(
+		'classes' => array(
+			'CopyrightBlock'
+		),
+		'rel' => 'copyright/index.php'
 	),
 	'footer' => array(
 		'classes' => array(
@@ -51,11 +45,23 @@ return array(
 		),
 		'rel' => 'footer/index.php'
 	),
+	'divider' => array(
+		'classes' => array(
+			'DividerBlock'
+		),
+		'rel' => 'divider/index.php'
+	),
 	'header' => array(
 		'classes' => array(
 			'HeaderTemplatePart'
 		),
 		'rel' => 'header/index.php'
+	),
+	'heading' => array(
+		'classes' => array(
+			'HeadingBlock'
+		),
+		'rel' => 'heading/index.php'
 	),
 	'hero' => array(
 		'classes' => array(
@@ -81,24 +87,24 @@ return array(
 		),
 		'rel' => 'image/index.php'
 	),
-	'heading' => array(
-		'classes' => array(
-			'HeadingBlock'
-		),
-		'rel' => 'heading/index.php'
-	),
-	'link' => array(
-		'classes' => array(
-			'LinkBlock'
-		),
-		'rel' => 'link/index.php'
-	),
 	'image-gallery' => array(
 		'classes' => array(
 			'ImageGalleryBlock',
 			'ImageGalleryItemBlock'
 		),
 		'rel' => 'image-gallery/index.php'
+	),
+	'language-selector' => array(
+		'classes' => array(
+			'LanguageSelector'
+		),
+		'rel' => 'language-selector/index.php'
+	),
+	'link' => array(
+		'classes' => array(
+			'LinkBlock'
+		),
+		'rel' => 'link/index.php'
 	),
 	'link-group' => array(
 		'classes' => array(
@@ -127,11 +133,11 @@ return array(
 		),
 		'rel' => 'navigation/index.php'
 	),
-	'pagination-numbers' => array(
+	'page-title' => array(
 		'classes' => array(
-			'PaginationNumbersBlock'
+			'PageTitleBlock'
 		),
-		'rel' => 'pagination-numbers/index.php'
+		'rel' => 'page-title/index.php'
 	),
 	'pagination-nav-button' => array(
 		'classes' => array(
@@ -139,29 +145,29 @@ return array(
 		),
 		'rel' => 'pagination-nav-button/index.php'
 	),
+	'pagination-numbers' => array(
+		'classes' => array(
+			'PaginationNumbersBlock'
+		),
+		'rel' => 'pagination-numbers/index.php'
+	),
 	'post-author-avatar' => array(
 		'classes' => array(
 			'PostAuthorAvatarBlock'
 		),
 		'rel' => 'post-author-avatar/index.php'
 	),
-	'page-title' => array(
+	'post-author-bio' => array(
 		'classes' => array(
-			'PageTitleBlock'
+			'PostAuthorBioBlock'
 		),
-		'rel' => 'page-title/index.php'
+		'rel' => 'post-author-bio/index.php'
 	),
 	'post-author-name' => array(
 		'classes' => array(
 			'PostAuthorNameBlock'
 		),
 		'rel' => 'post-author-name/index.php'
-	),
-	'post-author-bio' => array(
-		'classes' => array(
-			'PostAuthorBioBlock'
-		),
-		'rel' => 'post-author-bio/index.php'
 	),
 	'post-categories' => array(
 		'classes' => array(
@@ -205,17 +211,17 @@ return array(
 		),
 		'rel' => 'post-tags/index.php'
 	),
-	'query-layout' => array(
-		'classes' => array(
-			'QueryLayout'
-		),
-		'rel' => 'query-layout/index.php'
-	),
 	'post-title' => array(
 		'classes' => array(
 			'PostTitleBlock'
 		),
 		'rel' => 'post-title/index.php'
+	),
+	'query-layout' => array(
+		'classes' => array(
+			'QueryLayout'
+		),
+		'rel' => 'query-layout/index.php'
 	),
 	'query-pagination' => array(
 		'classes' => array(
@@ -235,11 +241,11 @@ return array(
 		),
 		'rel' => 'row/index.php'
 	),
-	'shortcode' => array(
+	'search-form' => array(
 		'classes' => array(
-			'ShortcodeBlock'
+			'SearchForm'
 		),
-		'rel' => 'shortcode/index.php'
+		'rel' => 'search-form/index.php'
 	),
 	'section' => array(
 		'classes' => array(
@@ -247,17 +253,17 @@ return array(
 		),
 		'rel' => 'section/index.php'
 	),
-	'search-form' => array(
-		'classes' => array(
-			'SearchForm'
-		),
-		'rel' => 'search-form/index.php'
-	),
 	'sidebar' => array(
 		'classes' => array(
 			'SidebarTemplatePart'
 		),
 		'rel' => 'sidebar/index.php'
+	),
+	'shortcode' => array(
+		'classes' => array(
+			'ShortcodeBlock'
+		),
+		'rel' => 'shortcode/index.php'
 	),
 	'social-icons' => array(
 		'classes' => array(
@@ -271,6 +277,12 @@ return array(
 			'SpacerBlock'
 		),
 		'rel' => 'spacer/index.php'
+	),
+	'text' => array(
+		'classes' => array(
+			'TextBlock'
+		),
+		'rel' => 'text/index.php'
 	),
 	'tab' => array(
 		'classes' => array(
@@ -288,23 +300,17 @@ return array(
 		),
 		'rel' => 'video/index.php'
 	),
-	'text' => array(
+	'widgets-area' => array(
 		'classes' => array(
-			'TextBlock'
+			'WidgetAreaBlock'
 		),
-		'rel' => 'text/index.php'
+		'rel' => 'widgets-area/index.php'
 	),
 	'accordion-menu' => array(
 		'classes' => array(
 			'AccordionMenuBlock'
 		),
 		'rel' => 'menu/accordion-menu/index.php'
-	),
-	'widgets-area' => array(
-		'classes' => array(
-			'WidgetAreaBlock'
-		),
-		'rel' => 'widgets-area/index.php'
 	),
 	'dropdown-menu' => array(
 		'classes' => array(
@@ -330,12 +336,6 @@ return array(
 		),
 		'rel' => 'menu/offscreen-content/index.php'
 	),
-	'accordion-item' => array(
-		'classes' => array(
-			'AccordionItemBlock'
-		),
-		'rel' => 'accordion/blocks/accordion-item/index.php'
-	),
 	'down-arrow' => array(
 		'classes' => array(
 			'DownArrowBlock'
@@ -348,11 +348,11 @@ return array(
 		),
 		'rel' => 'icon-list/blocks/icon-list/index.php'
 	),
-	'loop' => array(
+	'accordion-item' => array(
 		'classes' => array(
-			'LoopBlock'
+			'AccordionItemBlock'
 		),
-		'rel' => 'query/blocks/loop/index.php'
+		'rel' => 'accordion/blocks/accordion-item/index.php'
 	),
 	'icon-list-item' => array(
 		'classes' => array(
@@ -360,16 +360,22 @@ return array(
 		),
 		'rel' => 'icon-list/blocks/icon-list-item/index.php'
 	),
-	'loop-item' => array(
+	'loop' => array(
 		'classes' => array(
-			'LoopItemBlock'
+			'LoopBlock'
 		),
-		'rel' => 'query/blocks/loop-item/index.php'
+		'rel' => 'query/blocks/loop/index.php'
 	),
 	'query' => array(
 		'classes' => array(
 			'QueryBlock'
 		),
 		'rel' => 'query/blocks/query/index.php'
+	),
+	'loop-item' => array(
+		'classes' => array(
+			'LoopItemBlock'
+		),
+		'rel' => 'query/blocks/loop-item/index.php'
 	)
 );

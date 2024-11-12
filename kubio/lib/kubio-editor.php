@@ -242,7 +242,23 @@ function kubio_get_editor_style( $get_css = false, $skiped_handlers = array() ) 
 		'kubio-icons',
 	);
 
+	if (kubio_wpml_is_active()) {
+		$styles_to_copy = array(
+			'legacy-dropdown',
+			'legacy-dropdown-click',
+			'legacy-list-horizontal',
+			'legacy-list-vertical',
+			'legacy-post-translations',
+			'menu-item'
+		);
+
+		foreach ($styles_to_copy as $style) {
+			$style_handles[] = "kubio-copy-of-wpml-{$style}";
+		}
+	}
+
 	$style_handles = apply_filters( 'kubio/kubio_get_editor_style/style_handles', $style_handles );
+
 
 	$wp_styles = wp_styles();
 	foreach ( array_keys( $wp_styles->registered ) as $handle ) {
@@ -850,6 +866,7 @@ function kubio_edit_site_init( $hook ) {
 	) {
 		wp_enqueue_style( 'wp-block-library-theme' );
 	}
+
 }
 
 add_action( 'admin_enqueue_scripts', 'kubio_edit_site_init' );

@@ -111,7 +111,7 @@ class ImageGalleryItemBlock extends BlockBase {
 		$size      = $this->parent_block->getAttribute( 'size' );
 		$alt       = $this->getAttribute( 'alt' );
 		$caption   = $this->getAttribute( 'caption' );
-		$id        = $this->getAttribute( 'id' );
+		$id        = \kubio_wpml_get_translated_media_id($this->getAttribute( 'id' ));
 		$url       = $this->getAttribute( 'url', '' );
 
 		//https://mantis.iconvert.pro/view.php?id=51034 For some reason caption is array in this bug

@@ -361,6 +361,9 @@ add_action(
 		global $wp_version;
 		if ( $handle === 'kubio-utils' || $handle === 'kubio-admin-panel' ) {
 			$include_test_templates = defined( 'KUBIO_INCLUDE_TEST_TEMPLATES' ) && KUBIO_INCLUDE_TEST_TEMPLATES === true;
+			$is_wpml_active = kubio_wpml_is_active();
+			$is_polylang_active = kubio_polylang_is_active();
+
 			$data                   = 'window.kubioUtilsData=' . wp_json_encode(
 				array_merge(
 					kubio_get_site_urls(),
@@ -405,6 +408,12 @@ add_action(
 							admin_url( 'admin.php' )
 						),
 						'allow3rdPartyBlogOverride'     => apply_filters( 'kubio/allow_3rd_party_blog_override', true ),
+						'multilanguage' => array(
+							'hasTranslator' => $is_wpml_active || $is_polylang_active,
+							'isWpmlActive' => $is_wpml_active,
+							'isPolylangActive' => $is_polylang_active,
+							'polylang_add_page_translation_nonce' => wp_create_nonce( 'kubio_api_polylang_add_page_translation' ),
+						)
 					),
 					apply_filters( 'kubio/kubio-utils-data/extras', array() )
 				)

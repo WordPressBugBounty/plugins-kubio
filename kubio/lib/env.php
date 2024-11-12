@@ -46,7 +46,7 @@ function kubio_is_pro() {
 	$kubio_root       = untrailingslashit( wp_normalize_path( KUBIO_ROOT_DIR ) );
 	$folder_parts     = explode( '/', $kubio_root );
 	$folder           = array_pop( $folder_parts );
-	$pro_flag_defined = defined( 'KUBIO_IS_PRO' );
+	$pro_flag_defined = defined( 'KUBIO_IS_PRO' ) && \KUBIO_IS_PRO;
 	$is_pro           = $folder === 'kubio-pro' || $pro_flag_defined;
 	return apply_filters( 'kubio/is_pro', $is_pro );
 }

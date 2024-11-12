@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita60927e8490362d69e05599189e91a90
+class ComposerStaticInit67f22b57b0bd1a79b4a7e1b62184eee3
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -238,6 +238,7 @@ class ComposerStaticInita60927e8490362d69e05599189e91a90
         'Kubio\\FileLog' => __DIR__ . '/../..' . '/lib/src/FileLog.php',
         'Kubio\\Flags' => __DIR__ . '/../..' . '/lib/src/Flags.php',
         'Kubio\\GoogleFontsLocalLoader' => __DIR__ . '/../..' . '/lib/src/GoogleFontsLocalLoader.php',
+        'Kubio\\GutenbergControls' => __DIR__ . '/../..' . '/lib/src/GutenbergControls.php',
         'Kubio\\Migrations' => __DIR__ . '/../..' . '/lib/src/Migrations.php',
         'Kubio\\NotificationsManager' => __DIR__ . '/../..' . '/lib/src/NotificationsManager.php',
         'Kubio\\PluginsManager' => __DIR__ . '/../..' . '/lib/src/PluginsManager.php',
@@ -377,9 +378,9 @@ class ComposerStaticInita60927e8490362d69e05599189e91a90
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita60927e8490362d69e05599189e91a90::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita60927e8490362d69e05599189e91a90::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita60927e8490362d69e05599189e91a90::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit67f22b57b0bd1a79b4a7e1b62184eee3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit67f22b57b0bd1a79b4a7e1b62184eee3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit67f22b57b0bd1a79b4a7e1b62184eee3::$classMap;
 
         }, null, ClassLoader::class);
     }

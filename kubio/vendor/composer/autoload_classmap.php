@@ -140,6 +140,7 @@ return array(
     'Kubio\\FileLog' => $baseDir . '/lib/src/FileLog.php',
     'Kubio\\Flags' => $baseDir . '/lib/src/Flags.php',
     'Kubio\\GoogleFontsLocalLoader' => $baseDir . '/lib/src/GoogleFontsLocalLoader.php',
+    'Kubio\\GutenbergControls' => $baseDir . '/lib/src/GutenbergControls.php',
     'Kubio\\Migrations' => $baseDir . '/lib/src/Migrations.php',
     'Kubio\\NotificationsManager' => $baseDir . '/lib/src/NotificationsManager.php',
     'Kubio\\PluginsManager' => $baseDir . '/lib/src/PluginsManager.php',

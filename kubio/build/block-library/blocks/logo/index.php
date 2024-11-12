@@ -80,6 +80,21 @@ class LogoBlock extends BlockBase {
 			$alternate_image_src = $this->getAlternateImageLogoUrl();
 		}
 
+		$link_data = array();
+		if ( $this->getAttribute( 'linkTo' ) === 'homePage' ) {
+			$href = '';
+			if ( kubio_wpml_is_active() ) {
+				$href = apply_filters( 'wpml_home_url', site_url() );
+			} else {
+				$href = site_url();
+			}
+			$link_data = array(
+				'href' => $href,
+			);
+		} else {
+			$link_data = Utils::getLinkAttributes( $this->getAttribute( 'link' ) );
+		}
+
 		$map[ self::CONTAINER ] = array_merge(
 			array(
 				'className' => array(
@@ -87,27 +102,25 @@ class LogoBlock extends BlockBase {
 					$this->getAttribute( 'mode', 'default' ),
 				),
 			),
-			$this->getAttribute( 'linkTo' ) === 'homePage' ? array(
-				'href' => site_url(),
-			) : Utils::getLinkAttributes( $this->getAttribute( 'link' ) )
+			$link_data
 		);
 
 		if ( $this->imageShowData[ $computed['layout_type'] ]['showImage'] ) {
 			$map[ self::IMAGE ] = array(
-				'alt' => esc_attr($this->getAttribute( 'alt', '' )),
-				'src' => esc_url($image_src),
+				'alt' => esc_attr( $this->getAttribute( 'alt', '' ) ),
+				'src' => esc_url( $image_src ),
 			);
 		}
 
 		if ( $this->imageShowData[ $computed['layout_type'] ]['showImage'] ) {
 			$map[ self::ALTERNATE_IMAGE ] = array(
-				'alt' => esc_attr($this->getAttribute( 'alt', '' )),
-				'src' => esc_url($alternate_image_src),
+				'alt' => esc_attr( $this->getAttribute( 'alt', '' ) ),
+				'src' => esc_url( $alternate_image_src ),
 			);
 		}
 
 		$map[ self::TEXT ] = array(
-			'innerHTML' => wp_kses_post($text),
+			'innerHTML' => wp_kses_post( $text ),
 		);
 		return $map;
 

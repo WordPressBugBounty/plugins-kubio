@@ -780,4 +780,64 @@ class Utils {
 
 		return implode( "\n", $structure_text_lines ) . "\n";
 	}
+
+	public static function pageHasCustomTemplate($post_id = null): bool {
+		if ( ! $post_id ) {
+			$post_id = get_the_ID();
+		}
+
+		$template_slug = get_post_meta( $post_id, '_wp_page_template', true );
+		if ( $template_slug && $template_slug !== 'default' ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public static function getThemeTemplateParts() {
+		$default_language = apply_filters( 'wpml_default_language', null );
+		$query            = new \WP_Query( array(
+			'post_type'      => 'wp_template_part',
+			'post_status'    => [ 'publish' ],
+			'posts_per_page' => - 1,
+			'tax_query'      => array(
+				array(
+					'taxonomy' => 'wp_theme',
+					'field'    => 'name',
+					'terms'    => get_stylesheet(),
+				)
+			),
+			'kubio_filter'   => array(
+				'language_code' => $default_language
+			)
+		) );
+
+		if ( $query->have_posts() ) {
+			return array_map( function ( $post ) {
+				return $post->post_name;
+			}, $query->posts );
+		}
+
+		return null;
+	}
+
+	public static function getPageTemplate( $post_id ) {
+		if ( ! $post_id ) {
+			return null;
+		}
+
+		$permalink = get_permalink( $post_id );
+		$url       = add_query_arg( '_wp-find-template', "true", $permalink );
+		$res       = wp_remote_get( $url );
+		$data      = wp_remote_retrieve_body( $res );
+		$body      = json_decode( $data );
+
+		if ( $body ) {
+			// FSE theme
+			return $body->data;
+		}
+
+		// Non FSE theme
+		return null;
+	}
 }

@@ -36,7 +36,18 @@ function kubio_add_edit_post_row_actions( $actions, $post ) {
 	}
 
 	$post_id = $post->ID;
-
+	$is_translate_redirect = false;
+	//when you try to edit the translated page redirect to the original language
+	if(kubio_wpml_is_active()) {
+		$translated_id =kubio_wpml_get_original_language_post_id($post_id, $post->post_type);
+		if( $translated_id !== $post_id) {
+			$is_translate_redirect = true;
+			$post_id = $translated_id;
+			if( in_array( $post->post_type, array( 'wp_template', 'wp_template_part' ))) {
+				$post = get_post($translated_id);
+			}
+		}
+	}
 	if ( in_array( $post->post_type, array( 'wp_template', 'wp_template_part' ) ) ) {
 		$template = _kubio_build_template_result_from_post( $post );
 
@@ -47,12 +58,18 @@ function kubio_add_edit_post_row_actions( $actions, $post ) {
 		$post_id = $template->id;
 	}
 
+
+
+	$args = 	array(
+		'page'     => 'kubio',
+		'postId'   => $post_id,
+		'postType' => $post->post_type,
+	);
+	if($is_translate_redirect) {
+		$args['isTranslateRedirect'] = 1;
+	}
 	$edit_url = add_query_arg(
-		array(
-			'page'     => 'kubio',
-			'postId'   => $post_id,
-			'postType' => $post->post_type,
-		),
+		$args,
 		admin_url( 'admin.php' )
 	);
 
@@ -94,6 +111,7 @@ function kubio_add_edit_post_row_actions( $actions, $post ) {
 }
 
 function kubio_post_edit_add_button() {
+
 	global $post;
 
 	if ( ! $post ) {
@@ -113,7 +131,15 @@ function kubio_post_edit_add_button() {
 	}
 
 	$post_id = $post->ID;
-
+	$is_translate_redirect = false;
+	$translated_id =kubio_wpml_get_original_language_post_id($post_id, $post->post_type);
+	if( $translated_id !== $post_id) {
+		$is_translate_redirect = true;
+		$post_id = $translated_id;
+		if( in_array( $post->post_type, array( 'wp_template', 'wp_template_part' ))) {
+			$post = get_post($translated_id);
+		}
+	}
 	if ( in_array( $post->post_type, array( 'wp_template', 'wp_template_part' ) ) ) {
 		$template = _kubio_build_template_result_from_post( $post );
 
@@ -123,13 +149,16 @@ function kubio_post_edit_add_button() {
 
 		$post_id = $template->id;
 	}
-
+	$args = 	array(
+		'page'     => 'kubio',
+		'postId'   => $post_id,
+		'postType' => $post->post_type,
+	);
+	if($is_translate_redirect) {
+		$args['isTranslateRedirect'] = 1;
+	}
 	$edit_url = add_query_arg(
-		array(
-			'page'     => 'kubio',
-			'postId'   => $post_id,
-			'postType' => $post->post_type,
-		),
+		$args,
 		admin_url( 'admin.php' )
 	);
 
@@ -171,6 +200,7 @@ function kubio_post_edit_add_button() {
 			let unsubscribe = null;
 
 			const createButton = () => {
+
 
 				if (unsubscribe) {
 						unsubscribe();
@@ -243,6 +273,10 @@ add_action( 'enqueue_block_editor_assets', 'kubio_post_edit_add_button', 0, 2 );
 
 function kubio_frontend_get_editor_url() {
 	global $post;
+	if ( gettype( $post ) === 'integer' ) {
+		$post = get_post( $post );
+	}
+
 	// Add site-editor link.
 	$url = null;
 	if ( ! is_admin() && current_user_can( 'edit_theme_options' ) ) {
@@ -250,10 +284,21 @@ function kubio_frontend_get_editor_url() {
 
 		$args = array();
 		if ( is_singular() || is_single() ) {
+			$post_id = $post->ID;
+			$is_translate_redirect = false;
+			//when you try to edit the translated page redirect to the original language
+			$translated_post_id = kubio_wpml_get_original_language_post_id($post_id, $post->post_type);
+			if($translated_post_id !== $post_id) {
+				$post_id = $translated_post_id;
+				$is_translate_redirect = true;
+			}
 			$args = array(
-				'postId'   => $post->ID,
+				'postId'   => $post_id,
 				'postType' => $post->post_type,
 			);
+			if($is_translate_redirect) {
+				$args['isTranslateRedirect'] = 1;
+			}
 		} else {
 
 			$block_template = null;

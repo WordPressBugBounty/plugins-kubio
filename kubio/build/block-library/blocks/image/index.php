@@ -36,21 +36,29 @@ class ImageBlock extends BlockContainerBase {
 
 		$map = array();
 
+		$id        = \kubio_wpml_get_translated_media_id( ( $this->getAttribute( 'id' ) ) );
 		$size_slug = $this->getAttribute( 'sizeSlug' );
 		$align     = $this->getAttribute( 'align', 'center' );
 
 		//the wp image class is used to add the src set by WordPress
 		$image_classes = array( 'wp-image-' . $this->getAttribute( 'id' ) );
 		$default_img   = Utils::getDefaultAssetsURL( 'default-image.png' );
-
-		$src           = $this->getAttribute( 'url' );
-		$src           = $src ? $src : $default_img;
+		$src = null;
+		if ( $id ) {
+			$src = wp_get_attachment_image_url( $id, $size_slug );
+		}
+		if ( ! $src ) {
+			$src = $this->getAttribute( 'url' );
+		}
+		if ( ! $src ) {
+			$src = $default_img;
+		}
 		$outer_classes = array( "size-$size_slug", $this->getAlignClasses( $align ) );
 
 		$map[ self::OUTER ]       = array( 'className' => $outer_classes );
 		$map[ self::IMAGE ]       = array(
-			'alt'       => esc_attr($this->getAttribute( 'alt', '' )),
-			'src'       => esc_attr($src),
+			'alt'       => esc_attr( $this->getAttribute( 'alt', '' ) ),
+			'src'       => esc_attr( $src ),
 			'className' => $image_classes,
 		);
 		$map[ self::FRAME_IMAGE ] = array(
@@ -58,7 +66,7 @@ class ImageBlock extends BlockContainerBase {
 				$frame_hide_classes
 			),
 		);
-		$map[ self::CAPTION ]     = array( 'innerHTML' => wp_kses_post($this->getBlockInnerHtml()) );
+		$map[ self::CAPTION ]     = array( 'innerHTML' => wp_kses_post( $this->getBlockInnerHtml() ) );
 
 		$type = $this->getAttribute( 'link.typeOpenLink' );
 
@@ -70,6 +78,7 @@ class ImageBlock extends BlockContainerBase {
 
 		return $map;
 	}
+
 
 	public function getAlignClasses( $align ) {
 		return sprintf( 'align-items-%s', $align ? $align : 'center' );

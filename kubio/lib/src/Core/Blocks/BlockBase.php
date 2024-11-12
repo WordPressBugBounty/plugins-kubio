@@ -41,6 +41,8 @@ class BlockBase extends DataHelper {
 			$block['blockName']
 		);
 
+
+
 		$this->styledElementsByName = $this->getBlockStyledElementsByName();
 		$this->defaultElement       = $this->getDefaultElement();
 

@@ -3,9 +3,9 @@
 Contributors: ExtendThemes
 Tags: page builder, landing page, website builder, blocks, gutenberg
 Requires at least: 5.8
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.2
-Stable tag: 2.3.4
+Stable tag: 2.4.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -18,12 +18,12 @@ Using the power of AI, Kubio gives you a head start by generating a first draft 
 https://vimeo.com/901485891
 
 
-Experience the potential of Kubio AI, where your creative visions are seamlessly translated into captivating web pages. 
+Experience the potential of Kubio AI, where your creative visions are seamlessly translated into captivating web pages.
 With its intelligent block-based builder, cutting-edge AI technology empowers you to effortlessly shape layouts, customize styles, and infuse life into every pixel.
 
--   **Generate entire pages based on short prompts** 
--   **Generate images and text** 
--   **Re-generate any section in your style** 
+-   **Generate entire pages based on short prompts**
+-   **Generate images and text**
+-   **Re-generate any section in your style**
 
 
 == CREATE RICH WEBSITES WITH THE KUBIO BLOCKS ==
@@ -153,21 +153,20 @@ You’ll find a growing online documentation for Kubio builder [here](https://ku
 == Screenshots ==
 
 == Changelog ==
-= 2.3.4 and 2.3.4-pro = 
-- Add support for theme starter content
+= 2.4.0 and 2.4.0-pro =
+- Added support for WordPress 6.7
+- General bug fixes
 
-== Changelog ==
-= 2.3.3 and 2.3.3-pro = 
+= 2.3.3 and 2.3.3-pro =
 - Fixed an issue with sticky navigation
 
-== Changelog ==
-= 2.3.2 and 2.3.2-pro = 
+= 2.3.2 and 2.3.2-pro =
 - Various bug fixes
 
-= 2.3.1 and 2.3.1-pro = 
+= 2.3.1 and 2.3.1-pro =
 - Minor bug fixes
 
-= 2.3.0 and 2.3.0-pro = 
+= 2.3.0 and 2.3.0-pro =
 - Added support for WordPress 6.6
 
 = 2.2.4 and 2.2.4-pro =

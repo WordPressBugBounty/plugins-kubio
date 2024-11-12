@@ -128,7 +128,7 @@ class PageTitleBlock extends BlockBase {
 			$title_type = 'normalPage';
 		}
 
-		$final_title = $title_type ? str_replace( '{TITLE}', $title, $titles[ $title_type ] ) : $title;
+		$final_title = $title_type ? str_replace( '{TITLE}', $title,  kubio_wpml_get_translated_string($titles[ $title_type ]) ) : $title;
 
 		$content = ob_get_clean();
 

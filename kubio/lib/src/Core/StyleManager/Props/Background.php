@@ -44,7 +44,8 @@ class Background extends PropertyBase {
 					$background->image[0]
 				);
 				$bgImage = new BackgroundImage( $image, $this->config( 'default' ) );
-				$style   = LodashBasic::merge( $style, $bgImage->toStyle() );
+
+				$style = LodashBasic::merge( $style, $bgImage->toStyle() );
 				break;
 			case $this->types['NONE']:
 				$style = LodashBasic::merge( $style, $this->getBackgroundNoneCss( $colorIsSet ) );
