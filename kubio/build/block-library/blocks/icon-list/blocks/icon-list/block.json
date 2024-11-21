@@ -1,5 +1,6 @@
 {
 	"name": "kubio/iconlist",
+	"title": "Icon List",
 	"category": "kubio-components",
 	"attributes": {
 		"kubio": {
@@ -89,21 +90,34 @@
 					}
 				},
 				"item": {
-					"selector": " .wp-block-kubio-iconlistitem__item"
+					"selector": {
+						"normal": ".wp-block-kubio-iconlistitem__item",
+						"hover": ".wp-block-kubio-iconlistitem__item:hover",
+						"customDisabled": ".kubio-is-disabled.wp-block-kubio-iconlistitem__item"
+					}
 				},
 				"text": {
-					"selector": ".wp-block-kubio-iconlistitem__text"
+					"selector": {
+						"normal": ".wp-block-kubio-iconlistitem__text",
+						"hover": ".wp-block-kubio-iconlistitem__text:hover",
+						"customDisabled": ".kubio-is-disabled .wp-block-kubio-iconlistitem__text"
+					}
 				},
 				"text-wrapper": {
 					"selector": " .wp-block-kubio-iconlistitem__text-wrapper"
 				},
 				"icon": {
-					"selector": ".wp-block-kubio-iconlistitem__icon"
+					"selector": {
+						"normal": ".wp-block-kubio-iconlistitem__icon",
+						"hover": ".wp-block-kubio-iconlistitem__icon:hover",
+						"customDisabled": ".kubio-is-disabled .wp-block-kubio-iconlistitem__icon"
+					}
 				},
 				"link": {
 					"selector": {
 						"normal": "a",
-						"hover": "a:hover, a:hover .wp-block-kubio-iconlistitem__text"
+						"hover": "a:hover, a:hover .wp-block-kubio-iconlistitem__text",
+						"visited": "a:visited, a:visited .wp-block-kubio-iconlistitem__text"
 					}
 				},
 				"divider": {

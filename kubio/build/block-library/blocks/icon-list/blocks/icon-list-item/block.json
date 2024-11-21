@@ -1,13 +1,9 @@
 {
 	"name": "kubio/iconlistitem",
+	"title": "Icon list item",
 	"category": "kubio-basic",
-	"usesContext": [
-		"text",
-		"icon"
-	],
-	"parent": [
-		"kubio/iconlist"
-	],
+	"usesContext": ["text", "icon"],
+	"parent": ["kubio/iconlist"],
 	"attributes": {
 		"kubio": {
 			"type": "object"
@@ -28,6 +24,10 @@
 			}
 		},
 		"useForAll": {
+			"type": "boolean",
+			"default": false
+		},
+		"disabledItem": {
 			"type": "boolean",
 			"default": false
 		}
@@ -85,9 +85,7 @@
 						"type": "element",
 						"props": {
 							"name": "divider-wrapper",
-							"className": [
-								"first-el-spacer"
-							],
+							"className": ["first-el-spacer"],
 							"shouldRender": "computed.isFirstChild"
 						}
 					},
@@ -120,9 +118,7 @@
 						"type": "element",
 						"props": {
 							"name": "divider-wrapper",
-							"className": [
-								"last-el-spacer"
-							],
+							"className": ["last-el-spacer"],
 							"shouldRender": "computed.isLastChild"
 						}
 					},

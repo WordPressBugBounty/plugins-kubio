@@ -2,14 +2,14 @@
 # This file is distributed under the GPL3+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Kubio 2.4.0\n"
+"Project-Id-Version: Kubio 2.4.1\n"
 "Report-Msgid-Bugs-To: support@kubiobuilder.com\n"
 "Last-Translator: Kubio <support@kubiobuilder.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-11T16:10:18+02:00\n"
+"POT-Creation-Date: 2024-11-21T14:59:24+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: kubio\n"
@@ -3938,16 +3938,6 @@ msgid "Items per row"
 msgstr ""
 
 #: build/block-library/index.js:7
-#: build/editor/index.js:15
-msgid "Switch to quick mode"
-msgstr ""
-
-#: build/block-library/index.js:7
-#: build/editor/index.js:15
-msgid "Switch to advanced mode"
-msgstr ""
-
-#: build/block-library/index.js:7
 #: build/block-library/index.js:11
 msgid "Columns"
 msgstr ""
@@ -6913,10 +6903,6 @@ msgid "Accordion item"
 msgstr ""
 
 #: build/block-library/index.js:29
-msgid "Use this icon for all items"
-msgstr ""
-
-#: build/block-library/index.js:29
 #: build/block-library/index.js:33
 #: build/controls/index.js:1
 #: build/controls/index.js:19
@@ -6943,6 +6929,14 @@ msgstr ""
 #: build/controls/index.js:1
 #: build/controls/index.js:19
 msgid "Outset"
+msgstr ""
+
+#: build/block-library/index.js:29
+msgid "Use this icon for all items"
+msgstr ""
+
+#: build/block-library/index.js:29
+msgid "Disabled"
 msgstr ""
 
 #: build/block-library/index.js:29
@@ -6984,6 +6978,14 @@ msgstr ""
 
 #: build/block-library/index.js:29
 msgid "Horizontal Align"
+msgstr ""
+
+#: build/block-library/index.js:29
+msgid "Icon disabled color"
+msgstr ""
+
+#: build/block-library/index.js:29
+msgid "Text disabled color"
 msgstr ""
 
 #: build/block-library/index.js:29
@@ -10142,7 +10144,11 @@ msgid "Sidebars"
 msgstr ""
 
 #: build/editor/index.js:15
-msgid "Advanced Mode"
+msgid "Switch to quick mode"
+msgstr ""
+
+#: build/editor/index.js:15
+msgid "Switch to advanced mode"
 msgstr ""
 
 #: build/editor/index.js:15
@@ -11708,6 +11714,16 @@ msgstr ""
 #: build/block-library/blocks/footer/block.json
 msgctxt "block description"
 msgid "You can replace the default page footer with a custom one using the footer template part. Various footers can be assigned to various pages."
+msgstr ""
+
+#: build/block-library/blocks/icon-list/blocks/icon-list-item/block.json
+msgctxt "block title"
+msgid "Icon list item"
+msgstr ""
+
+#: build/block-library/blocks/icon-list/blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon List"
 msgstr ""
 
 #: build/block-library/blocks/navigation/blocks/navigation-top-bar/block.json

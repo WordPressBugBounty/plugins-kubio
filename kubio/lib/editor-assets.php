@@ -400,6 +400,7 @@ add_action(
 						'sectionStylesTags'             => array( 'shadow', 'flat', 'outlined', 'rounded', 'minimal' ),
 						'activatedOnStage2'             => Flags::getSetting( 'activatedOnStage2', false ),
 						'aiStage2'                      => Flags::getSetting( 'aiStage2', false ),
+						'advancedMode'                      => Flags::getSetting( 'advancedMode', true ),
 						'wpAdminUpgradePage'            => add_query_arg(
 							array(
 								'tab'  => 'pro-upgrade',

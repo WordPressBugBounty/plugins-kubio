@@ -4,9 +4,10 @@ use Kubio\Flags;
 
 function kubio_set_editor_ui_version() {
 	Flags::setSetting( 'editorUIVersion', 2 );
-	Flags::setSetting( 'editorMode', 'simple' );
+	Flags::setSetting( 'editorMode', 'advanced' );
 	Flags::setSetting( 'activatedOnStage2', true );
 	Flags::setSetting( 'aiStage2',  apply_filters( 'kubio/ai_stage_2', false ) || (defined('KUBIO_AI_STAGE_2') && KUBIO_AI_STAGE_2)   );
+	Flags::setSetting( 'advancedMode', apply_filters( 'kubio/advanced_mode_enabled', true ) );
 }
 
 

@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-11T16:10:18+02:00\n"
+"POT-Creation-Date: 2024-11-21T14:59:24+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.11.0\n"
@@ -1811,6 +1811,16 @@ msgstr "Fußzeile"
 msgctxt "block description"
 msgid "You can replace the default page footer with a custom one using the footer template part. Various footers can be assigned to various pages."
 msgstr "Du kannst den Standardseitenfuß durch einen benutzerdefinierten ersetzen, indem du den Fußzeilenvorlagen-Teil verwendest. Verschiedene Fußzeilen können verschiedenen Seiten zugewiesen werden."
+
+#: build/block-library/blocks/icon-list/blocks/icon-list-item/block.json
+msgctxt "block title"
+msgid "Icon list item"
+msgstr "Icon-Listenelement"
+
+#: build/block-library/blocks/icon-list/blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon List"
+msgstr "Icon-Liste"
 
 #: build/block-library/blocks/navigation/blocks/navigation-top-bar/block.json
 msgctxt "block title"

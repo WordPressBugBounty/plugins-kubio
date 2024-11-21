@@ -245,7 +245,7 @@ class KubioThirdPartyThemeBlockImporter {
 		// for a kubio supported theme, treat it as a normal import
 		if ( kubio_theme_has_kubio_block_support() ) {
 			add_filter( 'kubio/activation/activate_with_frontpage', $start_with_frontpage ? '__return_true' : '__return_false' );
-			add_filter( 'kubio/activation/override_front_page_content', $start_with_frontpage ? '__return_true' : '__return_false' );
+			add_filter( 'kubio/activation/override_front_page_content', $start_with_frontpage ? '__return_true' : '__return_false');
 
 			$activation = new Activation();
 			$activation->addCommonFilters();

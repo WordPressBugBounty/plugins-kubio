@@ -23,18 +23,35 @@ class IconListItemBlock extends BlockBase {
 	}
 
 	public function mapPropsToElements() {
-		$text               = $this->getBlockInnerHtml();
-		$text               = preg_replace( '/\r?\n/', '<br/>', $text );
-		$iconName           = $this->getAttribute( 'icon' );
-		$parent_block       = Registry::getInstance()->getLastBlockOfName( 'kubio/iconlist' );
-		$wrapper            = new IconListBlock( $parent_block->block_data );
-		$this->parent_block = $wrapper;
+		$text         = $this->getBlockInnerHtml();
+		$text         = preg_replace( '/\r?\n/', '<br/>', $text );
+		$iconName     = $this->getAttribute( 'icon' );
+		$disabledItem = $this->getAttribute( 'disabledItem' );
+		$parent_block = Registry::getInstance()->getLastBlockOfName( 'kubio/iconlist' );
+		$wrapper      = new IconListBlock( $parent_block->block_data );
+
+		// @TO DO - disabled default color won't be needed when default state style will be fixed for frontend elements
+		$iconDisabledDefaultColor = LodashBasic::get( $wrapper->block_type->supports, array( 'kubio', 'default', 'style', 'descendants', 'icon', 'states', 'customDisabled', 'fill' ) );
+		$textDisabledDefaultColor = LodashBasic::get( $wrapper->block_type->supports, array( 'kubio', 'default', 'style', 'descendants', 'text', 'states', 'customDisabled', 'typography', 'color' ) );
+
+		$iconDisabledStyle = array(
+			'fill' => $disabledItem ? $wrapper->getStyle( 'states.customDisabled.fill', $iconDisabledDefaultColor, array( 'styledComponent' => self::ICON ) ) : '',
+		);
+		$textDisabledStyle = array(
+			'color' => $disabledItem ? $wrapper->getStyle( 'states.customDisabled.typography.color', $textDisabledDefaultColor, array( 'styledComponent' => self::TEXT ) ) : '',
+		);
+
 		return array(
+			self::ITEM        => array(
+				'className' => $disabledItem === true ? 'kubio-is-disabled' : '',
+			),
 			self::ICON        => array(
-				'name' => $iconName,
+				'name'  => $iconName,
+				'style' => $iconDisabledStyle,
 			),
 			self::TEXT        => array(
-				'innerHTML' => wp_kses_post($text),
+				'innerHTML' => $text,
+				'style'     => $textDisabledStyle,
 			),
 			self::TEXTWRAPPER => array(),
 		);
@@ -62,6 +79,10 @@ class IconListItemBlock extends BlockBase {
 		);
 	}
 
+	public function getLinkAttribute() {
+		$disabledItem = $this->getAttribute( 'disabledItem' );
+		return ! $disabledItem ? $this->getAttribute( 'link', null ) : null;
+	}
 
 }
 
