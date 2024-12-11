@@ -291,6 +291,10 @@ function kubio_add_flags_to_redirects($location)
 }
 add_filter('wp_redirect', 'kubio_add_flags_to_redirects');
 
+function kubio_is_black_wizard_onboarding_enabled() {
+	return apply_filters( 'kubio/is_black_wizard_onboarding_enabled', false );
+}
+
 // deactivate new block editor
 function kubio_remove_widget_block_editor()
 {

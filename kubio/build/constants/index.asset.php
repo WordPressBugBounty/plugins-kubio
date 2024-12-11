@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('kubio-icons', 'wp-i18n', 'wp-polyfill'), 'version' => '1808450f11de1ae2cb27');
+<?php return array('dependencies' => array('kubio-icons', 'wp-i18n', 'wp-polyfill'), 'version' => 'b11c6bd99ea6f4dbe407');

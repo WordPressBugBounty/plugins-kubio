@@ -361,60 +361,66 @@ add_action(
 		global $wp_version;
 		if ( $handle === 'kubio-utils' || $handle === 'kubio-admin-panel' ) {
 			$include_test_templates = defined( 'KUBIO_INCLUDE_TEST_TEMPLATES' ) && KUBIO_INCLUDE_TEST_TEMPLATES === true;
-			$is_wpml_active = kubio_wpml_is_active();
-			$is_polylang_active = kubio_polylang_is_active();
+			$is_wpml_active         = kubio_wpml_is_active();
+			$is_polylang_active     = kubio_polylang_is_active();
 
-			$data                   = 'window.kubioUtilsData=' . wp_json_encode(
+			$data = 'window.kubioUtilsData=' . wp_json_encode(
 				array_merge(
 					kubio_get_site_urls(),
 					array(
-						'defaultAssetsURL'              => kubio_url( 'static/default-assets' ),
-						'staticAssetsURL'               => kubio_url( 'static' ),
-						'patternsAssetsUrl'             => kubio_url( 'static/patterns' ),
-						'kubioRemoteContentFile'        => 'https://static-assets.kubiobuilder.com/content-2022-05-17.json',
-						'kubioCloudPresetsUrl'          => Utils::getGlobalSnippetsURL(),
-						'kubioCloudPresetCategoriesUrl' => Utils::getGlobalSnippetsCategoriesURL(),
-						'kubioCloudPresetTagsUrl'       => Utils::getGlobalSnippetsTagsURL(),
-						'kubioCloudUrl'                 => Utils::getCloudURL(),
-						'kubioRemoteContent'            => Utils::getSnippetsURL( '/globals' ),
-						'kubioLocalContentFile'         => kubio_url( 'static/patterns/content-converted.json' ),
-						'kubioEditorURL'                => add_query_arg( 'page', 'kubio', admin_url( 'admin.php' ) ),
-						'patternsOnTheFly'              => ( defined( 'KUBIO_PATTERNS_ON_THE_FLY' ) && KUBIO_PATTERNS_ON_THE_FLY ) ? KUBIO_PATTERNS_ON_THE_FLY : '',
-						'base_url'                      => site_url(),
-						'admin_url'                     => admin_url(),
-						'admin_plugins_url'             => admin_url( 'plugins.php' ),
-						'demo_sites_url'                => Utils::getStarterSitesURL(),
-						'demo_parts_url'                => Utils::getStarterPartsURL(),
-						'plugins_states'                => DemoSitesRepository::getInstance()->getPluginsStates(),
-						'last_imported_starter'         => Flags::get( 'last_imported_starter' ),
-						'demo_site_ajax_nonce'          => wp_create_nonce( 'kubio-ajax-demo-site-verification' ),
-						'ajax_url'                      => admin_url( 'admin-ajax.php' ),
-						'kubio_ajax_nonce'              => wp_create_nonce( 'kubio_ajax_nonce' ),
-						'enable_starter_sites'          => apply_filters( 'kubio/starter-sites/enabled', true ),
-						'wpVersion'                     => preg_replace( '/([0-9]+).([0-9]+).*/', '$1.$2', $wp_version ),
-						'enable_try_online'             => Utils::isTryOnlineEnabled(),
-						'supplementary_upgrade_to_pro'  => apply_filters( 'kubio/show-supplementary-upgrade-to-pro', false ),
-						'kubioAIPricingURL'             => Utils::getCloudURL( '/ui-route/my-plans?purchase_ai=1' ),
-						'kubioAIParallelCalls'          => apply_filters( 'kubio/ai/parallel-calls', 5 ),
-						'showInternalFeatures'          => defined( '\KUBIO_INTERNAL' ) && \KUBIO_INTERNAL,
-						'sectionStylesTags'             => array( 'shadow', 'flat', 'outlined', 'rounded', 'minimal' ),
-						'activatedOnStage2'             => Flags::getSetting( 'activatedOnStage2', false ),
-						'aiStage2'                      => Flags::getSetting( 'aiStage2', false ),
-						'advancedMode'                      => Flags::getSetting( 'advancedMode', true ),
-						'wpAdminUpgradePage'            => add_query_arg(
+						'defaultAssetsURL'               => kubio_url( 'static/default-assets' ),
+						'staticAssetsURL'                => kubio_url( 'static' ),
+						'patternsAssetsUrl'              => kubio_url( 'static/patterns' ),
+						'kubioRemoteContentFile'         => 'https://static-assets.kubiobuilder.com/content-2022-05-17.json',
+						'kubioCloudPresetsUrl'           => Utils::getGlobalSnippetsURL(),
+						'kubioCloudPresetCategoriesUrl'  => Utils::getGlobalSnippetsCategoriesURL(),
+						'kubioCloudPresetTagsUrl'        => Utils::getGlobalSnippetsTagsURL(),
+						'kubioCloudUrl'                  => Utils::getCloudURL(),
+						'kubioRemoteContent'             => Utils::getSnippetsURL( '/globals' ),
+						'kubioLocalContentFile'          => kubio_url( 'static/patterns/content-converted.json' ),
+						'kubioEditorURL'                 => add_query_arg( 'page', 'kubio', admin_url( 'admin.php' ) ),
+						'patternsOnTheFly'               => ( defined( 'KUBIO_PATTERNS_ON_THE_FLY' ) && KUBIO_PATTERNS_ON_THE_FLY ) ? KUBIO_PATTERNS_ON_THE_FLY : '',
+						'base_url'                       => site_url(),
+						'admin_url'                      => admin_url(),
+						'admin_plugins_url'              => admin_url( 'plugins.php' ),
+						'demo_sites_url'                 => Utils::getStarterSitesURL(),
+						'demo_parts_url'                 => Utils::getStarterPartsURL(),
+						'plugins_states'                 => DemoSitesRepository::getInstance()->getPluginsStates(),
+						'last_imported_starter'          => Flags::get( 'last_imported_starter' ),
+						'demo_site_ajax_nonce'           => wp_create_nonce( 'kubio-ajax-demo-site-verification' ),
+						'ajax_url'                       => admin_url( 'admin-ajax.php' ),
+						'kubio_ajax_nonce'               => wp_create_nonce( 'kubio_ajax_nonce' ),
+						'enable_starter_sites'           => apply_filters( 'kubio/starter-sites/enabled', true ),
+						'wpVersion'                      => preg_replace( '/([0-9]+).([0-9]+).*/', '$1.$2', $wp_version ),
+						'enable_try_online'              => Utils::isTryOnlineEnabled(),
+						'supplementary_upgrade_to_pro'   => apply_filters( 'kubio/show-supplementary-upgrade-to-pro', false ),
+						'kubioAIPricingURL'              => Utils::getCloudURL( '/ui-route/my-plans?purchase_ai=1' ),
+						'kubioAIParallelCalls'           => apply_filters( 'kubio/ai/parallel-calls', 5 ),
+						'showInternalFeatures'           => defined( '\KUBIO_INTERNAL' ) && \KUBIO_INTERNAL,
+						'sectionStylesTags'              => array( 'shadow', 'flat', 'outlined', 'rounded', 'minimal' ),
+						'activatedOnStage2'              => Flags::getSetting( 'activatedOnStage2', false ),
+						'aiStage2'                       => Flags::getSetting( 'aiStage2', false ),
+						'advancedMode'                   => Flags::getSetting( 'advancedMode', true ),
+						'featuresVersion'                      => Flags::getSetting( 'featuresVersion', 1 ),
+						'wpAdminUpgradePage'             => add_query_arg(
 							array(
 								'tab'  => 'pro-upgrade',
 								'page' => 'kubio-get-started',
 							),
 							admin_url( 'admin.php' )
 						),
-						'allow3rdPartyBlogOverride'     => apply_filters( 'kubio/allow_3rd_party_blog_override', true ),
-						'multilanguage' => array(
-							'hasTranslator' => $is_wpml_active || $is_polylang_active,
-							'isWpmlActive' => $is_wpml_active,
+						'adminLanguage'                  => get_user_locale(),
+						'autoStartBlackWizardOnboarding' => get_option( '_kubio_auto_start_black_wizard_onboarding', false ),
+						'importDesignIndex'              => Flags::get( 'import_design_index', null ),
+						'importDesignAiStructure'        => Flags::get( 'import_design_ai_structure', null ),
+						'aiWizardDescriptionOptional'    => Flags::getSetting( 'aiWizardDescriptionOptional', false ),
+						'allow3rdPartyBlogOverride'      => apply_filters( 'kubio/allow_3rd_party_blog_override', true ),
+						'multilanguage'                  => array(
+							'hasTranslator'    => $is_wpml_active || $is_polylang_active,
+							'isWpmlActive'     => $is_wpml_active,
 							'isPolylangActive' => $is_polylang_active,
 							'polylang_add_page_translation_nonce' => wp_create_nonce( 'kubio_api_polylang_add_page_translation' ),
-						)
+						),
 					),
 					apply_filters( 'kubio/kubio-utils-data/extras', array() )
 				)

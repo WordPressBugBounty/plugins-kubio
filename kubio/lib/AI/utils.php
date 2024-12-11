@@ -320,14 +320,21 @@ function kubio_ai_get_original_image_dimensions( $imag_url ) {
  * @return mixed|null|WP_Error
  */
 function kubio_ai_call_api( $path, $payload = array(), $extra = array() ) {
-	$timeout = 120;
+
+	$is_guest      = isset( $_GET['is_guest'] ) && ! ! $_GET['is_guest'];
+	$skip_ai_cache = isset( $_GET['skip_ai_cache'] ) && ! ! $_GET['skip_ai_cache'];
+	$timeout       = 120;
 	ini_set( 'max_execution_time', $timeout );
 	set_time_limit( $timeout );
 
 	$log = defined( 'KUBIO_AI_LOG' ) ? KUBIO_AI_LOG : false;
+	if ( ! $is_guest ) {
+		$base_url = Utils::getCloudURL( "/api/ai/$path" );
+	} else {
+		$base_url = Utils::getCloudURL( "/api/ai-guest/$path" );
+	}
 
-	$base_url = Utils::getCloudURL( "/api/ai/$path" );
-	$url      = add_query_arg(
+	$url = add_query_arg(
 		array(
 			'ai_debug' => $log ? 1 : 0,
 		),
@@ -342,18 +349,24 @@ function kubio_ai_call_api( $path, $payload = array(), $extra = array() ) {
 
 		return $response;
 	}
-
+	$extra_headers = array();
+	if ( $skip_ai_cache ) {
+		$extra_headers['X-Kubio-AI-Skip-Cache'] = '1';
+	}
 	$response = wp_remote_post(
 		$url,
 		array(
 			'timeout'   => $timeout - 1,
 			'sslverify' => false,
-			'headers'   => array(
-				'Content-Type'      => 'application/json',
-				'Accept'            => 'application/json',
-				'X-Kubio-AI-Key'    => kubio_ai_get_key(),
-				'X-Kubio-Site-UUID' => Flags::getSiteUUID(),
-				'X-Kubio-Site-URL'  => get_bloginfo( 'url' ),
+			'headers'   => array_merge(
+				array(
+					'Content-Type'      => 'application/json',
+					'Accept'            => 'application/json',
+					'X-Kubio-AI-Key'    => kubio_ai_get_key(),
+					'X-Kubio-Site-UUID' => Flags::getSiteUUID(),
+					'X-Kubio-Site-URL'  => get_bloginfo( 'url' ),
+				),
+				$extra_headers
 			),
 			'body'      => json_encode(
 				array_merge(
@@ -494,3 +507,4 @@ function kubio_ai_call_api( $path, $payload = array(), $extra = array() ) {
 
 	return $result;
 }
+

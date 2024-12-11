@@ -117,7 +117,39 @@ add_action(
 				},
 			)
 		);
-
+		register_rest_route(
+			$namespace,
+			'/ai/get-default-homepage-sections-summaries-by-anchor',
+			array(
+				'methods'             => 'POST',
+				'callback'            => 'kubio_ai_get_default_homepage_sections_summaries_by_anchor',
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				},
+			)
+		);
+		register_rest_route(
+			$namespace,
+			'/ai/update-default-homepage-sections-used-images',
+			array(
+				'methods'             => 'POST',
+				'callback'            => 'kubio_ai_update_default_homepage_sections_used_images',
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				},
+			)
+		);
+		register_rest_route(
+			$namespace,
+			'/ai/get-default-homepage-sections-used-images',
+			array(
+				'methods'             => 'POST',
+				'callback'            => 'kubio_ai_get_default_homepage_sections_used_images',
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				},
+			)
+		);
 		register_rest_route(
 			$namespace,
 			'/ai/generate-section-content',
@@ -238,29 +270,41 @@ add_action(
 			)
 		);
 
-        register_rest_route(
-            $namespace,
-            '/commercial-flow',
-            array(
-                'methods'             => 'GET',
-                'callback'            => 'kubio_get_commercial_flow_settings',
-                'permission_callback' => function () {
-                    return current_user_can( 'edit_theme_options' );
-                },
-            )
-        );
+		register_rest_route(
+			$namespace,
+			'/commercial-flow',
+			array(
+				'methods'             => 'GET',
+				'callback'            => 'kubio_get_commercial_flow_settings',
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				},
+			)
+		);
 
-        register_rest_route(
-            $namespace,
-            '/commercial-flow',
-            array(
-                'methods'             => 'POST',
-                'callback'            => 'kubio_store_commercial_flow_settings',
-                'permission_callback' => function () {
-                    return current_user_can( 'edit_theme_options' );
-                },
-            )
-        );
+		register_rest_route(
+			$namespace,
+			'/remove-auto-start-black-wizard-flag',
+			array(
+				'methods'             => 'POST',
+				'callback'            => 'kubio_remove_auto_start_black_wizard_onboarding_flag',
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				},
+			)
+		);
+
+		register_rest_route(
+			$namespace,
+			'/commercial-flow',
+			array(
+				'methods'             => 'POST',
+				'callback'            => 'kubio_store_commercial_flow_settings',
+				'permission_callback' => function () {
+					return current_user_can( 'edit_theme_options' );
+				},
+			)
+		);
 
 	}
 );
@@ -284,16 +328,18 @@ function kubio_ai_store_general_settings( WP_REST_Request $request ) {
 }
 
 function kubio_get_commercial_flow_settings() {
-    return (object) Flags::get( 'commercialFlowSettings', array() );
+	return (object) Flags::get( 'commercialFlowSettings', array() );
 }
 
 
-function kubio_store_commercial_flow_settings(WP_REST_Request $request){
-    Flags::set('commercialFlowSettings',
-        array(
-            'disabled' => $request->get_param('disabled'))
-    );
-    return true;
+function kubio_store_commercial_flow_settings( WP_REST_Request $request ) {
+	Flags::set(
+		'commercialFlowSettings',
+		array(
+			'disabled' => $request->get_param( 'disabled' ),
+		)
+	);
+	return true;
 }
 
 function kubio_utils_data_add_ai_settings( $data ) {
@@ -337,6 +383,8 @@ function kubio_ai_get_site_structure( WP_REST_Request $request ) {
 			'siteContext' => Arr::get( $request, 'siteContext', array() ),
 			'pageContext' => Arr::get( $request, 'pageContext', array() ),
 			'pageTitle'   => Arr::get( $request, 'pageTitle', array() ),
+			'theme'       => Arr::get( $request, 'theme', null ),
+			'importDesignIndex'   => Arr::get( $request, 'importDesignIndex', null ),
 		)
 	);
 }
@@ -380,35 +428,77 @@ function kubio_ai_get_page_structure( WP_REST_Request $request ) {
 		)
 	);
 }
+function kubio_ai_get_default_homepage_sections_summaries_by_anchor( WP_REST_Request $request ) {
+	return kubio_ai_call_api(
+		'v1/get-default-homepage-sections-summaries-by-anchor',
+		array(
+			'siteContext'       => Arr::get( $request, 'siteContext', array() ),
+			'pageContext'       => Arr::get( $request, 'pageContext', array() ),
+			'pageTitle'         => Arr::get( $request, 'pageTitle', array() ),
+			'rules'             => Arr::get( $request, 'rules', array() ),
+			'theme'             => Arr::get( $request, 'theme', null ),
+			'importDesignIndex' => Arr::get( $request, 'importDesignIndex', null ),
+			'colorSchemeAndTypography' => Arr::get( $request, 'colorSchemeAndTypography', null ),
+		)
+	);
+}
+
 
 function kubio_ai_get_page_section_content( WP_REST_Request $request ) {
 	return kubio_ai_call_api(
 		'v1/generate-page-section',
 		array(
-			'siteContext' => Arr::get( $request, 'siteContext', array() ),
-			'pageContext' => Arr::get( $request, 'pageContext', array() ),
-			'pageTitle'   => Arr::get( $request, 'pageTitle', array() ),
+			'siteContext'   => Arr::get( $request, 'siteContext', array() ),
+			'pageContext'   => Arr::get( $request, 'pageContext', array() ),
+			'pageTitle'     => Arr::get( $request, 'pageTitle', array() ),
 
-			'structure'   => Arr::get( $request, 'structure', array() ),
-			'category'    => Arr::get( $request, 'category', 'section' ),
-			'summary'     => Arr::get( $request, 'summary', '' ),
-			'rules'       => Arr::get( $request, 'rules', array() ),
+			'structure'     => Arr::get( $request, 'structure', array() ),
+			'category'      => Arr::get( $request, 'category', 'section' ),
+			'summary'       => Arr::get( $request, 'summary', '' ),
+			'rules'         => Arr::get( $request, 'rules', array() ),
+
+			'sectionParams' => Arr::get( $request, 'sectionParams', array() ),
 		)
 	);
 }
+
+function kubio_ai_get_default_homepage_sections_used_images( WP_REST_Request $request ) {
+	return kubio_ai_call_api(
+		'v1/get-default-homepage-sections-used-images',
+		array(
+			'siteContext'       => Arr::get( $request, 'siteContext', array() ),
+			'theme'             => Arr::get( $request, 'theme', null ),
+			'importDesignIndex' => Arr::get( $request, 'importDesignIndex', null ),
+		)
+	);
+}
+function kubio_ai_update_default_homepage_sections_used_images( WP_REST_Request $request ) {
+	return kubio_ai_call_api(
+		'v1/update-default-homepage-sections-used-images',
+		array(
+			'siteContext'       => Arr::get( $request, 'siteContext', array() ),
+			'theme'             => Arr::get( $request, 'theme', null ),
+			'importDesignIndex' => Arr::get( $request, 'importDesignIndex', null ),
+			'content'			=> Arr::get( $request, 'content', null ),
+		)
+	);
+}
+
 
 function kubio_ai_get_rephrase_section_content( WP_REST_Request $request ) {
 	return kubio_ai_call_api(
 		'v1/rephrase-page-section',
 		array(
-			'siteContext' => Arr::get( $request, 'siteContext', array() ),
-			'pageContext' => Arr::get( $request, 'pageContext', array() ),
-			'pageTitle'   => Arr::get( $request, 'pageTitle', array() ),
+			'siteContext'   => Arr::get( $request, 'siteContext', array() ),
+			'pageContext'   => Arr::get( $request, 'pageContext', array() ),
+			'pageTitle'     => Arr::get( $request, 'pageTitle', array() ),
 
-			'structure'   => Arr::get( $request, 'structure', array() ),
-			'category'    => Arr::get( $request, 'category', 'section' ),
-			'summary'     => Arr::get( $request, 'summary', '' ),
-			'rules'       => Arr::get( $request, 'rules', array() ),
+			'structure'     => Arr::get( $request, 'structure', array() ),
+			'category'      => Arr::get( $request, 'category', 'section' ),
+			'summary'       => Arr::get( $request, 'summary', '' ),
+			'rules'         => Arr::get( $request, 'rules', array() ),
+
+			'sectionParams' => Arr::get( $request, 'sectionParams', array() ),
 		)
 	);
 }
@@ -644,3 +734,7 @@ function kubio_ai_sd_image_from_text( WP_REST_Request $request ) {
 }
 
 
+function kubio_remove_auto_start_black_wizard_onboarding_flag() {
+	delete_option( '_kubio_auto_start_black_wizard_onboarding' );
+	return true;
+}

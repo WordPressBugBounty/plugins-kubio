@@ -12,9 +12,14 @@ function kubio_ai_remove_start_with_ai_hash() {
 		Flags::delete( 'start_with_ai_hash' );
 	}
 }
+function kubio_ai_remove_black_wizard_onboarding_hash() {
+	if ( Utils::isRestRequest() && Flags::get( 'black_wizard_onboarding_hash' ) ) {
+		Flags::delete( 'black_wizard_onboarding_hash' );
+	}
+}
 
 add_action( 'wp_after_insert_post', 'kubio_ai_remove_start_with_ai_hash' );
-
+add_action( 'wp_after_insert_post', 'kubio_ai_remove_black_wizard_onboarding_hash' );
 
 function kubio_ai_upgrade_key( $upgrade_key ) {
 	$license = kubio_ai_get_key();

@@ -814,11 +814,15 @@ class CustomizerImporter {
 		$full_height         = Arr::get( $item_data, 'full_height' );
 
 		if (
-			Flags::get( 'import_design', false ) === true ||
-			( ! $hero_padding_top && ! $hero_padding_bottom )
+			( Flags::get( 'import_design', false ) === true && Flags::get( 'start_source' ) !== 'customizer-sidebar' ) ||
+			! $hero_padding_top || ! $hero_padding_bottom
 		) {
-			$hero_padding_top    = Arr::get( $item_data, 'style.descendants.outer.padding.top.value' );
-			$hero_padding_bottom = Arr::get( $item_data, 'style.descendants.outer.padding.bottom.value' );
+			if ( ! $hero_padding_top ) {
+				$hero_padding_top = Arr::get( $item_data, 'style.descendants.outer.padding.top.value' );
+			}
+			if ( ! $hero_padding_bottom ) {
+				$hero_padding_bottom = Arr::get( $item_data, 'style.descendants.outer.padding.bottom.value' );
+			}
 		}
 
 		if ( $full_height ) {

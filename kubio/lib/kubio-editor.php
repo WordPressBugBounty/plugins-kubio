@@ -242,23 +242,22 @@ function kubio_get_editor_style( $get_css = false, $skiped_handlers = array() ) 
 		'kubio-icons',
 	);
 
-	if (kubio_wpml_is_active()) {
+	if ( kubio_wpml_is_active() ) {
 		$styles_to_copy = array(
 			'legacy-dropdown',
 			'legacy-dropdown-click',
 			'legacy-list-horizontal',
 			'legacy-list-vertical',
 			'legacy-post-translations',
-			'menu-item'
+			'menu-item',
 		);
 
-		foreach ($styles_to_copy as $style) {
+		foreach ( $styles_to_copy as $style ) {
 			$style_handles[] = "kubio-copy-of-wpml-{$style}";
 		}
 	}
 
 	$style_handles = apply_filters( 'kubio/kubio_get_editor_style/style_handles', $style_handles );
-
 
 	$wp_styles = wp_styles();
 	foreach ( array_keys( $wp_styles->registered ) as $handle ) {
@@ -832,11 +831,23 @@ function kubio_edit_site_init( $hook ) {
 	kubio_enqueue_editor_page_assets();
 	$settings['postTypes'] = kubio_get_post_types();
 
-	$ai_hash       = Flags::get( 'start_with_ai_hash', null );
-	$ai_hash_param = Arr::get( $_REQUEST, 'ai', null );
-
+	$ai_hash                          = Flags::get( 'start_with_ai_hash', null );
+	$ai_hash_param                    = Arr::get( $_REQUEST, 'ai', null );
 	$settings['startWithAIFrontPage'] = ( $ai_hash && $ai_hash_param && $ai_hash_param === $ai_hash );
 
+	$black_wizard_onboarding_hash               = Flags::get( 'black_wizard_onboarding_hash', null );
+	$black_wizard_onboarding_param              = Arr::get( $_REQUEST, 'black-wizard-onboarding', null );
+	$settings['startWithBlackWizardOnboarding'] = ( kubio_is_black_wizard_onboarding_enabled() &&
+		 $black_wizard_onboarding_hash &&
+		 $black_wizard_onboarding_param &&
+		 $black_wizard_onboarding_hash === $black_wizard_onboarding_param );
+
+	if($settings['startWithBlackWizardOnboarding']) {
+		add_filter('admin_body_class', function ($classes) {
+			$classes .= ' kubio-will-have-black-wizard-onboarding';
+			return $classes;
+		});
+	}
 	if ( isset( $_REQUEST['generate-ai-frontpage'] ) && ! Flags::get( 'generated_from_getting_started', false ) ) {
 		$settings['startGeneratingAIFrontPage'] = true;
 		Flags::set( 'generated_from_getting_started', true );

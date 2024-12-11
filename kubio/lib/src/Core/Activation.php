@@ -226,15 +226,26 @@ class Activation {
 
 			if ( $this->activeWithFrontpage() ) {
 				if ( Flags::get( 'start_source', false ) == 'notice-homepage' ) {
-					$url = add_query_arg(
-						array(
-							'page'                    => 'kubio-get-started',
-							'kubio-designed-imported' => intval( ! ! Flags::get( 'import_design', false ) ),
-						),
-						admin_url( 'admin.php' )
-					);
+					if ( kubio_is_black_wizard_onboarding_enabled() && Flags::get( 'import_design_ai_structure', false ) ) {
+						$black_wizard_onboarding_hash = md5( uniqid( 'black-wizard-onboarding' ) );
+						Flags::set( 'black_wizard_onboarding_hash', $black_wizard_onboarding_hash );
+						$url = Utils::kubioGetEditorURL(
+							array(
+								'black-wizard-onboarding' => $black_wizard_onboarding_hash,
+							)
+						);
+					} else {
+						$url = add_query_arg(
+							array(
+								'page'                    => 'kubio-get-started',
+								'kubio-designed-imported' => intval( ! ! Flags::get( 'import_design', false ) ),
+							),
+							admin_url( 'admin.php' )
+						);
+					}
 
 					wp_redirect( $url );
+
 				} else {
 					wp_redirect(
 						Utils::kubioGetEditorURL()
@@ -293,6 +304,10 @@ class Activation {
 				return;
 			}
 
+			$ai_structure = isset( $data['ai-structure'] ) ? $data['ai-structure'] : null;
+			if ( $ai_structure ) {
+				Flags::set( 'import_design_ai_structure', $ai_structure );
+			}
 			$this->remote_content = $data;
 		} else {
 			$content              = file_get_contents( KUBIO_ROOT_DIR . '/defaults/default-site.dat' );

@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-21T14:59:24+02:00\n"
+"POT-Creation-Date: 2024-12-11T15:16:08+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.11.0\n"
@@ -58,7 +58,7 @@ msgstr "Mobiles Menü"
 #. translators: %s - year month or day
 #: build/block-library/blocks/page-title/index.php:17
 msgid "Posts from %s"
-msgstr "Beiträge von %s"
+msgstr "Beiträge des %s"
 
 #. translators: %s - search term
 #: build/block-library/blocks/page-title/index.php:22
@@ -92,7 +92,7 @@ msgstr "Kommentare sind geschlossen. Dieser Beitrag Kommentarformular-Block ist 
 #: build/block-library/blocks/post-comments/index.php:42
 #: build/block-library/index.js:37
 msgid "No responses yet"
-msgstr "Noch keine Antworten"
+msgstr "Keine Antworten bisher"
 
 #: build/block-library/blocks/post-comments/index.php:43
 #: build/block-library/index.js:37
@@ -140,7 +140,7 @@ msgstr "Widget-Bereich nicht gefunden"
 #: lib/add-edit-in-kubio.php:199
 #: lib/add-edit-in-kubio.php:367
 #: lib/filters/default-editor-overlay.php:151
-#: lib/kubio-editor.php:977
+#: lib/kubio-editor.php:988
 #: build/block-library/index.js:13
 msgid "Edit with Kubio"
 msgstr "Bearbeiten mit Kubio"
@@ -160,9 +160,9 @@ msgid "The supercharged block-based WordPress builder"
 msgstr "Der leistungsstarke blockbasierte WordPress-Builder"
 
 #: lib/admin-pages/kubio-get-started.php:25
-#: build/editor/index.js:17
+#: build/editor/index.js:23
 msgid "Starter sites"
-msgstr "Startseiten"
+msgstr "Starter-Websites"
 
 #: lib/admin-pages/kubio-get-started.php:27
 msgid "Beautiful starter sites with 1-click import"
@@ -178,7 +178,7 @@ msgstr "Kubio - Loslegen"
 
 #: lib/admin-pages/kubio-get-started.php:98
 msgid "Get Started"
-msgstr "Los geht's"
+msgstr "Erste Schritte"
 
 #: lib/admin-pages/kubio-get-started.php:108
 msgid "Kubio - Starter Sites"
@@ -186,10 +186,10 @@ msgstr "Kubio - Starterseiten"
 
 #: lib/admin-pages/kubio-get-started.php:109
 msgid "Starter Sites"
-msgstr "Startseiten"
+msgstr "Starter-Websites"
 
 #: lib/admin-pages/main-page/demo-sites.php:13
-#: lib/kubio-editor.php:1220
+#: lib/kubio-editor.php:1231
 msgid "You need a higher level of permission."
 msgstr "Du benötigst eine höhere Berechtigungsstufe."
 
@@ -202,7 +202,7 @@ msgid "Retrieving starter sites..."
 msgstr "Starterseiten werden abgerufen..."
 
 #: lib/admin-pages/main-page/demo-sites.php:48
-#: build/editor/index.js:19
+#: build/editor/index.js:25
 msgid "Preview"
 msgstr "Vorschau"
 
@@ -214,24 +214,24 @@ msgstr "Ohne Titel"
 #: lib/admin-pages/main-page/demo-sites.php:62
 #: lib/admin-pages/main-page/demo-sites.php:149
 msgid "Import site"
-msgstr "Website importieren"
+msgstr "Sites importieren"
 
 #: lib/admin-pages/main-page/demo-sites.php:69
 msgid "Try Online"
 msgstr "Online ausprobieren"
 
 #: lib/admin-pages/main-page/demo-sites.php:92
-#: build/editor/index.js:17
+#: build/editor/index.js:23
 msgid "You are about to import a demo site"
 msgstr "Du bist dabei, eine Demo-Website zu importieren"
 
 #: lib/admin-pages/main-page/demo-sites.php:95
-#: build/editor/index.js:17
+#: build/editor/index.js:23
 msgid "Current pages will be moved to trash. You can restore the content back at any time."
 msgstr "Die aktuellen Seiten werden in den Papierkorb verschoben. Du kannst den Inhalt jederzeit wiederherstellen."
 
 #: lib/admin-pages/main-page/demo-sites.php:98
-#: build/editor/index.js:17
+#: build/editor/index.js:23
 msgid "Posts, pages, images, widgets, menus and other theme settings will get imported."
 msgstr "Beiträge, Seiten, Bilder, Widgets, Menüs und andere Theme-Einstellungen werden importiert."
 
@@ -240,7 +240,7 @@ msgid "Your current design will be completely overwritten by the new template. T
 msgstr "Dein aktuelles Design wird vollständig durch die neue Vorlage überschrieben. Dieser Vorgang ist nicht rückgängig zu machen. Wenn du zu deinem aktuellen Design zurückkehren möchtest, erstelle bitte ein Backup deiner Website, bevor du mit dem Import fortfährst."
 
 #: lib/admin-pages/main-page/demo-sites.php:107
-#: build/editor/index.js:17
+#: build/editor/index.js:23
 msgid "The following plugins will be installed as they are part of the demo"
 msgstr "Die folgenden Plugins werden installiert, da sie Teil der Demo sind"
 
@@ -271,14 +271,14 @@ msgstr "Nur verfügbar mit Kubio PRO"
 #: build/block-library/index.js:19
 #: build/controls/index.js:35
 #: build/editor/index.js:7
-#: build/editor/index.js:17
-#: build/editor/index.js:29
+#: build/editor/index.js:23
+#: build/editor/index.js:33
 msgid "Cancel"
 msgstr "Abbrechen"
 
 #: lib/admin-pages/main-page/demo-sites.php:153
 msgid "Check all PRO features"
-msgstr "Überprüfe alle PRO-Funktionen"
+msgstr "Alle PRO-Funktionen ansehen"
 
 #: lib/admin-pages/main-page/demo-sites.php:161
 msgid "Demo site imported sucessfuly"
@@ -291,19 +291,19 @@ msgstr "Website anzeigen"
 #: lib/admin-pages/main-page/demo-sites.php:171
 #: lib/admin-pages/pages.php:63
 msgid "Start editing"
-msgstr "Bearbeiten starten"
+msgstr "Starte mit dem Bearbeiten"
 
 #: lib/admin-pages/main-page/demo-sites.php:202
 #: build/block-library/index.js:27
 #: build/block-library/index.js:29
 #: build/block-library/index.js:33
 #: build/block-library/index.js:37
-#: build/editor/index.js:17
+#: build/editor/index.js:23
 msgid "Active"
-msgstr "Aktiv"
+msgstr "aktiv"
 
 #: lib/admin-pages/main-page/demo-sites.php:203
-#: build/editor/index.js:17
+#: build/editor/index.js:23
 msgid "Installed"
 msgstr "Installiert"
 
@@ -355,7 +355,7 @@ msgid "%s Retrieving data..."
 msgstr "Daten werden abgerufen..."
 
 #: lib/AI/admin-tab/tab.php:20
-#: build/editor/index.js:53
+#: build/editor/index.js:55
 msgid "Kubio AI"
 msgstr "Kubio KI"
 
@@ -366,20 +366,20 @@ msgstr "Baue intelligenter und schneller mit Kubio AI"
 #: lib/AI/admin-tab/tab.php:51
 #: lib/AI/admin-tab/tab.php:52
 msgid "Unauthorized"
-msgstr "Unberechtigt"
+msgstr "Unbefugte"
 
-#: lib/AI/api.php:623
+#: lib/AI/api.php:713
 #: lib/AI/SDApi/KubioCloudSDApi.php:80
 msgid "No image was generated"
 msgstr "Es wurde kein Bild generiert"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:13
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Photographic"
 msgstr "Fotografisch"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:14
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "3D Model"
 msgstr "3D-Modell"
 
@@ -389,7 +389,7 @@ msgid "Background image"
 msgstr "Hintergrundbild"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:16
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Digital Art"
 msgstr "Digitale Kunst"
 
@@ -400,9 +400,9 @@ msgstr "Kunstmalerie"
 #: lib/AI/SDApi/KubioImagePrompts.php:24
 #: build/block-editor/index.js:96
 #: build/block-library/index.js:19
-#: build/editor/index.js:53
+#: build/editor/index.js:55
 msgid "Landscape"
-msgstr "Landschaft"
+msgstr "Querformat"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:25
 msgid "Macro"
@@ -411,9 +411,9 @@ msgstr "Makro"
 #: lib/AI/SDApi/KubioImagePrompts.php:26
 #: build/block-editor/index.js:96
 #: build/block-library/index.js:19
-#: build/editor/index.js:53
+#: build/editor/index.js:55
 msgid "Portrait"
-msgstr "Porträt"
+msgstr "Hochformat"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:27
 msgid "Long Exposure"
@@ -421,14 +421,14 @@ msgstr "Langzeitbelichtung"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:31
 msgid "Clay"
-msgstr "Ton"
+msgstr "Lehm"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:32
 msgid "Digital"
 msgstr "Digital"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:33
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Origami"
 msgstr "Origami"
 
@@ -465,31 +465,31 @@ msgid "Bokeh"
 msgstr "Bokeh"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:47
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Anime"
 msgstr "Anime"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:48
 msgid "Cartoon"
-msgstr "Zeichentrickfilm"
+msgstr "Karikatur"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:49
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Cinematic"
-msgstr "Filmisch"
+msgstr "Cinematic"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:50
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Comic Book"
 msgstr "Comicbuch"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:51
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Fantasy Art"
 msgstr "Fantasy-Kunst"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:52
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Isometric"
 msgstr "Isometrisch"
 
@@ -498,29 +498,29 @@ msgid "Vector"
 msgstr "Vektor"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:54
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Pixel Art"
 msgstr "Pixelkunst"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:55
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Low Poly"
 msgstr "Niedriges Polygonmodell"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:56
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Neon Punk"
 msgstr "Neon Punk"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:60
 #: build/controls/index.js:35
 msgid "Doodle"
-msgstr "Skizze"
+msgstr "Doodle"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:61
-#: build/editor/index.js:51
+#: build/editor/index.js:53
 msgid "Line Art"
-msgstr "Strichzeichnung"
+msgstr "Linien-Kunst"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:62
 msgid "Oil Painting"
@@ -532,7 +532,7 @@ msgstr "Bleistiftzeichnung"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:64
 msgid "Watercolor"
-msgstr "Aquarell"
+msgstr "Wasserfarbe"
 
 #: lib/AI/utils.php:73
 #: build/ai/index.js:1
@@ -546,7 +546,7 @@ msgstr "Ist der Standard-Sprachstil. Kann sich in gewissem Maße je nach den Hin
 
 #: lib/AI/utils.php:77
 msgid "Formal"
-msgstr "Formell"
+msgstr "Formal"
 
 #: lib/AI/utils.php:78
 msgid "Used in official documents, academic papers, and professional communication, characterized by complex sentence structures, precise vocabulary, and avoidance of contractions and slang."
@@ -578,7 +578,7 @@ msgstr "Wird verwendet, um die Meinung des Lesers zu überzeugen oder zu beeinfl
 
 #: lib/AI/utils.php:94
 msgid "Humorous"
-msgstr "Humorvoll"
+msgstr "Witzig"
 
 #: lib/AI/utils.php:95
 msgid "Intended to amuse the reader, this style uses wit, sarcasm, irony, and clever wordplay to evoke laughter or amusement."
@@ -587,7 +587,7 @@ msgstr "Mit dem Ziel, den Leser zu amüsieren, verwendet dieser Stil Witz, Sarka
 #: lib/AI/utils.php:104
 #: build/ai/index.js:1
 msgid "Business"
-msgstr "Geschäft"
+msgstr "Geschäftlich"
 
 #: lib/AI/utils.php:106
 #: build/ai/index.js:1
@@ -597,7 +597,7 @@ msgstr "Ressourcen und Einblicke für den Start, die Verwaltung und das Wachstum
 #: lib/AI/utils.php:109
 #: build/ai/index.js:3
 msgid "Services"
-msgstr "Dienstleistungen"
+msgstr "Dienste"
 
 #: lib/AI/utils.php:111
 msgid "Promoting and detailing services offered by professionals or businesses."
@@ -621,7 +621,7 @@ msgstr "Präsentation von künstlerischen und Designarbeiten, einschließlich Po
 
 #: lib/AI/utils.php:126
 msgid "Community & Non-profit"
-msgstr "Gemeinschaft & Non-Profit"
+msgstr "Community und gemeinnützige Organisationen"
 
 #: lib/AI/utils.php:128
 msgid "Highlighting community initiatives, nonprofit organizations, and philanthropic efforts for social good."
@@ -629,7 +629,7 @@ msgstr "Hervorheben von Gemeinschaftsinitiativen, gemeinnützigen Organisationen
 
 #: lib/AI/utils.php:131
 msgid "Personal"
-msgstr "Persönlich"
+msgstr "Personenangaben"
 
 #: lib/AI/utils.php:133
 msgid "A platform for sharing personal experiences, thoughts, and interests."
@@ -661,7 +661,7 @@ msgstr "Erkunden von kulinarischen Genüssen, Rezepten und Getränke-bezogenem I
 
 #: lib/AI/utils.php:154
 msgid "Health & Fitness"
-msgstr "Gesundheit & Fitness"
+msgstr "Gesundheit und Fitness"
 
 #: lib/AI/utils.php:156
 msgid "Promoting a healthy lifestyle, fitness routines, and well-being tips."
@@ -669,7 +669,7 @@ msgstr "Förderung eines gesunden Lebensstils, Fitness-Routinen und Wohlbefinden
 
 #: lib/AI/utils.php:160
 msgid "Fashion & Beauty"
-msgstr "Mode & Schönheit"
+msgstr "Mode und Beauty"
 
 #: lib/AI/utils.php:162
 msgid "Showcasing the latest fashion trends, beauty tips, and style advice."
@@ -692,15 +692,15 @@ msgid "Exploring the world of gaming, video games, and esports."
 msgstr "Die Welt der Spiele, Videospiele und E-Sports erkunden."
 
 #. translators: %s is the error message
-#: lib/AI/utils.php:393
+#: lib/AI/utils.php:406
 msgid "AI Server error: %s"
 msgstr "AI-Serverfehler: %s"
 
-#: lib/AI/utils.php:409
+#: lib/AI/utils.php:422
 msgid "AI response is invalid"
 msgstr "Die KI-Antwort ist ungültig"
 
-#: lib/AI/utils.php:467
+#: lib/AI/utils.php:480
 msgid "AI response is invalid ( Empty response )"
 msgstr "Die KI-Antwort ist ungültig (Leere Antwort)"
 
@@ -716,7 +716,7 @@ msgstr "API-Schlüssel nicht gefunden"
 
 #: lib/api/subscribe-form.php:23
 msgid "Untitled form"
-msgstr "Unbenanntes Formular"
+msgstr "Ohne Titel Form"
 
 #: lib/blog/comments.php:44
 msgid "Older Comments"
@@ -747,7 +747,7 @@ msgstr "WordPress %1$s"
 #. translators: %1$s and %2$s - PHP and WordPress versions version e.g. 5.0
 #: lib/filters/requirements-notices.php:27
 msgid "%1$s and %2$s"
-msgstr "Versionen %1$s und %2$s"
+msgstr "%1$s und %2$s"
 
 #. translators: %s required message. e.g. WordPress 6.0 and PHP 7.2
 #: lib/filters/requirements-notices.php:92
@@ -771,7 +771,7 @@ msgstr "Für dieses Template ist kein Theme definiert."
 #: lib/full-site-editing/default-template-types.php:26
 msgctxt "Template name"
 msgid "Index"
-msgstr "Startseite"
+msgstr "Index"
 
 #: lib/full-site-editing/default-template-types.php:27
 msgid "The default template used when no other template is available. This is a required template in WordPress."
@@ -798,7 +798,7 @@ msgstr "Vorlage, die verwendet wird, um die Startseite der Website zu rendern, u
 #: lib/full-site-editing/default-template-types.php:38
 msgctxt "Template name"
 msgid "Singular"
-msgstr "Einzahl"
+msgstr "Singular"
 
 #: lib/full-site-editing/default-template-types.php:39
 msgid "Template used for displaying single views of the content. This template is a fallback for the Single, Post, and Page templates, which take precedence when they exist."
@@ -807,7 +807,7 @@ msgstr "Vorlage zur Anzeige einzelner Ansichten des Inhalts. Diese Vorlage ist e
 #: lib/full-site-editing/default-template-types.php:42
 msgctxt "Template name"
 msgid "Single Post"
-msgstr "Einzelner Beitrag"
+msgstr "Einzelbeitrag"
 
 #: lib/full-site-editing/default-template-types.php:43
 msgid "Template used to display a single blog post."
@@ -887,11 +887,11 @@ msgstr "Vorlage zur Anzeige einzelner Mediendateien oder Anhänge."
 #: lib/full-site-editing/default-template-types.php:78
 msgctxt "Template name"
 msgid "Search"
-msgstr "Suche"
+msgstr "Suchen"
 
 #: lib/full-site-editing/default-template-types.php:79
 msgid "Template used to display search results."
-msgstr "Vorlage zur Anzeige der Suchergebnisse."
+msgstr "Template für die Anzeige von Suchergebnissen."
 
 #: lib/full-site-editing/default-template-types.php:82
 msgid "Privacy Policy"
@@ -915,29 +915,29 @@ msgstr "Allgemein"
 
 #: lib/full-site-editing/template-parts-area.php:27
 msgid "General templates often perform a specific role like displaying post content, and are not tied to any particular area."
-msgstr "Allgemeine Vorlagen erfüllen oft eine spezifische Rolle, wie z.B. die Anzeige von Beitraginhalten, und sind nicht an einen bestimmten Bereich gebunden."
+msgstr "Allgemeine Templates übernehmen oft eine spezifische Aufgabe wie das Darstellen von Betragsinhalt und sind an keinen bestimmten Bereich gebunden."
 
 #: lib/full-site-editing/template-parts-area.php:36
 #: build/block-library/index.js:19
 #: build/core/index.js:3
 #: build/editor/index.js:3
 msgid "Header"
-msgstr "Kopfzeile"
+msgstr "Header"
 
 #: lib/full-site-editing/template-parts-area.php:37
 msgid "The Header template defines a page area that typically contains a title, logo, and main navigation."
-msgstr "Die Kopfzeilenvorlage definiert einen Seitenbereich, der in der Regel einen Titel, ein Logo und die Hauptnavigation enthält."
+msgstr "Das Header-Template definiert einen Seitenbereich, der typischerweise Titel, Logo und Hauptnavigation enthält."
 
 #: lib/full-site-editing/template-parts-area.php:46
 #: build/block-library/index.js:19
 #: build/core/index.js:3
 #: build/editor/index.js:3
 msgid "Footer"
-msgstr "Fußzeile"
+msgstr "Footer"
 
 #: lib/full-site-editing/template-parts-area.php:47
 msgid "The Footer template defines a page area that typically contains site credits, social links, or any other combination of blocks."
-msgstr "Das Footer-Template definiert einen Seitenbereich, der in der Regel Site-Credits, Social-Media-Links oder eine beliebige andere Kombination von Blöcken enthält."
+msgstr "Das Footer-Template definiert einen Seitenbereich, der typischerweise Impressum, Social Links oder jede andere Kombination von Blöcken enthält."
 
 #: lib/full-site-editing/template-parts-area.php:56
 #: build/block-library/index.js:19
@@ -953,106 +953,106 @@ msgstr "Das Sidebar-Template definiert einen Seitenbereich, der in der Regel Wid
 #. translators: %1$s: Template area type, %2$s: the uncategorized template area value.
 #: lib/full-site-editing/template-parts-area.php:118
 msgid "\"%1$s\" is not a supported wp_template_part area value and has been added as \"%2$s\"."
-msgstr "\"%1$s\" ist kein unterstützter wp_template_part-Bereichswert und wurde als \"%2$s\" hinzugefügt."
+msgstr "„%1$s“ ist ein nicht unterstützter wp_template_part-Bereichswert und wurde hinzugefügt als „%2$s“."
 
 #: lib/full-site-editing/template-parts-area.php:142
 msgid "Template Part Areas"
-msgstr "Vorlagenbereiche"
+msgstr "Template-Teil-Bereiche"
 
 #: lib/full-site-editing/template-parts-area.php:143
 msgid "Template Part Area"
-msgstr "Vorlagenbereich"
+msgstr "Template-Teil-Bereich"
 
 #: lib/full-site-editing/template-parts.php:13
 #: lib/kubio-block-library.php:41
-#: build/editor/index.js:31
+#: build/editor/index.js:35
 msgid "Template Parts"
-msgstr "Vorlagen-Teile"
+msgstr "Template-Teile"
 
 #: lib/full-site-editing/template-parts.php:14
 #: build/block-library/index.js:11
 msgid "Template Part"
-msgstr "Vorlage Teil"
+msgstr "Template-Teil"
 
 #: lib/full-site-editing/template-parts.php:15
 msgctxt "Admin Menu text"
 msgid "Template Parts"
-msgstr "Vorlagen-Teile"
+msgstr "Template-Teile"
 
 #: lib/full-site-editing/template-parts.php:16
 msgctxt "Template Part"
 msgid "Add New"
-msgstr "Neu hinzufügen"
+msgstr "Erstellen"
 
 #: lib/full-site-editing/template-parts.php:17
 msgid "Add New Template Part"
-msgstr "Neuen Vorlagenteil hinzufügen"
+msgstr "Neues Template-Teil hinzufügen"
 
 #: lib/full-site-editing/template-parts.php:18
 msgid "New Template Part"
-msgstr "Neuer Vorlagenteil"
+msgstr "Neues Template-Teil"
 
 #: lib/full-site-editing/template-parts.php:19
 msgid "Edit Template Part"
-msgstr "Vorlage-Teil bearbeiten"
+msgstr "Template-Teil bearbeiten"
 
 #: lib/full-site-editing/template-parts.php:20
 msgid "View Template Part"
-msgstr "Vorlage-Teil anzeigen"
+msgstr "Template-Teil anzeigen"
 
 #: lib/full-site-editing/template-parts.php:21
 msgid "All Template Parts"
-msgstr "Alle Vorlagen-Teile"
+msgstr "Alle Template-Teile"
 
 #: lib/full-site-editing/template-parts.php:22
 msgid "Search Template Parts"
-msgstr "Vorlagen-Teile durchsuchen"
+msgstr "Template-Teile suchen"
 
 #: lib/full-site-editing/template-parts.php:23
 msgid "Parent Template Part:"
-msgstr "Übergeordneter Vorlagenteil:"
+msgstr "Übergeordnetes Template-Teil:"
 
 #: lib/full-site-editing/template-parts.php:24
 msgid "No template parts found."
-msgstr "Keine Vorlagenteile gefunden."
+msgstr "Keine Template-Teile gefunden."
 
 #: lib/full-site-editing/template-parts.php:25
 msgid "No template parts found in Trash."
-msgstr "Keine Vorlagen-Teile im Papierkorb gefunden."
+msgstr "Im Papierkorb wurden keine Template-Teile gefunden."
 
 #: lib/full-site-editing/template-parts.php:26
 msgid "Template part archives"
-msgstr "Vorlagen-Teil Archive"
+msgstr "Template-Teil-Archive"
 
 #: lib/full-site-editing/template-parts.php:27
 msgid "Insert into template part"
-msgstr "In Vorlagenteil einfügen"
+msgstr "In den Template-Teil einfügen"
 
 #: lib/full-site-editing/template-parts.php:28
 msgid "Uploaded to this template part"
-msgstr "Hochgeladen in diesem Vorlagenteil"
+msgstr "Zu diesem Template-Teil hochgeladen"
 
 #: lib/full-site-editing/template-parts.php:29
 msgid "Filter template parts list"
-msgstr "Filtere die Liste der Vorlagenbestandteile"
+msgstr "Liste von Template-Teilen filtern"
 
 #: lib/full-site-editing/template-parts.php:30
 msgid "Template parts list navigation"
-msgstr "Vorlagen-Teilelisten-Navigation"
+msgstr "Listennavigation für Template-Teile"
 
 #: lib/full-site-editing/template-parts.php:31
 msgid "Template parts list"
-msgstr "Liste der Vorlagenbestandteile"
+msgstr "Liste von Template-Teilen"
 
 #: lib/full-site-editing/template-parts.php:36
 msgid "Template parts to include in your templates."
-msgstr "Vorlagenbestandteile, die in Ihre Vorlagen aufgenommen werden sollen."
+msgstr "Template-Teile zum Einfügen in dein Template."
 
 #: lib/full-site-editing/template-parts.php:122
 #: lib/full-site-editing/templates.php:243
 #: build/block-library/index.js:27
 msgid "Slug"
-msgstr "Slug"
+msgstr "Titelform"
 
 #: lib/full-site-editing/template-parts.php:136
 msgid "Template part slug"
@@ -1063,21 +1063,21 @@ msgstr "Vorlagen-Teil-Slug"
 #: lib/full-site-editing/templates.php:260
 #: build/wp-global-styles/index.js:3
 msgid "Theme"
-msgstr "Thema"
+msgstr "Theme"
 
 #: lib/full-site-editing/templates.php:20
 msgid "Themes"
-msgstr "Themen"
+msgstr "Themes"
 
 #: lib/full-site-editing/templates.php:45
-#: build/editor/index.js:31
+#: build/editor/index.js:35
 msgid "Templates"
 msgstr "Vorlagen"
 
 #: lib/full-site-editing/templates.php:46
-#: build/editor/index.js:31
+#: build/editor/index.js:35
 msgid "Template"
-msgstr "Vorlage"
+msgstr "Template"
 
 #: lib/full-site-editing/templates.php:47
 msgctxt "Admin Menu text"
@@ -1087,7 +1087,7 @@ msgstr "Vorlagen"
 #: lib/full-site-editing/templates.php:48
 msgctxt "Template"
 msgid "Add New"
-msgstr "Neu hinzufügen"
+msgstr "Erstellen"
 
 #: lib/full-site-editing/templates.php:49
 msgid "Add New Template"
@@ -1095,43 +1095,43 @@ msgstr "Neues Template hinzufügen"
 
 #: lib/full-site-editing/templates.php:50
 msgid "New Template"
-msgstr "Neue Vorlage"
+msgstr "Neues Template"
 
 #: lib/full-site-editing/templates.php:51
 msgid "Edit Template"
-msgstr "Vorlage bearbeiten"
+msgstr "Template bearbeiten"
 
 #: lib/full-site-editing/templates.php:52
 msgid "View Template"
-msgstr "Vorlage anzeigen"
+msgstr "Template anzeigen"
 
 #: lib/full-site-editing/templates.php:53
 msgid "All Templates"
-msgstr "Alle Vorlagen"
+msgstr "Alle Templates"
 
 #: lib/full-site-editing/templates.php:54
 msgid "Search Templates"
-msgstr "Vorlagen durchsuchen"
+msgstr "Template suchen"
 
 #: lib/full-site-editing/templates.php:55
 msgid "Parent Template:"
-msgstr "Übergeordnetes Template:"
+msgstr "Eltern-Template:"
 
 #: lib/full-site-editing/templates.php:56
 msgid "No templates found."
-msgstr "Keine Vorlagen gefunden."
+msgstr "Kein Template gefunden."
 
 #: lib/full-site-editing/templates.php:57
 msgid "No templates found in Trash."
-msgstr "Keine Vorlagen im Papierkorb gefunden."
+msgstr "Kein Template im Papierkorb gefunden."
 
 #: lib/full-site-editing/templates.php:58
 msgid "Template archives"
-msgstr "Vorlagenarchiv"
+msgstr "Template-Archiv"
 
 #: lib/full-site-editing/templates.php:59
 msgid "Insert into template"
-msgstr "In Vorlage einfügen"
+msgstr "In das Template einfügen"
 
 #: lib/full-site-editing/templates.php:60
 msgid "Uploaded to this template"
@@ -1139,19 +1139,19 @@ msgstr "Zu diesem Template hochgeladen"
 
 #: lib/full-site-editing/templates.php:61
 msgid "Filter templates list"
-msgstr "Filtere Vorlagenliste"
+msgstr "Template-Liste filtern"
 
 #: lib/full-site-editing/templates.php:62
 msgid "Templates list navigation"
-msgstr "Vorlagenlisten-Navigation"
+msgstr "Templates-Listen-Navigation"
 
 #: lib/full-site-editing/templates.php:63
 msgid "Templates list"
-msgstr "Vorlagenliste"
+msgstr "Templates-Liste"
 
 #: lib/full-site-editing/templates.php:68
 msgid "Templates to include in your theme."
-msgstr "Vorlagen, die in dein Theme eingefügt werden sollen."
+msgstr "Templates, die in dein Theme eingefügt werden können."
 
 #: lib/full-site-editing/templates.php:256
 msgid "Template slug"
@@ -1169,15 +1169,15 @@ msgstr "Kubio Farbe %s"
 
 #: lib/integrations/third-party-themes/templates-importer.php:285
 #: lib/kubio-editor.php:164
-#: lib/src/Core/Activation.php:374
-#: lib/src/Core/Activation.php:556
-#: build/editor/index.js:17
+#: lib/src/Core/Activation.php:389
+#: lib/src/Core/Activation.php:571
+#: build/editor/index.js:23
 msgid "Blog"
 msgstr "Blog"
 
 #: lib/integrations/third-party-themes/templates-importer.php:323
-#: lib/src/Core/Activation.php:439
-#: lib/src/Core/Activation.php:542
+#: lib/src/Core/Activation.php:454
+#: lib/src/Core/Activation.php:557
 msgid "Home"
 msgstr "Startseite"
 
@@ -1185,13 +1185,13 @@ msgstr "Startseite"
 #: build/controls/index.js:19
 #: build/core/index.js:7
 #: build/editor-data/index.js:1
-#: build/editor/index.js:21
+#: build/editor/index.js:27
 msgid "Page"
 msgstr "Seite"
 
 #: lib/integrations/third-party-themes/templates.php:43
 msgid "Single"
-msgstr "Einzel"
+msgstr "Singular"
 
 #: lib/integrations/woocommerce-basic/sidebar.php:21
 msgid "Cart"
@@ -1207,7 +1207,7 @@ msgstr "Zuletzt angesehene Produkte"
 
 #: lib/integrations/woocommerce-basic/sidebar.php:52
 msgid "Top rated products"
-msgstr "Top bewertete Produkte"
+msgstr "Bestbewertete Produkte"
 
 #: lib/integrations/woocommerce-basic/sidebar.php:59
 msgid "Active filters"
@@ -1268,7 +1268,7 @@ msgstr "Über"
 #: lib/kubio-editor.php:150
 #: build/ai/index.js:3
 msgid "Features"
-msgstr "Eigenschaften"
+msgstr "Funktionen"
 
 #. translators: %d: number of blocks
 #. translators: %d: number of words
@@ -1279,8 +1279,8 @@ msgstr "Eigenschaften"
 #: build/block-library/index.js:37
 #: build/editor/index.js:3
 #: build/editor/index.js:7
-#: build/editor/index.js:17
-#: build/editor/index.js:19
+#: build/editor/index.js:23
+#: build/editor/index.js:25
 #: build/third-party-blocks/index.js:1
 msgid "Content"
 msgstr "Inhalt"
@@ -1304,7 +1304,7 @@ msgstr "Fotogalerie"
 
 #: lib/kubio-editor.php:184
 msgid "Testimonials"
-msgstr "Kundenmeinungen"
+msgstr "Testimonials"
 
 #: lib/kubio-editor.php:189
 msgid "Clients"
@@ -1323,13 +1323,13 @@ msgstr "Kontakt"
 #: lib/kubio-editor.php:204
 #: build/ai/index.js:3
 msgid "F.A.Q."
-msgstr "Häufig gestellte Fragen"
+msgstr "F.A.Q."
 
 #: lib/kubio-editor.php:209
 #: build/ai/index.js:3
 #: build/block-library/index.js:37
 msgid "Pricing"
-msgstr "Preise"
+msgstr "Tarife"
 
 #: lib/kubio-editor.php:213
 msgid "Inner Headers"
@@ -1338,115 +1338,115 @@ msgstr "Innere Überschriften"
 #: lib/kubio-editor.php:218
 #: build/editor/index.js:15
 msgid "Headers"
-msgstr "Überschriften"
+msgstr "Header"
 
 #: lib/kubio-editor.php:223
 #: build/editor/index.js:15
 msgid "Footers"
-msgstr "Fußzeilen"
+msgstr "Footer"
+
+#: lib/kubio-editor.php:390
+#: build/block-editor/index.js:1
+#: build/block-library/index.js:19
+msgid "Thumbnail"
+msgstr "Vorschaubild"
 
 #: lib/kubio-editor.php:391
 #: build/block-editor/index.js:1
 #: build/block-library/index.js:19
-msgid "Thumbnail"
-msgstr "Miniaturansicht"
+#: build/editor/index.js:55
+msgid "Medium"
+msgstr "Mittel"
 
 #: lib/kubio-editor.php:392
 #: build/block-editor/index.js:1
 #: build/block-library/index.js:19
-#: build/editor/index.js:53
-msgid "Medium"
-msgstr "Mittel"
-
-#: lib/kubio-editor.php:393
-#: build/block-editor/index.js:1
-#: build/block-library/index.js:19
-#: build/editor/index.js:53
+#: build/editor/index.js:55
 msgid "Large"
 msgstr "Groß"
 
-#: lib/kubio-editor.php:394
+#: lib/kubio-editor.php:393
 #: build/block-editor/index.js:1
 #: build/block-library/index.js:19
 msgid "Original Size"
 msgstr "Originalgröße"
 
-#: lib/kubio-editor.php:961
-#: lib/kubio-editor.php:965
+#: lib/kubio-editor.php:972
 #: lib/kubio-editor.php:976
+#: lib/kubio-editor.php:987
 msgid "Kubio"
 msgstr "Kubio"
 
-#: lib/kubio-editor.php:1004
+#: lib/kubio-editor.php:1015
 #: lib/src/Core/EditInKubioCustomizerPanel.php:86
 msgid "Open Kubio Editor"
 msgstr "Kubio Editor öffnen"
 
-#: lib/kubio-editor.php:1080
+#: lib/kubio-editor.php:1091
 msgid "What to show on the front page"
-msgstr "Was auf der Startseite anzeigen"
+msgstr "Was auf der Startseite angezeigt werden soll"
 
-#: lib/kubio-editor.php:1092
+#: lib/kubio-editor.php:1103
 msgid "The ID of the page that should be displayed on the front page"
 msgstr "Die ID der Seite, die auf der Startseite angezeigt werden soll"
 
-#: lib/kubio-editor.php:1106
+#: lib/kubio-editor.php:1117
 msgid "The ID of the page that displays the posts"
 msgstr "Die ID der Seite, die die Beiträge anzeigt"
 
-#: lib/kubio-editor.php:1123
+#: lib/kubio-editor.php:1134
 msgid "Site icon."
-msgstr "Seiten-Symbol"
+msgstr "Website-Icon."
 
-#: lib/kubio-editor.php:1140
+#: lib/kubio-editor.php:1151
 msgctxt "Template name"
 msgid "Full Width"
-msgstr "Volle Breite"
+msgstr "Gesamte Breite"
 
-#: lib/kubio-editor.php:1141
-#: lib/kubio-editor.php:1148
+#: lib/kubio-editor.php:1152
+#: lib/kubio-editor.php:1159
 msgid "Recommended Kubio template to display individual pages. This template works best with the Kubio provided blocks and predesigned sections."
 msgstr "Empfohlenes Kubio-Template zur Anzeige einzelner Seiten. Dieses Template funktioniert am besten mit den bereitgestellten Kubio-Blöcken und vordefinierten Abschnitten."
 
-#: lib/kubio-editor.php:1147
+#: lib/kubio-editor.php:1158
 msgctxt "Template name"
 msgid "Kubio Full Width"
 msgstr "Kubio in voller Breite"
 
-#: lib/kubio-editor.php:1221
+#: lib/kubio-editor.php:1232
 msgid "Sorry, you are not allowed to customize this site."
-msgstr "Entschuldigung, du hast keine Berechtigung, diese Seite anzupassen."
+msgstr "Du bist leider nicht berechtigt, diese Website anzupassen."
 
-#: lib/kubio-editor.php:1239
+#: lib/kubio-editor.php:1250
 msgid "Kubio Section"
 msgstr "Kubio Abschnitt"
 
-#: lib/kubio-editor.php:1281
+#: lib/kubio-editor.php:1292
 msgid "Kubio Favorites"
 msgstr "Kubio Favoriten"
 
 #: lib/menu/class-wp-rest-menu-locations-controller.php:50
 msgid "An alphanumeric identifier for the menu location."
-msgstr "Ein alphanumerischer Bezeichner für den Menüstandort."
+msgstr "Dies ist ein alphanumerischer Identifikator für die Menü-Position."
 
 #: lib/menu/class-wp-rest-menu-locations-controller.php:76
 #: lib/menu/class-wp-rest-menu-locations-controller.php:113
 msgid "Sorry, you are not allowed to view menu locations."
-msgstr "Entschuldigung, du hast keine Berechtigung, um die Menüpositionen anzuzeigen."
+msgstr "Du bist leider nicht berechtigt Menü-Positionen anzuzeigen."
 
 #: lib/menu/class-wp-rest-menu-locations-controller.php:116
 #: lib/menu/class-wp-rest-menu-locations-controller.php:132
 #: lib/menu/class-wp-rest-menus-controller.php:146
 msgid "Invalid menu location."
-msgstr "Ungültiger Menüort."
+msgstr "Ungültige Menü-Position."
 
 #: lib/menu/class-wp-rest-menu-locations-controller.php:194
 msgid "The name of the menu location."
-msgstr "Der Name des Menü-Standorts."
+msgstr "Der Name der Menü-Position."
 
 #: lib/menu/class-wp-rest-menu-locations-controller.php:200
 msgid "The description of the menu location."
-msgstr "Die Beschreibung des Menüorts."
+msgstr "Die Beschreibung der Menü-Position."
 
 #: lib/menu/class-wp-rest-menu-locations-controller.php:206
 msgid "The ID of the assigned menu."
@@ -1454,7 +1454,7 @@ msgstr "Die ID des zugewiesenen Menüs."
 
 #: lib/menu/class-wp-rest-menus-controller.php:38
 msgid "Sorry, you are not allowed to edit terms in this taxonomy."
-msgstr "Entschuldigung, du hast keine Berechtigung, Begriffe in dieser Taxonomie zu bearbeiten."
+msgstr "Du bist leider nicht berechtigt, Begriffe in dieser Taxonomie zu bearbeiten."
 
 #: lib/menu/class-wp-rest-menus-controller.php:40
 msgid "Sorry, you cannot view these menus, unless you have access to permission edit them. "
@@ -1462,7 +1462,7 @@ msgstr "Entschuldigung, du kannst diese Menüs nicht anzeigen, es sei denn, du h
 
 #: lib/menu/class-wp-rest-menus-controller.php:58
 msgid "Sorry, you are not allowed to edit this term."
-msgstr "Entschuldigung, du hast keine Berechtigung, diesen Begriff zu bearbeiten."
+msgstr "Du bist leider nicht berechtigt, diesen Begriff zu bearbeiten."
 
 #: lib/menu/class-wp-rest-menus-controller.php:60
 msgid "Sorry, you cannot view this menu, unless you have access to permission edit it. "
@@ -1479,7 +1479,7 @@ msgstr "Entschuldigung, du hast keine Berechtigung, automatisches Hinzufügen vo
 #: lib/menu/class-wp-rest-menus-controller.php:264
 #: lib/menu/class-wp-rest-menus-controller.php:373
 msgid "Cannot set parent term, taxonomy is not hierarchical."
-msgstr "Übergeordneten Begriff kann nicht festgelegt werden, die Taxonomie ist nicht hierarchisch."
+msgstr "Kann den Eltern-Begriff nicht setzen, da die Taxonomie nicht hierarchisch ist."
 
 #: lib/menu/class-wp-rest-menus-controller.php:270
 #: lib/menu/class-wp-rest-menus-controller.php:379
@@ -1489,7 +1489,7 @@ msgstr "Übergeordneter Begriff existiert nicht."
 #. translators: %s: force=true
 #: lib/menu/class-wp-rest-menus-controller.php:450
 msgid "Terms do not support trashing. Set '%s' to delete."
-msgstr "Begriffe unterstützen nicht das Verschieben in den Papierkorb. Setze '%s' auf Löschen."
+msgstr "Begriffe unterstützen die Papierkorbfunktion nicht. Setze ‚%s‘, um sie zu löschen."
 
 #: lib/menu/class-wp-rest-menus-controller.php:460
 msgid "The term cannot be deleted."
@@ -1501,11 +1501,11 @@ msgstr "Menüposition existiert nicht."
 
 #: lib/menu/class-wp-rest-menus-controller.php:604
 msgid "The locations assigned to the menu."
-msgstr "Die den Menüs zugewiesenen Standorte."
+msgstr "Die dem Menü zugeordneten Positionen."
 
 #: lib/menu/class-wp-rest-menus-controller.php:613
 msgid "Whether to automatically add top level pages to this menu."
-msgstr "Ob top-Level-Seiten automatisch zu diesem Menü hinzugefügt werden sollen."
+msgstr "Ob Seiten der ersten Ebene automatisch zu diesem Menü hinzugefügt werden sollen."
 
 #: lib/menu/locations.php:10
 msgid "Header menu"
@@ -1525,7 +1525,7 @@ msgstr "Kubio sekundäres Kopfmenü"
 
 #: lib/menu/locations.php:18
 msgid "Footer menu"
-msgstr "Fußzeilenmenü"
+msgstr "Footer-Menü"
 
 #: lib/menu/locations.php:19
 msgid "Kubio footer menu"
@@ -1533,7 +1533,7 @@ msgstr "Kubio Fußzeilenmenü"
 
 #: lib/menu/locations.php:22
 msgid "Secondary footer menu"
-msgstr "Sekundäres Fußzeilenmenü"
+msgstr "Sekundäres Footer-Menü"
 
 #: lib/menu/locations.php:23
 msgid "Kubio secondary footer menu"
@@ -1559,9 +1559,9 @@ msgstr "Der aktuelle Inhalt wird durch den Inhalt der Primärsprache ersetzt. Bi
 msgid "Copy from primary language"
 msgstr "Kopiere aus der Primärsprache"
 
-#: lib/src/Core/Activation.php:492
+#: lib/src/Core/Activation.php:507
 msgid "Primary menu"
-msgstr "Hauptmenü"
+msgstr "Primäres Menü"
 
 #: lib/src/Core/Blocks/Query/QueryLoopBase.php:50
 #: build/block-library/index.js:33
@@ -1624,7 +1624,7 @@ msgstr "Kein Fehler"
 
 #: lib/src/Core/License/ActivationForm.php:197
 msgid "AI Features"
-msgstr "KI-Funktionen"
+msgstr "AI-Funktionen"
 
 #: lib/src/Core/License/ActivationForm.php:198
 msgid "More sections and blocks"
@@ -1636,7 +1636,7 @@ msgstr "Footer bearbeiten"
 
 #: lib/src/Core/License/ActivationForm.php:200
 msgid "Multiple page headers"
-msgstr "Mehrere Seitenüberschriften"
+msgstr "Mehrfache Seiten-Header"
 
 #: lib/src/Core/License/ActivationForm.php:207
 msgid "Other"
@@ -1661,10 +1661,10 @@ msgid "Current license key was removed! Reason: %s"
 msgstr "Der aktuelle Lizenzschlüssel wurde entfernt! Grund: %s"
 
 #: lib/src/Core/License/License.php:99
-#: build/editor/index.js:49
+#: build/editor/index.js:51
 #: build/pro/index.js:1
 msgid "Upgrade to PRO"
-msgstr "Auf PRO upgraden"
+msgstr "Upgrade auf PRO"
 
 #: lib/src/Core/License/License.php:101
 msgid "The first block-based WordPress builder"
@@ -1703,7 +1703,7 @@ msgstr "Kubio Demo-Import -"
 
 #: lib/src/DemoSites/DemoSitesHelpers.php:101
 msgid "Missing URL for downloading a file!"
-msgstr "Fehlende URL zum Herunterladen einer Datei!"
+msgstr "Fehlende URL für den Download!"
 
 #: lib/src/DemoSites/DemoSitesHelpers.php:111
 msgid "Invalid URL for downloading a file!"
@@ -1712,7 +1712,7 @@ msgstr "Ungültige URL zum Herunterladen einer Datei!"
 #. translators: %1$s and %3$s - strong HTML tags, %2$s - file URL, %4$s - br HTML tag, %5$s - error code, %6$s - error message.
 #: lib/src/DemoSites/DemoSitesHelpers.php:130
 msgid "An error occurred while fetching file from: %1$s%2$s%3$s!%4$sReason: %5$s - %6$s."
-msgstr "Beim Abrufen der Datei von: %1$s%2$s%3$s ist ein Fehler aufgetreten!%4$sGrund: %5$s - %6$s."
+msgstr "Beim Abrufen der Datei von: %1$s%2$s%3$s!%4$sGrund: %5$s - %6$s ist ein Fehler aufgetreten."
 
 #. translators: %1$s - br HTML tag, %2$s - file path
 #: lib/src/DemoSites/DemoSitesHelpers.php:231
@@ -1730,7 +1730,7 @@ msgstr "Warnung: memory_limit kann nicht festgelegt werden"
 
 #: lib/src/DemoSites/DemoSitesImporter.php:226
 msgid "No import files specified!"
-msgstr "Es wurden keine Importdateien angegeben!"
+msgstr "Keine Importdateien angegeben!"
 
 #: lib/src/DemoSites/DemoSitesImporter.php:245
 #: lib/src/DemoSites/DemoSitesImporter.php:255
@@ -1805,7 +1805,7 @@ msgstr "Spalte"
 #: build/block-library/blocks/footer/block.json
 msgctxt "block title"
 msgid "Footer"
-msgstr "Fußzeile"
+msgstr "Footer"
 
 #: build/block-library/blocks/footer/block.json
 msgctxt "block description"
@@ -1815,7 +1815,7 @@ msgstr "Du kannst den Standardseitenfuß durch einen benutzerdefinierten ersetze
 #: build/block-library/blocks/icon-list/blocks/icon-list-item/block.json
 msgctxt "block title"
 msgid "Icon list item"
-msgstr "Icon-Listenelement"
+msgstr "Icon-Liste-Element"
 
 #: build/block-library/blocks/icon-list/blocks/icon-list/block.json
 msgctxt "block title"
