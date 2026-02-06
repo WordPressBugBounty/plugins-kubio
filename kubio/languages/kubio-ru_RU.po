@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-11T11:33:25+03:00\n"
+"POT-Creation-Date: 2025-12-02T14:02:11+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -27,7 +27,7 @@ msgstr "https://kubiobuilder.com"
 #. Description of the plugin
 #: plugin.php
 msgid "Using the power of AI, Kubio gives you a head start by generating a first draft of your website, which you can further customize to your liking."
-msgstr "Используя силу искусственного интеллекта, Kubio дает вам стартовую точку, создавая первый черновик вашего веб-сайта, который вы можете далее настраивать по своему усмотрению."
+msgstr "Используя силу искусственного интеллекта, Kubio дает вам стартовую точку, создавая первый черновик вашего веб-сайта, который вы можете далее настроить по своему усмотрению."
 
 #. Author of the plugin
 #: plugin.php
@@ -106,13 +106,13 @@ msgstr "Y"
 #: build/block-library/blocks/page-title/index.php:78
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "Ежемесячный архив %1$s"
+msgstr "Ежемесячный архив %s"
 
 #. translators: Daily archive title. 1: Date
 #: build/block-library/blocks/page-title/index.php:82
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr "j F Y"
+msgstr "j F Y г."
 
 #: build/block-library/blocks/page-title/index.php:86
 msgctxt "post format archive title"
@@ -202,7 +202,7 @@ msgstr "Обсуждение закрыто"
 #: build/block-library/blocks/post-excerpt/index.php:52
 #: build/block-library/index.js:37
 msgid "Pages do not support excerpt by default."
-msgstr "Страницы не поддерживают выдержку по умолчанию."
+msgstr "Страницы не поддерживают анонс по умолчанию."
 
 #: build/block-library/blocks/post-excerpt/index.php:53
 msgid "Edit this page and remove the current block or use it in a posts list."
@@ -257,7 +257,7 @@ msgstr "Стартовые сайты"
 
 #: lib/admin-pages/kubio-get-started.php:27
 msgid "Beautiful starter sites with 1-click import"
-msgstr "Прекрасные стартовые сайты с импортом в один клик"
+msgstr "Прекрасные стартовые сайты с импортом в 1 клик"
 
 #: lib/admin-pages/kubio-get-started.php:44
 #: build/editor/index.js:51
@@ -271,7 +271,7 @@ msgstr "Первый конструктор WordPress на основе блок
 
 #: lib/admin-pages/kubio-get-started.php:100
 msgid "Unknown tab partial"
-msgstr "Неизвестная часть вкладки"
+msgstr "Неизвестная вкладка частично"
 
 #: lib/admin-pages/kubio-get-started.php:115
 msgid "Kubio - Get Started"
@@ -296,7 +296,7 @@ msgstr "Вам требуется более высокий уровень до�
 
 #: lib/admin-pages/main-page/demo-sites.php:16
 msgid "Current user is not allowed to import starter sites. This feature is available only for administrators"
-msgstr "У текущего пользователя нет прав на импорт стартовых сайтов. Эта функция доступна только для администраторов"
+msgstr "У текущего пользователя нет прав на импорт стартовых сайтов. Эта функция доступна только для администраторов."
 
 #: lib/admin-pages/main-page/demo-sites.php:31
 msgid "Retrieving starter sites..."
@@ -368,7 +368,7 @@ msgstr "Доступно только с Kubio PRO"
 #: lib/admin-pages/main-page/demo-sites.php:149
 #: build/block-editor/index.js:11
 #: build/block-editor/index.js:23
-#: build/block-editor/index.js:94
+#: build/block-editor/index.js:98
 #: build/block-library/index.js:19
 #: build/controls/index.js:53
 #: build/editor/index.js:1
@@ -454,7 +454,7 @@ msgstr "Как обновить за 3 простых шага"
 #: lib/admin-pages/main-page/upgrade-pro.php:32
 #, php-format
 msgid "%s - Select the plan that fits your needs."
-msgstr "%s - Выберите план, который подходит вам."
+msgstr "%s - Выберите план, который подходит вам по параметрам."
 
 #. translators: %s: Upgrade to Kubio PRO link.
 #: lib/admin-pages/main-page/upgrade-pro.php:33
@@ -533,7 +533,7 @@ msgstr "%s Получение данных..."
 #: lib/AI/admin-tab/tab.php:25
 #: build/editor/index.js:55
 msgid "Kubio AI"
-msgstr "Кубио ИИ"
+msgstr "Kubio ИИ"
 
 #: lib/AI/admin-tab/tab.php:27
 msgid "Build smarter & faster with Kubio AI"
@@ -562,8 +562,8 @@ msgstr "3D модель"
 #. translators: 1: The side of the block being modified (top, bottom, left etc.). 2. Type of spacing being modified (padding, margin, etc).
 #. translators: %s: file name
 #: lib/AI/SDApi/KubioImagePrompts.php:15
-#: build/block-editor/index.js:100
-#: build/block-editor/index.js:110
+#: build/block-editor/index.js:104
+#: build/block-editor/index.js:114
 #: build/controls/index.js:53
 msgid "Background image"
 msgstr "Фоновое изображение"
@@ -578,7 +578,7 @@ msgid "Artistic painting"
 msgstr "Художественная живопись"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:24
-#: build/block-editor/index.js:94
+#: build/block-editor/index.js:98
 #: build/block-library/index.js:19
 #: build/editor/index.js:55
 msgid "Landscape"
@@ -589,7 +589,7 @@ msgid "Macro"
 msgstr "Макросьемка"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:26
-#: build/block-editor/index.js:94
+#: build/block-editor/index.js:98
 #: build/block-library/index.js:19
 #: build/editor/index.js:55
 msgid "Portrait"
@@ -625,7 +625,7 @@ msgid "Floral"
 msgstr "Цветочный"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:40
-#: build/block-editor/index.js:100
+#: build/block-editor/index.js:104
 #: build/controls/index.js:15
 #: build/controls/index.js:53
 #: build/controls/index.js:55
@@ -686,7 +686,7 @@ msgstr "Пиксельное искусство"
 #: lib/AI/SDApi/KubioImagePrompts.php:55
 #: build/editor/index.js:53
 msgid "Low Poly"
-msgstr "Низкая полигональность"
+msgstr "Лоу-поли"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:56
 #: build/editor/index.js:53
@@ -806,7 +806,7 @@ msgstr "Общество и некоммерческая деятельност�
 
 #: lib/AI/utils.php:128
 msgid "Highlighting community initiatives, nonprofit organizations, and philanthropic efforts for social good."
-msgstr "Поддержка инициатив общественности, некоммерческих организаций и филантропических усилий во имя социальной пользы."
+msgstr "Поддержка инициатив общественности, некоммерческих организаций и филантропических усилий во благо общества."
 
 #: lib/AI/utils.php:131
 msgid "Personal"
@@ -884,7 +884,7 @@ msgstr "Ответ ИИ недействителен"
 
 #: lib/AI/utils.php:484
 msgid "AI response is invalid ( Empty response )"
-msgstr "Ответ ИИ недействителен (пустой ответ)"
+msgstr "Ответ ИИ недействителен (Пустой ответ)"
 
 #: lib/api/colibri.php:107
 #: lib/api/colibri.php:168
@@ -1002,6 +1002,7 @@ msgid "%1$s at %2$s"
 msgstr "%1$s в %2$s"
 
 #: lib/blog/walker-comment.php:39
+#: build/block-editor/index.js:82
 #: build/editor/index.js:53
 msgid "Edit"
 msgstr "Изменить"
@@ -1052,7 +1053,7 @@ msgstr "Если вы хотите вернуться к предыдущей в
 #: lib/filters/requirements-notices.php:105
 #, php-format
 msgid "Kubio Page Builder requires %s!"
-msgstr "Для Kubio Page Builder требуется %s!"
+msgstr "Для работы Kubio Page Builder требуется %s!"
 
 #: lib/full-site-editing/block-templates.php:78
 msgid "No theme is defined for this template."
@@ -1092,7 +1093,7 @@ msgstr "Одиночная"
 
 #: lib/full-site-editing/default-template-types.php:39
 msgid "Template used for displaying single views of the content. This template is a fallback for the Single, Post, and Page templates, which take precedence when they exist."
-msgstr "Шаблон, используемый для отображения отдельных представлений контента. Этот шаблон является резервным для шаблонов Одиночной записи, Публикации и Страницы, которые имеют приоритет, если они существуют."
+msgstr "Шаблон, используемый для отображения отдельных представлений контента. Этот шаблон является запасным для шаблонов Одиночной записи, Статьи и Страницы, которые имеют приоритет, когда они существуют."
 
 #: lib/full-site-editing/default-template-types.php:42
 msgctxt "Template name"
@@ -1119,7 +1120,7 @@ msgstr "Архив"
 
 #: lib/full-site-editing/default-template-types.php:51
 msgid "The archive template displays multiple entries at once. It is used as a fallback for the Category, Author, and Date templates, which take precedence when they are available."
-msgstr "Шаблон архива отображает несколько записей сразу. Он используется как запасной вариант для шаблонов Категории, Автора и Даты, которые имеют приоритет, когда они доступны."
+msgstr "Шаблон архива отображает несколько записей одновременно. Он используется как запасной вариант для шаблонов Категории, Автора и Даты, которые имеют приоритет, когда они доступны."
 
 #: lib/full-site-editing/default-template-types.php:54
 msgctxt "Template name"
@@ -1128,7 +1129,7 @@ msgstr "Автор"
 
 #: lib/full-site-editing/default-template-types.php:55
 msgid "Archive template used to display a list of posts from a single author."
-msgstr "Шаблон архива, используемый для отображения списка публикаций отдельного автора."
+msgstr "Шаблон архива, используемый для отображения списка публикаций от одного автора."
 
 #: lib/full-site-editing/default-template-types.php:58
 msgctxt "Template name"
@@ -1447,7 +1448,7 @@ msgstr "Шаблоны для включения в вашу тему."
 
 #: lib/full-site-editing/templates.php:255
 msgid "Template slug"
-msgstr "Шаблон слаг"
+msgstr "Шаблон слага"
 
 #: lib/global-data.php:21
 #: lib/global-data.php:130
@@ -1561,7 +1562,7 @@ msgid "Features"
 msgstr "Функции"
 
 #: lib/kubio-editor.php:151
-#: build/block-editor/index.js:110
+#: build/block-editor/index.js:114
 #: build/block-library/index.js:3
 #: build/block-library/index.js:29
 #: build/block-library/index.js:37
@@ -1840,6 +1841,10 @@ msgstr "Предпросмотр Kubio"
 msgid "Current preview state is unavailable"
 msgstr "Текущее состояние предпросмотра недоступно"
 
+#: lib/preview/index.php:288
+msgid "No URL provided"
+msgstr "URL не указан"
+
 #. translators: the placeholder is an url
 #: lib/pro/filters/notices.php:33
 #, php-format
@@ -1848,7 +1853,7 @@ msgstr "Если вы хотите вернуться к предыдущей в
 
 #: lib/pro/integrations/multilanguage/polylang.php:385
 msgid "Current content will be replaced with the content from the primary language. Are you sure ?"
-msgstr "Текущее содержимое будет заменено содержимым основного языка. Вы уверены?"
+msgstr "Текущее содержимое будет заменено содержимым из основного языка. Вы уверены?"
 
 #: lib/pro/integrations/multilanguage/polylang.php:401
 msgid "Copy from primary language"
@@ -1864,7 +1869,7 @@ msgstr "Активировать лицензию Kubio PRO"
 
 #: lib/pro/src/Core/License/ActivationForm.php:68
 msgid "If this is a testing site you can ignore this message. If this is your live site then please insert the license key below."
-msgstr "Если это тестовый сайт, вы можете проигнорировать это сообщение. Если это ваш рабочий сайт, вставьте ключ лицензии ниже."
+msgstr "Если это тестовый сайт, вы можете проигнорировать это сообщение. Если это ваш рабочий сайт, пожалуйста, вставьте ключ лицензии ниже."
 
 #: lib/pro/src/Core/License/ActivationForm.php:81
 msgid "Activate License"
@@ -1954,7 +1959,7 @@ msgstr "Отправить сообщение"
 
 #: lib/recommendations/newsletters.php:118
 msgid "Email capture popup 1"
-msgstr "Окно захвата email 1"
+msgstr "Окно захвата электронной почты 1"
 
 #: lib/recommendations/recommendation-page-post-type.php:9
 msgid "Recommendation pages"
@@ -1968,14 +1973,14 @@ msgstr "Основное меню"
 #: build/block-library/index.js:33
 #: build/block-library/index.js:35
 msgid "No {post_title} found!"
-msgstr "Записей с заголовком {post_title} не найдено!"
+msgstr "Не найдено {post_title}!"
 
 #: lib/src/Core/Blocks/TemplatePartBlockBase.php:26
 msgid "Template Part Not Found"
 msgstr "Часть шаблона не найдена"
 
 #: lib/src/Core/CustomizerImporter.php:275
-#: build/block-editor/index.js:100
+#: build/block-editor/index.js:104
 #: build/block-library/index.js:19
 #: build/controls/index.js:19
 #: build/controls/index.js:53
@@ -1984,11 +1989,11 @@ msgstr "Изображение"
 
 #: lib/src/Core/EditInKubioCustomizerPanel.php:74
 msgid "After installing the Kubio builder, all page contents editing will be done using the WordPress block editor instead of the Customizer."
-msgstr "После установки конструктора Kubio все редактирование содержимого страниц будет выполняться с использованием редактора блоков WordPress вместо настраиваемого."
+msgstr "После установки конструктора Kubio все редактирование содержимого страниц будет выполняться с помощью редактора блоков WordPress вместо настройщика."
 
 #: lib/src/Core/EditInKubioCustomizerPanel.php:77
 msgid "After installing the Kubio builder, all site editing will be done using the WordPress block editor instead of the Customizer."
-msgstr "После установки конструктора Kubio вся редакция сайта будет производиться с использованием редактора блоков WordPress вместо Персонализатора."
+msgstr "После установки конструктора Kubio весь редактирование сайта будет выполняться с использованием редактора блоков WordPress вместо Персонализатора."
 
 #: lib/src/Core/EditInKubioCustomizerPanel.php:84
 msgid " Please use the button below to open the Kubio editor."
@@ -2175,7 +2180,7 @@ msgstr "Новый вызов AJAX!"
 
 #: lib/src/DemoSites/WXRImporter.php:585
 msgid "Posts post processing"
-msgstr "Обработка записей"
+msgstr "Обработка сообщений"
 
 #. translators: %1$s = term slug, %2$s = taxonomy
 #: lib/src/DemoSites/WXRImporter.php:596
@@ -2232,7 +2237,7 @@ msgstr "Навигация"
 #: build/block-library/blocks/navigation/blocks/navigation/block.json
 msgctxt "block description"
 msgid "If you've accidentally removed your navigation, you can re-add a navigation to your page with this block. The navigation block has 5 available layouts."
-msgstr "Если вы случайно удалили свою навигацию, вы можете снова добавить навигацию на свою страницу с помощью этого блока. У блока навигации есть 5 доступных макетов."
+msgstr "Если вы случайно удалили свою навигацию, вы можете снова добавить навигацию на свою страницу с помощью этого блока. Блок навигации имеет 5 доступных макетов."
 
 #: build/block-library/blocks/row/block.json
 msgctxt "block title"
