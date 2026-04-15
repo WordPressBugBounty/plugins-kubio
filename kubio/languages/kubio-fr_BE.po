@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-02T13:04:43+03:00\n"
+"POT-Creation-Date: 2026-04-14T10:42:03+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -106,7 +106,7 @@ msgstr "Y"
 #: build/block-library/blocks/page-title/index.php:78
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "Archive mensuelle %s"
+msgstr "Archive mensuelle %1$s"
 
 #. translators: Daily archive title. 1: Date
 #: build/block-library/blocks/page-title/index.php:82
@@ -177,7 +177,7 @@ msgstr "Archives"
 
 #: build/block-library/blocks/post-comments-form/index.php:26
 msgid "Comments are closed. This Post Comments Form block is still present here but is not visible on front-end."
-msgstr "Les commentaires sont fermés. Ce bloc de formulaire de commentaires de l'article est toujours présent ici mais n'est pas visible sur le front-end."
+msgstr "Les commentaires sont fermés. Ce bloc de formulaire de commentaires de l'article est toujours présent ici mais n'est pas visible en front-end."
 
 #: build/block-library/blocks/post-comments/index.php:42
 #: build/block-library/index.js:37
@@ -231,7 +231,7 @@ msgstr "Zone de widgets non trouvée"
 #: lib/add-edit-in-kubio.php:197
 #: lib/add-edit-in-kubio.php:377
 #: lib/filters/default-editor-overlay.php:156
-#: lib/kubio-editor.php:999
+#: lib/kubio-editor.php:997
 #: build/block-library/index.js:13
 msgid "Edit with Kubio"
 msgstr "Modifier avec Kubio"
@@ -290,7 +290,7 @@ msgid "Starter Sites"
 msgstr "Sites de démarrage"
 
 #: lib/admin-pages/main-page/demo-sites.php:13
-#: lib/kubio-editor.php:1248
+#: lib/kubio-editor.php:1246
 msgid "You need a higher level of permission."
 msgstr "Vous devez avoir des droits supérieurs."
 
@@ -1674,57 +1674,57 @@ msgstr "Grande"
 msgid "Original Size"
 msgstr "Taille d'origine"
 
-#: lib/kubio-editor.php:983
-#: lib/kubio-editor.php:987
-#: lib/kubio-editor.php:998
+#: lib/kubio-editor.php:981
+#: lib/kubio-editor.php:985
+#: lib/kubio-editor.php:996
 msgid "Kubio"
 msgstr "Kubio"
 
-#: lib/kubio-editor.php:1026
+#: lib/kubio-editor.php:1024
 #: lib/src/Core/EditInKubioCustomizerPanel.php:87
 msgid "Open Kubio Editor"
 msgstr "Ouvrir l'éditeur Kubio"
 
-#: lib/kubio-editor.php:1104
+#: lib/kubio-editor.php:1102
 msgid "What to show on the front page"
 msgstr "Afficher quoi sur la page d’accueil"
 
-#: lib/kubio-editor.php:1117
+#: lib/kubio-editor.php:1115
 msgid "The ID of the page that should be displayed on the front page"
 msgstr "L’ID de la page qui doit être affiché sur la page d’accueil"
 
-#: lib/kubio-editor.php:1132
+#: lib/kubio-editor.php:1130
 msgid "The ID of the page that displays the posts"
 msgstr "L'ID de la page qui affiche les articles"
 
-#: lib/kubio-editor.php:1150
+#: lib/kubio-editor.php:1148
 msgid "Site icon."
 msgstr "Icône du site"
 
-#: lib/kubio-editor.php:1167
+#: lib/kubio-editor.php:1165
 msgctxt "Template name"
 msgid "Full Width"
 msgstr "Pleine largeur"
 
-#: lib/kubio-editor.php:1168
-#: lib/kubio-editor.php:1175
+#: lib/kubio-editor.php:1166
+#: lib/kubio-editor.php:1173
 msgid "Recommended Kubio template to display individual pages. This template works best with the Kubio provided blocks and predesigned sections."
 msgstr "Modèle Kubio recommandé pour afficher des pages individuelles. Ce modèle fonctionne mieux avec les blocs fournis par Kubio et les sections prédéfinies."
 
-#: lib/kubio-editor.php:1174
+#: lib/kubio-editor.php:1172
 msgctxt "Template name"
 msgid "Kubio Full Width"
 msgstr "Kubio Pleine Largeur"
 
-#: lib/kubio-editor.php:1249
+#: lib/kubio-editor.php:1247
 msgid "Sorry, you are not allowed to customize this site."
 msgstr "Désolé, vous n’avez pas l’autorisation de personnaliser ce site."
 
-#: lib/kubio-editor.php:1267
+#: lib/kubio-editor.php:1265
 msgid "Kubio Section"
 msgstr "Section Kubio"
 
-#: lib/kubio-editor.php:1309
+#: lib/kubio-editor.php:1307
 msgid "Kubio Favorites"
 msgstr "Favoris de Kubio"
 
@@ -2241,7 +2241,7 @@ msgstr "Liste d’icône"
 #: build/block-library/blocks/navigation/blocks/navigation-top-bar/block.json
 msgctxt "block title"
 msgid "Navigation Top Bar"
-msgstr "Barre de navigation en haut"
+msgstr "Barre de navigation supérieure"
 
 #: build/block-library/blocks/navigation/blocks/navigation/block.json
 msgctxt "block title"
@@ -2271,4 +2271,4 @@ msgstr "Colonne latérale"
 #: build/block-library/blocks/sidebar/block.json
 msgctxt "block description"
 msgid "You can create separate sidebars for web pages, blog, and articles, in order to create different user journeys."
-msgstr "Vous pouvez créer des barres latérales séparées pour les pages web, les blogs et les articles, afin de créer des parcours utilisateur différents."
+msgstr "Vous pouvez créer des barres latérales séparées pour les pages web, les blogs et les articles, afin de créer différents parcours utilisateur."

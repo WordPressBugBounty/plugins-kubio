@@ -62,18 +62,19 @@ class Importer {
 		return true;
 	}
 
-	public static function deleteTemplate($slug) {
+	public static function deleteTemplate( $slug ) {
 		// Query to find the wp_template with slug 'front_page'
-		$query = new WP_Query([
-			'post_type' => 'wp_template',
-			'name' => $slug,
-			'posts_per_page' => 1,
-		]);
+		$query = new WP_Query(
+			array(
+				'post_type'      => 'wp_template',
+				'name'           => $slug,
+				'posts_per_page' => 1,
+			)
+		);
 
 		if ( $query->have_posts() ) {
 
 			$template_post = $query->posts[0];
-
 
 			wp_trash_post( $template_post->ID, true );
 		}
@@ -402,38 +403,37 @@ class Importer {
 		return $files;
 	}
 
-	public static function getCachedImportRemoteFileByUrl($source_url) {
+	public static function getCachedImportRemoteFileByUrl( $source_url ) {
 
-		$files_map = get_transient(static::IMPORT_REMOTE_FILE_TRANSIENT_KEY);
-		if(empty($files_map) || !is_array($files_map)) {
+		$files_map = get_transient( static::IMPORT_REMOTE_FILE_TRANSIENT_KEY );
+		if ( empty( $files_map ) || ! is_array( $files_map ) ) {
 			return null;
 		}
-		$result = isset($files_map[$source_url]) ? $files_map[$source_url] : null;
+		$result = isset( $files_map[ $source_url ] ) ? $files_map[ $source_url ] : null;
 		return $result;
 	}
 
-	//used for this 	0057827: Images from pexels are duplicated in media library every time you save some changes
-	public static function storeInCacheImportRemoteFileByUrl($source_url, $file) {
-		if(empty($file)) {
+	//used for this     0057827: Images from pexels are duplicated in media library every time you save some changes
+	public static function storeInCacheImportRemoteFileByUrl( $source_url, $file ) {
+		if ( empty( $file ) ) {
 			return;
 		}
-		$files_map = get_transient(static::IMPORT_REMOTE_FILE_TRANSIENT_KEY);
-		if(empty($files_map)) {
-			$files_map = [];
+		$files_map = get_transient( static::IMPORT_REMOTE_FILE_TRANSIENT_KEY );
+		if ( empty( $files_map ) ) {
+			$files_map = array();
 		}
-		$files_map[$source_url] = $file;
+		$files_map[ $source_url ] = $file;
 
 		//30 minutes in seconds.
 		$time = 30 * 60;
-		set_transient(static::IMPORT_REMOTE_FILE_TRANSIENT_KEY, $files_map, $time);
+		set_transient( static::IMPORT_REMOTE_FILE_TRANSIENT_KEY, $files_map, $time );
 	}
 	public static function importRemoteFile( $source_url ) {
 		require_once ABSPATH . 'wp-admin/includes/media.php';
 		require_once ABSPATH . 'wp-admin/includes/image.php';
 
-
-		$cached_result = static::getCachedImportRemoteFileByUrl($source_url);
-		if(!empty($cached_result)) {
+		$cached_result = static::getCachedImportRemoteFileByUrl( $source_url );
+		if ( ! empty( $cached_result ) ) {
 			return $cached_result;
 		}
 		if ( apply_filters( 'kubio/importer/disabled-import-remote-file', false ) ) {
@@ -554,7 +554,7 @@ class Importer {
 				'id'  => intval( $post_id ),
 				'url' => $upload['url'],
 			);
-			static::storeInCacheImportRemoteFileByUrl($source_url, $result);
+			static::storeInCacheImportRemoteFileByUrl( $source_url, $result );
 			$imported_files[ $source_url ] = $result;
 
 			return $result;
@@ -650,6 +650,10 @@ class Importer {
 
 	public static function maybeImportBlockAssets( $blocks, $on_time_expired = null ) {
 
+		if ( ! static::canUploadFiles() ) {
+			return $blocks;
+		}
+
 		require_once KUBIO_ROOT_DIR . '/lib/importer/assets-importer-filters.php';
 
 		foreach ( $blocks as $index => $block ) {
@@ -664,6 +668,17 @@ class Importer {
 		}
 
 		return $blocks;
+	}
+
+	private static function canUploadFiles() {
+
+		if ( defined( 'WP_CLI' ) && WP_CLI ) {
+			return true;
+		}
+
+		$current_user = wp_get_current_user();
+
+		return user_can( $current_user, 'upload_files' );
 	}
 
 	public static function setBlocksLocks( $blocks, $value = null ) {

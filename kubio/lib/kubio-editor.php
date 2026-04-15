@@ -518,7 +518,6 @@ function kubio_block_editor_general_settings( $settings ) {
 	$settings['enableFSEBlocks']                       = true;
 	$settings['kubioGlobalSettings']                   = (object) Flags::getSettings();
 
-
 	// settings for outside Kubio editor
 	// __unstableResolvedAssets was added in WP 6.0
 	if ( isset( $settings['__unstableResolvedAssets'] ) && ! kubio_is_kubio_editor_page() ) {
@@ -572,7 +571,6 @@ function kubio_load_gutenberg_assets() {
 	AssetsDependencyInjector::injectKubioScriptDependencies( 'jquery-masonry', false );
 
 	do_action( 'kubio/editor/load_gutenberg_assets' );
-
 	wp_enqueue_style( 'kubio-pro' );
 	wp_enqueue_script( 'kubio-block-patterns' );
 	wp_enqueue_script( 'kubio-third-party-blocks' );
@@ -1359,7 +1357,7 @@ function kubio_load_block_bindings_sources() {
 		?>
 		<script>
 			(function() {
-				var kubioBindingSources = JSON.parse('<?php echo wp_kses_post($encoded_data); ?>');
+				var kubioBindingSources = JSON.parse('<?php echo wp_kses_post( $encoded_data ); ?>');
 
 				let bindingSourcesAreSupported = wp.blocks && wp.blocks.getBlockBindingsSource && wp.blocks.registerBlockBindingsSource;
 				if (!bindingSourcesAreSupported) {

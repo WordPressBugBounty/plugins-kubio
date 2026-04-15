@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-02T13:04:43+03:00\n"
+"POT-Creation-Date: 2026-04-14T10:42:03+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -45,7 +45,7 @@ msgstr "Det här blocket har ingen meny tilldelad."
 
 #: build/block-library/blocks/menu/menu-items/index.php:146
 msgid "Edit this page to select a menu or delete this block."
-msgstr "Redigera den här sidan för att välja en meny eller ta bort detta block."
+msgstr "Redigera denna sida för att välja en meny eller ta bort detta block."
 
 #: build/block-library/blocks/menu/offscreen/index.php:56
 msgid "Mobile Menu"
@@ -106,7 +106,7 @@ msgstr "Y"
 #: build/block-library/blocks/page-title/index.php:78
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "Månadsarkiv %s"
+msgstr "Månadsarkiv %1$s"
 
 #. translators: Daily archive title. 1: Date
 #: build/block-library/blocks/page-title/index.php:82
@@ -117,7 +117,7 @@ msgstr "j F Y"
 #: build/block-library/blocks/page-title/index.php:86
 msgctxt "post format archive title"
 msgid "Asides"
-msgstr "Parenteser"
+msgstr "Sidorubriker"
 
 #: build/block-library/blocks/page-title/index.php:88
 msgctxt "post format archive title"
@@ -202,11 +202,11 @@ msgstr "Kommentarer är stängda"
 #: build/block-library/blocks/post-excerpt/index.php:52
 #: build/block-library/index.js:37
 msgid "Pages do not support excerpt by default."
-msgstr "Sidor stöder inte utdrag som standard."
+msgstr "Sidor stödjer inte utdrag som standard."
 
 #: build/block-library/blocks/post-excerpt/index.php:53
 msgid "Edit this page and remove the current block or use it in a posts list."
-msgstr "Redigera den här sidan och ta bort det nuvarande blocket eller använd det i en inläggslista."
+msgstr "Redigera den här sidan och ta bort det aktuella blocket eller använd det i en inläggslista."
 
 #: build/block-library/blocks/post-title/index.php:35
 #: build/block-library/index.js:37
@@ -231,7 +231,7 @@ msgstr "Widgetområde hittades inte"
 #: lib/add-edit-in-kubio.php:197
 #: lib/add-edit-in-kubio.php:377
 #: lib/filters/default-editor-overlay.php:156
-#: lib/kubio-editor.php:999
+#: lib/kubio-editor.php:997
 #: build/block-library/index.js:13
 msgid "Edit with Kubio"
 msgstr "Redigera med Kubio"
@@ -290,7 +290,7 @@ msgid "Starter Sites"
 msgstr "Startsajter"
 
 #: lib/admin-pages/main-page/demo-sites.php:13
-#: lib/kubio-editor.php:1248
+#: lib/kubio-editor.php:1246
 msgid "You need a higher level of permission."
 msgstr "Du behöver en högre behörighetsnivå."
 
@@ -1674,57 +1674,57 @@ msgstr "Stor"
 msgid "Original Size"
 msgstr "Originalstorlek"
 
-#: lib/kubio-editor.php:983
-#: lib/kubio-editor.php:987
-#: lib/kubio-editor.php:998
+#: lib/kubio-editor.php:981
+#: lib/kubio-editor.php:985
+#: lib/kubio-editor.php:996
 msgid "Kubio"
 msgstr "Kubio"
 
-#: lib/kubio-editor.php:1026
+#: lib/kubio-editor.php:1024
 #: lib/src/Core/EditInKubioCustomizerPanel.php:87
 msgid "Open Kubio Editor"
 msgstr "Öppna Kubio-redigeraren"
 
-#: lib/kubio-editor.php:1104
+#: lib/kubio-editor.php:1102
 msgid "What to show on the front page"
 msgstr "Vad som visas på startsidan"
 
-#: lib/kubio-editor.php:1117
+#: lib/kubio-editor.php:1115
 msgid "The ID of the page that should be displayed on the front page"
 msgstr "ID för den sida som ska visas på startsidan"
 
-#: lib/kubio-editor.php:1132
+#: lib/kubio-editor.php:1130
 msgid "The ID of the page that displays the posts"
 msgstr "ID för sidan som visar inläggen"
 
-#: lib/kubio-editor.php:1150
+#: lib/kubio-editor.php:1148
 msgid "Site icon."
 msgstr "Webbplatsikon."
 
-#: lib/kubio-editor.php:1167
+#: lib/kubio-editor.php:1165
 msgctxt "Template name"
 msgid "Full Width"
 msgstr "Full Bredd"
 
-#: lib/kubio-editor.php:1168
-#: lib/kubio-editor.php:1175
+#: lib/kubio-editor.php:1166
+#: lib/kubio-editor.php:1173
 msgid "Recommended Kubio template to display individual pages. This template works best with the Kubio provided blocks and predesigned sections."
 msgstr "Rekommenderad Kubio-mall för att visa enskilda sidor. Denna mall fungerar bäst med de Kubio-block och fördesignade sektioner som tillhandahålls."
 
-#: lib/kubio-editor.php:1174
+#: lib/kubio-editor.php:1172
 msgctxt "Template name"
 msgid "Kubio Full Width"
 msgstr "Kubio Full Bredd"
 
-#: lib/kubio-editor.php:1249
+#: lib/kubio-editor.php:1247
 msgid "Sorry, you are not allowed to customize this site."
 msgstr "Du har inte behörighet att anpassa denna webbplats."
 
-#: lib/kubio-editor.php:1267
+#: lib/kubio-editor.php:1265
 msgid "Kubio Section"
 msgstr "Kubioavsnitt"
 
-#: lib/kubio-editor.php:1309
+#: lib/kubio-editor.php:1307
 msgid "Kubio Favorites"
 msgstr "Kubio Favoriter"
 
@@ -2241,7 +2241,7 @@ msgstr "Ikonlista"
 #: build/block-library/blocks/navigation/blocks/navigation-top-bar/block.json
 msgctxt "block title"
 msgid "Navigation Top Bar"
-msgstr "Navigeringsfält högst upp"
+msgstr "Översta navigeringsfältet"
 
 #: build/block-library/blocks/navigation/blocks/navigation/block.json
 msgctxt "block title"
