@@ -168,6 +168,9 @@ class TabNavigationItemBlock extends BlockBase {
 		$iconName   = LodashBasic::get( $this->block_context, 'iconName' );
 		$arrayIndex = LodashBasic::get( $this->block_context, 'arrayIndex' );
 		$link       = sprintf( '#%s', LodashBasic::get( $this->block_context, 'slug' ) );
+		if(empty($title)) {
+			$title = '';
+		}
 		return array(
 			self::LINK => array(
 				'href'      => esc_url( $link ),

@@ -458,7 +458,7 @@ function kubio_edit_site_get_settings() {
 	$settings                  = apply_filters( 'kubio/block_editor_settings', $settings, $post );
 	$settings['isWooCommerce'] = function_exists( 'WC' );
 
-	$settings['defaultTemplatePartAreas'] = kubio_get_allowed_template_part_areas();
+	$settings['defaultTemplatePartAreas'] = get_allowed_block_template_part_areas();
 	$settings['classicThemeTemplates']    = kubio_get_classic_theme_templates();
 	$settings['kubioThemeAssetsUrlBase']  = untrailingslashit( apply_filters( 'kubio/importer/kubio-url-placeholder-replacement', '' ) );
 
@@ -1055,6 +1055,9 @@ function kubio_admin_menu_style() {
 
 		#adminmenu .kubio-menu-item--icon {
 			color: rgba(240, 246, 252, .6);
+		}
+		body:not(.admin-color-fresh)  #adminmenu .kubio-menu-item--icon {
+			color: hsl(0, 7%, 95%);
 		}
 
 		#adminmenu .wp-menu-name:hover .kubio-menu-item--icon {

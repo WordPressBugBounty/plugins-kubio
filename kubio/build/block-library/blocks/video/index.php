@@ -196,7 +196,10 @@ class VideoBlock extends BlockBase {
 			if ( gettype( $paramValue ) === 'boolean' ) {
 				$paramValue = $paramValue ? 1 : 0;
 			}
-			$queryString[] = sprintf( '%s=%s', $paramName, urlencode( $paramValue ) );
+			if(!empty($paramValue)) {
+				$paramValue = urlencode( $paramValue );
+			}
+			$queryString[] = sprintf( '%s=%s', $paramName, $paramValue );
 		}
 
 		return $queryString;

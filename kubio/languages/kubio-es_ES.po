@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-14T10:42:03+03:00\n"
+"POT-Creation-Date: 2026-05-18T11:43:28+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -106,7 +106,7 @@ msgstr "Y"
 #: build/block-library/blocks/page-title/index.php:78
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "Archivo mensual %1$s"
+msgstr "Archivo mensual %s"
 
 #. translators: Daily archive title. 1: Date
 #: build/block-library/blocks/page-title/index.php:82
@@ -163,7 +163,7 @@ msgstr "Chats"
 #: build/block-library/blocks/page-title/index.php:106
 #, php-format
 msgid "Archives: %s"
-msgstr "Archivos: %s"
+msgstr "Archivo: %s"
 
 #. translators: Taxonomy term archive title. 1: Taxonomy singular name, 2: Current taxonomy term
 #: build/block-library/blocks/page-title/index.php:110
@@ -237,8 +237,6 @@ msgid "Edit with Kubio"
 msgstr "Editar con Kubio"
 
 #: lib/add-edit-in-kubio.php:145
-#: lib/full-site-editing/template-parts.php:156
-#: lib/full-site-editing/templates.php:276
 msgid "Unknown"
 msgstr "Desconocido"
 
@@ -290,7 +288,7 @@ msgid "Starter Sites"
 msgstr "Sitios de inicio"
 
 #: lib/admin-pages/main-page/demo-sites.php:13
-#: lib/kubio-editor.php:1246
+#: lib/kubio-editor.php:1249
 msgid "You need a higher level of permission."
 msgstr "Necesitas un nivel más alto de permisos."
 
@@ -368,7 +366,7 @@ msgstr "Disponible solo con Kubio PRO"
 #: lib/admin-pages/main-page/demo-sites.php:149
 #: build/block-editor/index.js:11
 #: build/block-editor/index.js:23
-#: build/block-editor/index.js:98
+#: build/block-editor/index.js:96
 #: build/block-library/index.js:19
 #: build/controls/index.js:53
 #: build/editor/index.js:1
@@ -559,11 +557,8 @@ msgstr "Fotográfico"
 msgid "3D Model"
 msgstr "Modelo 3D"
 
-#. translators: 1: The side of the block being modified (top, bottom, left etc.). 2. Type of spacing being modified (padding, margin, etc).
-#. translators: %s: file name
 #: lib/AI/SDApi/KubioImagePrompts.php:15
-#: build/block-editor/index.js:104
-#: build/block-editor/index.js:114
+#: build/block-editor/index.js:100
 #: build/controls/index.js:53
 msgid "Background image"
 msgstr "Imagen de fondo"
@@ -578,7 +573,7 @@ msgid "Artistic painting"
 msgstr "Pintura artística"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:24
-#: build/block-editor/index.js:98
+#: build/block-editor/index.js:96
 #: build/block-library/index.js:19
 #: build/editor/index.js:55
 msgid "Landscape"
@@ -589,7 +584,7 @@ msgid "Macro"
 msgstr "Macro"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:26
-#: build/block-editor/index.js:98
+#: build/block-editor/index.js:96
 #: build/block-library/index.js:19
 #: build/editor/index.js:55
 msgid "Portrait"
@@ -625,7 +620,7 @@ msgid "Floral"
 msgstr "Floral"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:40
-#: build/block-editor/index.js:104
+#: build/block-editor/index.js:100
 #: build/controls/index.js:15
 #: build/controls/index.js:53
 #: build/controls/index.js:55
@@ -1016,7 +1011,7 @@ msgid "%1$s at %2$s"
 msgstr "%1$s a las %2$s"
 
 #: lib/blog/walker-comment.php:39
-#: build/block-editor/index.js:82
+#: build/block-editor/index.js:78
 #: build/editor/index.js:53
 msgid "Edit"
 msgstr "Editar"
@@ -1211,258 +1206,10 @@ msgstr "404"
 msgid "Template shown when no content is found."
 msgstr "Plantilla mostrada cuando no se encuentra contenido."
 
-#: lib/full-site-editing/template-parts-area.php:26
-#: build/ai/index.js:3
-#: build/block-library/index.js:37
-#: build/editor/index.js:15
-msgid "General"
-msgstr "General"
-
-#: lib/full-site-editing/template-parts-area.php:27
-msgid "General templates often perform a specific role like displaying post content, and are not tied to any particular area."
-msgstr "Las plantillas generales a menudo cumplen funciones específicas, como mostrar contenido de entradas, y no están atadas a ningún área en particular."
-
-#: lib/full-site-editing/template-parts-area.php:36
-#: build/block-library/index.js:19
-#: build/core/index.js:3
-#: build/editor/index.js:3
-msgid "Header"
-msgstr "Cabecera"
-
-#: lib/full-site-editing/template-parts-area.php:37
-msgid "The Header template defines a page area that typically contains a title, logo, and main navigation."
-msgstr "La plantilla de cabecera define un área de la página que normalmente contiene un título, logotipo y la navegación principal."
-
-#: lib/full-site-editing/template-parts-area.php:46
-#: build/block-library/index.js:19
-#: build/core/index.js:3
-#: build/editor/index.js:3
-msgid "Footer"
-msgstr "Pie de página"
-
-#: lib/full-site-editing/template-parts-area.php:47
-msgid "The Footer template defines a page area that typically contains site credits, social links, or any other combination of blocks."
-msgstr "La plantilla de pie de página define un área de la página que normalmente contiene los agradecimientos del sitio, enlaces sociales o cualquier otra combinación de bloques."
-
-#: lib/full-site-editing/template-parts-area.php:56
-#: build/block-library/index.js:19
-#: build/core/index.js:3
-#: build/editor/index.js:3
-msgid "Sidebar"
-msgstr "Barra lateral"
-
-#: lib/full-site-editing/template-parts-area.php:57
-msgid "The Sidebar template defines a page area that typically contains widgets."
-msgstr "La plantilla de la barra lateral define un área de página que normalmente contiene widgets."
-
-#. translators: %1$s: Template area type, %2$s: the uncategorized template area value.
-#: lib/full-site-editing/template-parts-area.php:118
-#, php-format
-msgid "\"%1$s\" is not a supported wp_template_part area value and has been added as \"%2$s\"."
-msgstr "«%1$s» no es un valor de área `wp_template_part` compatible y ha sido añadido como «%2$s»."
-
-#: lib/full-site-editing/template-parts-area.php:143
-msgid "Template Part Areas"
-msgstr "Áreas de la parte de plantilla"
-
-#: lib/full-site-editing/template-parts-area.php:144
-msgid "Template Part Area"
-msgstr "Área de la parte de plantilla"
-
-#: lib/full-site-editing/template-parts.php:13
-#: lib/kubio-block-library.php:41
-#: build/editor/index.js:33
-msgid "Template Parts"
-msgstr "Partes de plantilla"
-
-#: lib/full-site-editing/template-parts.php:14
-#: build/block-library/index.js:11
-msgid "Template Part"
-msgstr "Parte de plantilla"
-
-#: lib/full-site-editing/template-parts.php:15
-msgctxt "Admin Menu text"
-msgid "Template Parts"
-msgstr "Partes de plantilla"
-
-#: lib/full-site-editing/template-parts.php:16
-msgctxt "Template Part"
-msgid "Add New"
-msgstr "Añadir nuevo"
-
-#: lib/full-site-editing/template-parts.php:17
-msgid "Add New Template Part"
-msgstr "Añadir nueva parte de plantilla"
-
-#: lib/full-site-editing/template-parts.php:18
-msgid "New Template Part"
-msgstr "Nueva parte de plantilla"
-
-#: lib/full-site-editing/template-parts.php:19
-msgid "Edit Template Part"
-msgstr "Editar parte de plantilla"
-
-#: lib/full-site-editing/template-parts.php:20
-msgid "View Template Part"
-msgstr "Ver parte de plantilla"
-
-#: lib/full-site-editing/template-parts.php:21
-msgid "All Template Parts"
-msgstr "Todas las partes de plantilla"
-
-#: lib/full-site-editing/template-parts.php:22
-msgid "Search Template Parts"
-msgstr "Buscar partes de plantilla"
-
-#: lib/full-site-editing/template-parts.php:23
-msgid "Parent Template Part:"
-msgstr "Parte de plantilla padre:"
-
-#: lib/full-site-editing/template-parts.php:24
-msgid "No template parts found."
-msgstr "No se han encontrado partes de plantilla."
-
-#: lib/full-site-editing/template-parts.php:25
-msgid "No template parts found in Trash."
-msgstr "No se han encontrado partes de plantilla en la papelera."
-
-#: lib/full-site-editing/template-parts.php:26
-msgid "Template part archives"
-msgstr "Archivo de partes de plantilla"
-
-#: lib/full-site-editing/template-parts.php:27
-msgid "Insert into template part"
-msgstr "Insertar en la parte de la plantilla"
-
-#: lib/full-site-editing/template-parts.php:28
-msgid "Uploaded to this template part"
-msgstr "Subiba a esta parte de plantilla"
-
-#: lib/full-site-editing/template-parts.php:29
-msgid "Filter template parts list"
-msgstr "Filtrar lista de partes de plantilla"
-
-#: lib/full-site-editing/template-parts.php:30
-msgid "Template parts list navigation"
-msgstr "Lista de navegación de partes de plantilla"
-
-#: lib/full-site-editing/template-parts.php:31
-msgid "Template parts list"
-msgstr "Lista de partes de plantilla"
-
-#: lib/full-site-editing/template-parts.php:36
-msgid "Template parts to include in your templates."
-msgstr "Partes de plantilla a incluir en tus plantillas."
-
-#: lib/full-site-editing/template-parts.php:122
-#: lib/full-site-editing/templates.php:242
+#: lib/full-site-editing/templates.php:79
 #: build/block-library/index.js:27
 msgid "Slug"
 msgstr "Slug"
-
-#: lib/full-site-editing/template-parts.php:136
-msgid "Template part slug"
-msgstr "Slug de la parte de la plantilla"
-
-#: lib/full-site-editing/template-parts.php:140
-#: lib/full-site-editing/templates.php:21
-#: lib/full-site-editing/templates.php:259
-#: build/editor/index.js:51
-#: build/wp-global-styles/index.js:3
-msgid "Theme"
-msgstr "Tema"
-
-#: lib/full-site-editing/templates.php:20
-msgid "Themes"
-msgstr "Temas"
-
-#: lib/full-site-editing/templates.php:45
-#: build/editor/index.js:33
-msgid "Templates"
-msgstr "Plantillas"
-
-#: lib/full-site-editing/templates.php:46
-#: build/editor/index.js:33
-msgid "Template"
-msgstr "Plantilla"
-
-#: lib/full-site-editing/templates.php:47
-msgctxt "Admin Menu text"
-msgid "Templates"
-msgstr "Plantillas"
-
-#: lib/full-site-editing/templates.php:48
-msgctxt "Template"
-msgid "Add New"
-msgstr "Añadir nuevo"
-
-#: lib/full-site-editing/templates.php:49
-msgid "Add New Template"
-msgstr "Añadir una nueva plantilla"
-
-#: lib/full-site-editing/templates.php:50
-msgid "New Template"
-msgstr "Nueva plantilla"
-
-#: lib/full-site-editing/templates.php:51
-msgid "Edit Template"
-msgstr "Editar plantilla"
-
-#: lib/full-site-editing/templates.php:52
-msgid "View Template"
-msgstr "Ver plantilla"
-
-#: lib/full-site-editing/templates.php:53
-msgid "All Templates"
-msgstr "Todas las plantillas"
-
-#: lib/full-site-editing/templates.php:54
-msgid "Search Templates"
-msgstr "Buscar plantillas"
-
-#: lib/full-site-editing/templates.php:55
-msgid "Parent Template:"
-msgstr "Plantilla principal:"
-
-#: lib/full-site-editing/templates.php:56
-msgid "No templates found."
-msgstr "No se han encontrado plantillas."
-
-#: lib/full-site-editing/templates.php:57
-msgid "No templates found in Trash."
-msgstr "No se han encontrado plantillas en la papelera."
-
-#: lib/full-site-editing/templates.php:58
-msgid "Template archives"
-msgstr "Archivos de plantillas"
-
-#: lib/full-site-editing/templates.php:59
-msgid "Insert into template"
-msgstr "Insertar en la plantilla"
-
-#: lib/full-site-editing/templates.php:60
-msgid "Uploaded to this template"
-msgstr "Subido a esta plantilla"
-
-#: lib/full-site-editing/templates.php:61
-msgid "Filter templates list"
-msgstr "Filtro de la lista de plantillas"
-
-#: lib/full-site-editing/templates.php:62
-msgid "Templates list navigation"
-msgstr "Navegación de la lista de plantillas"
-
-#: lib/full-site-editing/templates.php:63
-msgid "Templates list"
-msgstr "Lista de plantillas"
-
-#: lib/full-site-editing/templates.php:68
-msgid "Templates to include in your theme."
-msgstr "Plantillas a incluir en tu tema."
-
-#: lib/full-site-editing/templates.php:255
-msgid "Template slug"
-msgstr "Slug de plantilla"
 
 #: lib/global-data.php:21
 #: lib/global-data.php:130
@@ -1547,6 +1294,7 @@ msgid "Blog Blocks"
 msgstr "Bloques de Blog"
 
 #: lib/kubio-block-library.php:36
+#: build/block-editor/index.js:102
 #: build/block-library/index.js:9
 #: build/block-library/index.js:11
 #: build/block-library/index.js:25
@@ -1556,6 +1304,11 @@ msgstr "Bloques de Blog"
 #: build/wp-global-styles/index.js:3
 msgid "Layout"
 msgstr "Estructura"
+
+#: lib/kubio-block-library.php:41
+#: build/editor/index.js:33
+msgid "Template Parts"
+msgstr "Partes de plantilla"
 
 #: lib/kubio-block-library.php:138
 msgid "Kubio Error: Blocks manifest file (blocks-manifest.php) does not exists. Please recompile the plugin"
@@ -1576,7 +1329,7 @@ msgid "Features"
 msgstr "Características"
 
 #: lib/kubio-editor.php:151
-#: build/block-editor/index.js:114
+#: build/block-editor/index.js:100
 #: build/block-library/index.js:3
 #: build/block-library/index.js:29
 #: build/block-library/index.js:37
@@ -1685,46 +1438,46 @@ msgstr "Kubio"
 msgid "Open Kubio Editor"
 msgstr "Abrir Editor de Kubio"
 
-#: lib/kubio-editor.php:1102
+#: lib/kubio-editor.php:1105
 msgid "What to show on the front page"
 msgstr "Qué mostrar en la página de inicio"
 
-#: lib/kubio-editor.php:1115
+#: lib/kubio-editor.php:1118
 msgid "The ID of the page that should be displayed on the front page"
 msgstr "El ID de la página que debe mostrarse en la página de inicio"
 
-#: lib/kubio-editor.php:1130
+#: lib/kubio-editor.php:1133
 msgid "The ID of the page that displays the posts"
 msgstr "El ID de la página que muestra las entradas"
 
-#: lib/kubio-editor.php:1148
+#: lib/kubio-editor.php:1151
 msgid "Site icon."
 msgstr "Icono del sitio."
 
-#: lib/kubio-editor.php:1165
+#: lib/kubio-editor.php:1168
 msgctxt "Template name"
 msgid "Full Width"
 msgstr "Ancho completo"
 
-#: lib/kubio-editor.php:1166
-#: lib/kubio-editor.php:1173
+#: lib/kubio-editor.php:1169
+#: lib/kubio-editor.php:1176
 msgid "Recommended Kubio template to display individual pages. This template works best with the Kubio provided blocks and predesigned sections."
 msgstr "Plantilla Kubio recomendada para mostrar páginas individuales. Esta plantilla funciona mejor con los bloques proporcionados por Kubio y las secciones pre-diseñadas."
 
-#: lib/kubio-editor.php:1172
+#: lib/kubio-editor.php:1175
 msgctxt "Template name"
 msgid "Kubio Full Width"
 msgstr "Kubio Ancho Completo"
 
-#: lib/kubio-editor.php:1247
+#: lib/kubio-editor.php:1250
 msgid "Sorry, you are not allowed to customize this site."
 msgstr "Lo siento, no tienes permisos para personalizar el sitio."
 
-#: lib/kubio-editor.php:1265
+#: lib/kubio-editor.php:1268
 msgid "Kubio Section"
 msgstr "Sección Kubio"
 
-#: lib/kubio-editor.php:1307
+#: lib/kubio-editor.php:1310
 msgid "Kubio Favorites"
 msgstr "Favoritos de Kubio"
 
@@ -1994,7 +1747,7 @@ msgid "Template Part Not Found"
 msgstr "Parte de la plantilla no encontrada"
 
 #: lib/src/Core/CustomizerImporter.php:275
-#: build/block-editor/index.js:104
+#: build/block-editor/index.js:100
 #: build/block-library/index.js:19
 #: build/controls/index.js:19
 #: build/controls/index.js:53

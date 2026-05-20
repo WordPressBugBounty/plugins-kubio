@@ -11,14 +11,28 @@ document = {
 			style: [],
 			setAttribute: kubioNoop,
 			attachEvent: kubioNoop,
+			appendChild: kubioNoop,
 		};
 	},
+	createTextNode: kubioNoop,
 	attachEvent: kubioNoop,
 	addEventListener: kubioNoop,
 	querySelectorAll() {
 		return [];
 	},
 };
+const emptyNodeStructure = {
+	addEventListener: kubioNoop,
+	appendChild: kubioNoop,
+	querySelectorAll() {
+		return [];
+	},
+	querySelector() {
+		return null;
+	},
+};
+document.head = emptyNodeStructure;
+document.body = emptyNodeStructure;
 
 // wp imported scripts need to load kubio-style-manager
 // {{{importScriptsPlaceholder}}}
@@ -29,25 +43,25 @@ const fonts = {};
 wp.hooks.addAction(
 	'kubio.google-fonts.load',
 	'kubio.google-fonts.load',
-	function (nextFonts) {
-		nextFonts.forEach(function (font) {
-			fonts[font.family] = fonts[font.family] || [];
+	function ( nextFonts ) {
+		nextFonts.forEach( function ( font ) {
+			fonts[ font.family ] = fonts[ font.family ] || [];
 			// eslint-disable-next-line no-undef
-			fonts[font.family] = lodash.uniq(
-				fonts[font.family].concat(font.variants)
+			fonts[ font.family ] = lodash.uniq(
+				fonts[ font.family ].concat( font.variants )
 			);
-		});
+		} );
 	}
 );
 
-const renderStyle = function (payload) {
+const renderStyle = function ( payload ) {
 	// eslint-disable-next-line no-undef
-	const dynamicStyle = lodash.get(payload.data, 'dynamicStyle', {});
+	const dynamicStyle = lodash.get( payload.data, 'dynamicStyle', {} );
 
 	// eslint-disable-next-line no-undef
 	const renderer = new kubio.styleManager.BlockStyleRender(
 		// eslint-disable-next-line no-undef
-		lodash.omit(payload.data, 'dynamicStyle'),
+		lodash.omit( payload.data, 'dynamicStyle' ),
 		payload.parentDetails,
 		payload.canUseHtml,
 		payload.document || null
@@ -58,31 +72,31 @@ const renderStyle = function (payload) {
 
 	return {
 		css: renderer.export(),
-		dynamicRules: renderer.exportDynamicStyle(dynamicStyle),
+		dynamicRules: renderer.exportDynamicStyle( dynamicStyle ),
 		styleRef,
 		localId,
 		responseHash: payload.hash,
-		fonts: Object.keys(fonts).map((family) => ({
+		fonts: Object.keys( fonts ).map( ( family ) => ( {
 			family,
-			variants: fonts[family],
-		})),
+			variants: fonts[ family ],
+		} ) ),
 	};
 };
 
 // actual web worker runner
 // eslint-disable-next-line no-undef
-self.addEventListener('message', (event) => {
+self.addEventListener( 'message', ( event ) => {
 	const action = event.data.action;
 	const hash = event.data.hash;
-	const payload = lodash.isObject(event.data.payload)
+	const payload = lodash.isObject( event.data.payload )
 		? event.data.payload
-		: JSON.parse(event.data.payload);
+		: JSON.parse( event.data.payload );
 
 	let response = null;
 
-	switch (action) {
+	switch ( action ) {
 		case 'EXPORT_CSS':
-			response = renderStyle(payload);
+			response = renderStyle( payload );
 			break;
 		case 'TEST':
 			response = 'test';
@@ -90,11 +104,11 @@ self.addEventListener('message', (event) => {
 	}
 
 	// eslint-disable-next-line no-undef
-	self.postMessage({
+	self.postMessage( {
 		hash,
 		payload: response,
-	});
-});
+	} );
+} );
 
 // eslint-disable-next-line no-undef
-self.postMessage('WORKER_LOADED');
+self.postMessage( 'WORKER_LOADED' );

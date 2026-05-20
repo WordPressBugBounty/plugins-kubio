@@ -27,7 +27,7 @@ function kubio_add_dismissable_notice( $name, $callback, $repeat_after = 0, $par
 				'name' => $name,
 			);
 			?>
-				<div data-kubio-notice-id="<?php echo esc_attr( $id ); ?>" class="notice is-dismissible <?php echo esc_attr( $classes ); ?>">
+				<div data-kubio-notice-id="<?php echo esc_attr( $id ); ?>" class="kubio-notice notice is-dismissible <?php echo esc_attr( $classes ); ?>">
 					<?php call_user_func( $callback, $params ); ?>
 					<script>
 						jQuery(function($){

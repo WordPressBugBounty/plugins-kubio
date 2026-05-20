@@ -45,7 +45,7 @@ add_filter(
 		$utils_data['recommendations'] = array_merge(
 			$utils_data['recommendations'],
 			array(
-				'displayButtonActionsOptions' => Flags::getSetting( 'displayButtonActionsOptions', false ),
+				'displayButtonActionsOptions' => true,
 			)
 		);
 
@@ -53,12 +53,12 @@ add_filter(
 	}
 );
 
-add_action(
-	'kubio/after_activation',
-	function () {
-		Flags::setSetting( 'displayButtonActionsOptions', true );
-	}
-);
+//add_action(
+//	'kubio/after_activation',
+//	function () {
+//		Flags::setSetting( 'displayButtonActionsOptions', true );
+//	}
+//);
 
 
 add_action(

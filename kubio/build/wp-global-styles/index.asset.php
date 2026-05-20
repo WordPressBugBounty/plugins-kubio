@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('kubio-constants', 'lodash', 'react', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-core-data', 'wp-data', 'wp-element', 'wp-i18n', 'wp-polyfill', 'wp-primitives'), 'version' => '89449bdb6e5f8ca41248');
+<?php return array('dependencies' => array('kubio-constants', 'lodash', 'react', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-core-data', 'wp-data', 'wp-element', 'wp-i18n', 'wp-polyfill', 'wp-primitives'), 'version' => '4d06459ddd5f79772689');

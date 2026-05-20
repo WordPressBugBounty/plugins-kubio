@@ -22,7 +22,7 @@ class DemoSitesHelpers {
 					sprintf(
 					/* translators: %1$s - opening div and paragraph HTML tags, %2$s - closing div and paragraph HTML tags. */
 						__( '%1$sYour user role isn\'t high enough. You don\'t have permission to import demo data.%2$s', 'kubio' ),
-						'<div class="notice  notice-error"><p>',
+						'<div class="kubio-notice notice  notice-error"><p>',
 						'</p></div>'
 					)
 				)

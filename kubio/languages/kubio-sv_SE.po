@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-14T10:42:03+03:00\n"
+"POT-Creation-Date: 2026-05-18T11:43:28+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -45,7 +45,7 @@ msgstr "Det här blocket har ingen meny tilldelad."
 
 #: build/block-library/blocks/menu/menu-items/index.php:146
 msgid "Edit this page to select a menu or delete this block."
-msgstr "Redigera denna sida för att välja en meny eller ta bort detta block."
+msgstr "Redigera den här sidan för att välja en meny eller ta bort detta block."
 
 #: build/block-library/blocks/menu/offscreen/index.php:56
 msgid "Mobile Menu"
@@ -106,7 +106,7 @@ msgstr "Y"
 #: build/block-library/blocks/page-title/index.php:78
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "Månadsarkiv %1$s"
+msgstr "Månadsarkiv %s"
 
 #. translators: Daily archive title. 1: Date
 #: build/block-library/blocks/page-title/index.php:82
@@ -177,7 +177,7 @@ msgstr "Arkiv"
 
 #: build/block-library/blocks/post-comments-form/index.php:26
 msgid "Comments are closed. This Post Comments Form block is still present here but is not visible on front-end."
-msgstr "Kommentarer är stängda. Denna Post Comments Form-block är fortfarande närvarande här men syns inte på framsidan."
+msgstr "Kommentarerna är stängda. Denna block för kommentarsformulär för inlägget är fortfarande närvarande här men syns inte på front-end."
 
 #: build/block-library/blocks/post-comments/index.php:42
 #: build/block-library/index.js:37
@@ -202,11 +202,11 @@ msgstr "Kommentarer är stängda"
 #: build/block-library/blocks/post-excerpt/index.php:52
 #: build/block-library/index.js:37
 msgid "Pages do not support excerpt by default."
-msgstr "Sidor stödjer inte utdrag som standard."
+msgstr "Sidor stöder inte utdrag som standard."
 
 #: build/block-library/blocks/post-excerpt/index.php:53
 msgid "Edit this page and remove the current block or use it in a posts list."
-msgstr "Redigera den här sidan och ta bort det aktuella blocket eller använd det i en inläggslista."
+msgstr "Redigera den här sidan och ta bort det nuvarande blocket eller använd det i en inläggslista."
 
 #: build/block-library/blocks/post-title/index.php:35
 #: build/block-library/index.js:37
@@ -237,8 +237,6 @@ msgid "Edit with Kubio"
 msgstr "Redigera med Kubio"
 
 #: lib/add-edit-in-kubio.php:145
-#: lib/full-site-editing/template-parts.php:156
-#: lib/full-site-editing/templates.php:276
 msgid "Unknown"
 msgstr "Okänd"
 
@@ -290,7 +288,7 @@ msgid "Starter Sites"
 msgstr "Startsajter"
 
 #: lib/admin-pages/main-page/demo-sites.php:13
-#: lib/kubio-editor.php:1246
+#: lib/kubio-editor.php:1249
 msgid "You need a higher level of permission."
 msgstr "Du behöver en högre behörighetsnivå."
 
@@ -368,7 +366,7 @@ msgstr "Tillgängligt endast med Kubio PRO"
 #: lib/admin-pages/main-page/demo-sites.php:149
 #: build/block-editor/index.js:11
 #: build/block-editor/index.js:23
-#: build/block-editor/index.js:98
+#: build/block-editor/index.js:96
 #: build/block-library/index.js:19
 #: build/controls/index.js:53
 #: build/editor/index.js:1
@@ -559,11 +557,8 @@ msgstr "Fotografisk"
 msgid "3D Model"
 msgstr "3D-modell"
 
-#. translators: 1: The side of the block being modified (top, bottom, left etc.). 2. Type of spacing being modified (padding, margin, etc).
-#. translators: %s: file name
 #: lib/AI/SDApi/KubioImagePrompts.php:15
-#: build/block-editor/index.js:104
-#: build/block-editor/index.js:114
+#: build/block-editor/index.js:100
 #: build/controls/index.js:53
 msgid "Background image"
 msgstr "Bakgrundsbild"
@@ -578,7 +573,7 @@ msgid "Artistic painting"
 msgstr "Konstnärlig målning"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:24
-#: build/block-editor/index.js:98
+#: build/block-editor/index.js:96
 #: build/block-library/index.js:19
 #: build/editor/index.js:55
 msgid "Landscape"
@@ -589,7 +584,7 @@ msgid "Macro"
 msgstr "Makro"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:26
-#: build/block-editor/index.js:98
+#: build/block-editor/index.js:96
 #: build/block-library/index.js:19
 #: build/editor/index.js:55
 msgid "Portrait"
@@ -625,7 +620,7 @@ msgid "Floral"
 msgstr "Blommig"
 
 #: lib/AI/SDApi/KubioImagePrompts.php:40
-#: build/block-editor/index.js:104
+#: build/block-editor/index.js:100
 #: build/controls/index.js:15
 #: build/controls/index.js:53
 #: build/controls/index.js:55
@@ -1016,7 +1011,7 @@ msgid "%1$s at %2$s"
 msgstr "%1$s kl %2$s"
 
 #: lib/blog/walker-comment.php:39
-#: build/block-editor/index.js:82
+#: build/block-editor/index.js:78
 #: build/editor/index.js:53
 msgid "Edit"
 msgstr "Redigera"
@@ -1211,258 +1206,10 @@ msgstr "404"
 msgid "Template shown when no content is found."
 msgstr "Mall som visas när inget innehåll hittas."
 
-#: lib/full-site-editing/template-parts-area.php:26
-#: build/ai/index.js:3
-#: build/block-library/index.js:37
-#: build/editor/index.js:15
-msgid "General"
-msgstr "Allmänt"
-
-#: lib/full-site-editing/template-parts-area.php:27
-msgid "General templates often perform a specific role like displaying post content, and are not tied to any particular area."
-msgstr "Allmänna mallar utför ofta en specifik roll som att visa inläggsinnehåll och är inte knutna till något specifikt område."
-
-#: lib/full-site-editing/template-parts-area.php:36
-#: build/block-library/index.js:19
-#: build/core/index.js:3
-#: build/editor/index.js:3
-msgid "Header"
-msgstr "Sidhuvud"
-
-#: lib/full-site-editing/template-parts-area.php:37
-msgid "The Header template defines a page area that typically contains a title, logo, and main navigation."
-msgstr "Sidhuvudsmallen definierar ett sidområde som vanligtvis innehåller en rubrik, logga och huvudnavigering."
-
-#: lib/full-site-editing/template-parts-area.php:46
-#: build/block-library/index.js:19
-#: build/core/index.js:3
-#: build/editor/index.js:3
-msgid "Footer"
-msgstr "Sidfot"
-
-#: lib/full-site-editing/template-parts-area.php:47
-msgid "The Footer template defines a page area that typically contains site credits, social links, or any other combination of blocks."
-msgstr "Sidfotmallen definierar ett sidområde som vanligtvis innehåller webbplatsens erkännande, sociala länkar eller någon annan kombination av block."
-
-#: lib/full-site-editing/template-parts-area.php:56
-#: build/block-library/index.js:19
-#: build/core/index.js:3
-#: build/editor/index.js:3
-msgid "Sidebar"
-msgstr "Sidopanel"
-
-#: lib/full-site-editing/template-parts-area.php:57
-msgid "The Sidebar template defines a page area that typically contains widgets."
-msgstr "Sidofältets mall definierar ett sidoområde som vanligtvis innehåller widgets."
-
-#. translators: %1$s: Template area type, %2$s: the uncategorized template area value.
-#: lib/full-site-editing/template-parts-area.php:118
-#, php-format
-msgid "\"%1$s\" is not a supported wp_template_part area value and has been added as \"%2$s\"."
-msgstr "”%1$s” stöds inte som områdesvärde för wp_template_part och det har därför lagts till som ”%2$s”."
-
-#: lib/full-site-editing/template-parts-area.php:143
-msgid "Template Part Areas"
-msgstr "Malldelsytor"
-
-#: lib/full-site-editing/template-parts-area.php:144
-msgid "Template Part Area"
-msgstr "Malldelsyta"
-
-#: lib/full-site-editing/template-parts.php:13
-#: lib/kubio-block-library.php:41
-#: build/editor/index.js:33
-msgid "Template Parts"
-msgstr "Malldelar"
-
-#: lib/full-site-editing/template-parts.php:14
-#: build/block-library/index.js:11
-msgid "Template Part"
-msgstr "Malldel"
-
-#: lib/full-site-editing/template-parts.php:15
-msgctxt "Admin Menu text"
-msgid "Template Parts"
-msgstr "Malldelar"
-
-#: lib/full-site-editing/template-parts.php:16
-msgctxt "Template Part"
-msgid "Add New"
-msgstr "Lägg till ny"
-
-#: lib/full-site-editing/template-parts.php:17
-msgid "Add New Template Part"
-msgstr "Lägg till ny malldel"
-
-#: lib/full-site-editing/template-parts.php:18
-msgid "New Template Part"
-msgstr "Ny malldel"
-
-#: lib/full-site-editing/template-parts.php:19
-msgid "Edit Template Part"
-msgstr "Redigera malldel"
-
-#: lib/full-site-editing/template-parts.php:20
-msgid "View Template Part"
-msgstr "Visa malldel"
-
-#: lib/full-site-editing/template-parts.php:21
-msgid "All Template Parts"
-msgstr "Alla malldelar"
-
-#: lib/full-site-editing/template-parts.php:22
-msgid "Search Template Parts"
-msgstr "Sök malldelar"
-
-#: lib/full-site-editing/template-parts.php:23
-msgid "Parent Template Part:"
-msgstr "Överordnad malldel:"
-
-#: lib/full-site-editing/template-parts.php:24
-msgid "No template parts found."
-msgstr "Inga malldelar hittades."
-
-#: lib/full-site-editing/template-parts.php:25
-msgid "No template parts found in Trash."
-msgstr "Inga malldelar hittades i papperskorgen."
-
-#: lib/full-site-editing/template-parts.php:26
-msgid "Template part archives"
-msgstr "Malldelsarkiv"
-
-#: lib/full-site-editing/template-parts.php:27
-msgid "Insert into template part"
-msgstr "Infoga i malldel"
-
-#: lib/full-site-editing/template-parts.php:28
-msgid "Uploaded to this template part"
-msgstr "Uppladdad till denna malldel"
-
-#: lib/full-site-editing/template-parts.php:29
-msgid "Filter template parts list"
-msgstr "Filtrera listan med malldelar"
-
-#: lib/full-site-editing/template-parts.php:30
-msgid "Template parts list navigation"
-msgstr "Navigering i lista med malldelar"
-
-#: lib/full-site-editing/template-parts.php:31
-msgid "Template parts list"
-msgstr "Lista med malldelar"
-
-#: lib/full-site-editing/template-parts.php:36
-msgid "Template parts to include in your templates."
-msgstr "Malldelar som behöver inkluderas i dina mallar."
-
-#: lib/full-site-editing/template-parts.php:122
-#: lib/full-site-editing/templates.php:242
+#: lib/full-site-editing/templates.php:79
 #: build/block-library/index.js:27
 msgid "Slug"
 msgstr "Slug"
-
-#: lib/full-site-editing/template-parts.php:136
-msgid "Template part slug"
-msgstr "Mallens delslug"
-
-#: lib/full-site-editing/template-parts.php:140
-#: lib/full-site-editing/templates.php:21
-#: lib/full-site-editing/templates.php:259
-#: build/editor/index.js:51
-#: build/wp-global-styles/index.js:3
-msgid "Theme"
-msgstr "Tema"
-
-#: lib/full-site-editing/templates.php:20
-msgid "Themes"
-msgstr "Teman"
-
-#: lib/full-site-editing/templates.php:45
-#: build/editor/index.js:33
-msgid "Templates"
-msgstr "Mallar"
-
-#: lib/full-site-editing/templates.php:46
-#: build/editor/index.js:33
-msgid "Template"
-msgstr "Mall"
-
-#: lib/full-site-editing/templates.php:47
-msgctxt "Admin Menu text"
-msgid "Templates"
-msgstr "Mallar"
-
-#: lib/full-site-editing/templates.php:48
-msgctxt "Template"
-msgid "Add New"
-msgstr "Lägg till ny"
-
-#: lib/full-site-editing/templates.php:49
-msgid "Add New Template"
-msgstr "Lägg till ny mall"
-
-#: lib/full-site-editing/templates.php:50
-msgid "New Template"
-msgstr "Ny mall"
-
-#: lib/full-site-editing/templates.php:51
-msgid "Edit Template"
-msgstr "Redigera mall"
-
-#: lib/full-site-editing/templates.php:52
-msgid "View Template"
-msgstr "Visa mall"
-
-#: lib/full-site-editing/templates.php:53
-msgid "All Templates"
-msgstr "Alla mallar"
-
-#: lib/full-site-editing/templates.php:54
-msgid "Search Templates"
-msgstr "Sök mallar"
-
-#: lib/full-site-editing/templates.php:55
-msgid "Parent Template:"
-msgstr "Överordnad mall:"
-
-#: lib/full-site-editing/templates.php:56
-msgid "No templates found."
-msgstr "Inga mallar hittades."
-
-#: lib/full-site-editing/templates.php:57
-msgid "No templates found in Trash."
-msgstr "Inga mallar hittades i papperskorgen."
-
-#: lib/full-site-editing/templates.php:58
-msgid "Template archives"
-msgstr "Mallarkiv"
-
-#: lib/full-site-editing/templates.php:59
-msgid "Insert into template"
-msgstr "Infoga i mall"
-
-#: lib/full-site-editing/templates.php:60
-msgid "Uploaded to this template"
-msgstr "Uppladdad till denna mall"
-
-#: lib/full-site-editing/templates.php:61
-msgid "Filter templates list"
-msgstr "Filtrera mallistan"
-
-#: lib/full-site-editing/templates.php:62
-msgid "Templates list navigation"
-msgstr "Navigation i mallista"
-
-#: lib/full-site-editing/templates.php:63
-msgid "Templates list"
-msgstr "Mallista"
-
-#: lib/full-site-editing/templates.php:68
-msgid "Templates to include in your theme."
-msgstr "Mall att inkludera i ditt tema."
-
-#: lib/full-site-editing/templates.php:255
-msgid "Template slug"
-msgstr "Mallslug"
 
 #: lib/global-data.php:21
 #: lib/global-data.php:130
@@ -1547,6 +1294,7 @@ msgid "Blog Blocks"
 msgstr "Bloggblock"
 
 #: lib/kubio-block-library.php:36
+#: build/block-editor/index.js:102
 #: build/block-library/index.js:9
 #: build/block-library/index.js:11
 #: build/block-library/index.js:25
@@ -1556,6 +1304,11 @@ msgstr "Bloggblock"
 #: build/wp-global-styles/index.js:3
 msgid "Layout"
 msgstr "Layout"
+
+#: lib/kubio-block-library.php:41
+#: build/editor/index.js:33
+msgid "Template Parts"
+msgstr "Malldelar"
 
 #: lib/kubio-block-library.php:138
 msgid "Kubio Error: Blocks manifest file (blocks-manifest.php) does not exists. Please recompile the plugin"
@@ -1576,7 +1329,7 @@ msgid "Features"
 msgstr "Funktioner"
 
 #: lib/kubio-editor.php:151
-#: build/block-editor/index.js:114
+#: build/block-editor/index.js:100
 #: build/block-library/index.js:3
 #: build/block-library/index.js:29
 #: build/block-library/index.js:37
@@ -1685,46 +1438,46 @@ msgstr "Kubio"
 msgid "Open Kubio Editor"
 msgstr "Öppna Kubio-redigeraren"
 
-#: lib/kubio-editor.php:1102
+#: lib/kubio-editor.php:1105
 msgid "What to show on the front page"
 msgstr "Vad som visas på startsidan"
 
-#: lib/kubio-editor.php:1115
+#: lib/kubio-editor.php:1118
 msgid "The ID of the page that should be displayed on the front page"
 msgstr "ID för den sida som ska visas på startsidan"
 
-#: lib/kubio-editor.php:1130
+#: lib/kubio-editor.php:1133
 msgid "The ID of the page that displays the posts"
 msgstr "ID för sidan som visar inläggen"
 
-#: lib/kubio-editor.php:1148
+#: lib/kubio-editor.php:1151
 msgid "Site icon."
 msgstr "Webbplatsikon."
 
-#: lib/kubio-editor.php:1165
+#: lib/kubio-editor.php:1168
 msgctxt "Template name"
 msgid "Full Width"
 msgstr "Full Bredd"
 
-#: lib/kubio-editor.php:1166
-#: lib/kubio-editor.php:1173
+#: lib/kubio-editor.php:1169
+#: lib/kubio-editor.php:1176
 msgid "Recommended Kubio template to display individual pages. This template works best with the Kubio provided blocks and predesigned sections."
 msgstr "Rekommenderad Kubio-mall för att visa enskilda sidor. Denna mall fungerar bäst med de Kubio-block och fördesignade sektioner som tillhandahålls."
 
-#: lib/kubio-editor.php:1172
+#: lib/kubio-editor.php:1175
 msgctxt "Template name"
 msgid "Kubio Full Width"
 msgstr "Kubio Full Bredd"
 
-#: lib/kubio-editor.php:1247
+#: lib/kubio-editor.php:1250
 msgid "Sorry, you are not allowed to customize this site."
 msgstr "Du har inte behörighet att anpassa denna webbplats."
 
-#: lib/kubio-editor.php:1265
+#: lib/kubio-editor.php:1268
 msgid "Kubio Section"
 msgstr "Kubioavsnitt"
 
-#: lib/kubio-editor.php:1307
+#: lib/kubio-editor.php:1310
 msgid "Kubio Favorites"
 msgstr "Kubio Favoriter"
 
@@ -1994,7 +1747,7 @@ msgid "Template Part Not Found"
 msgstr "Mallpart hittades inte"
 
 #: lib/src/Core/CustomizerImporter.php:275
-#: build/block-editor/index.js:104
+#: build/block-editor/index.js:100
 #: build/block-library/index.js:19
 #: build/controls/index.js:19
 #: build/controls/index.js:53
@@ -2241,7 +1994,7 @@ msgstr "Ikonlista"
 #: build/block-library/blocks/navigation/blocks/navigation-top-bar/block.json
 msgctxt "block title"
 msgid "Navigation Top Bar"
-msgstr "Översta navigeringsfältet"
+msgstr "Navigeringsfält högst upp"
 
 #: build/block-library/blocks/navigation/blocks/navigation/block.json
 msgctxt "block title"

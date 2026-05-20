@@ -430,14 +430,16 @@ class Utils {
 		return $versions;
 	}
 
-	public static function getCloudURL( $url = '', $cloud_root_url = KUBIO_CLOUD_URL ) {
+	public static function getCloudURL( $url = '', $cloud_root_url = KUBIO_CLOUD_URL, $include_activated_on = true ) {
 		$url = trim( $url, '/' );
 
 		$args = array(
 			'kubio_version' => KUBIO_VERSION,
 			'kubio_build'   => KUBIO_BUILD_NUMBER,
-			'activated_on'  => Flags::get( 'kubio_activation_time', '' ),
 		);
+		if ( $include_activated_on ) {
+			$args['activated_on'] = Flags::get( 'kubio_activation_time', '' );
+		}
 
 		$is_skip_cache_flag_on = defined( 'KUBIO_SKIP_CLOUD_CACHE' ) && KUBIO_SKIP_CLOUD_CACHE;
 
@@ -482,7 +484,7 @@ class Utils {
 			$base_url = KUBIO_SNIPPETS_BASE_URL;
 		}
 
-		return self::getCloudURL( $relative_path, $base_url );
+		return self::getCloudURL( $relative_path, $base_url, false );
 	}
 
 	public static function getGlobalSnippetsURL() {

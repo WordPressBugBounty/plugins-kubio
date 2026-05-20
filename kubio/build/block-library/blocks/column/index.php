@@ -43,7 +43,7 @@ class ColumnBlock extends BlockContainerBase {
 		);
 
 		$layoutByMedia    = $this->getPropByMedia( 'layout' );
-		$rowLayoutByMedia = $row_block->getPropByMedia( 'layout' );
+		$rowLayoutByMedia = $row_block ? $row_block->getPropByMedia( 'layout' ) : array();
 
 		$columnWidth  = $columnWidthByMedia['desktop'];
 		$layoutHelper = new LayoutHelper( $layoutByMedia, $rowLayoutByMedia );

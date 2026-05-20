@@ -24,8 +24,6 @@ class Importer {
 		$template_types = kubio_get_default_template_types();
 		$theme          = get_stylesheet();
 
-		kubio_register_wp_theme_taxonomy();
-
 		if ( isset( $template_types[ $slug ] ) ) {
 			$title = $template_types[ $slug ]['title'];
 		} else {
@@ -184,9 +182,6 @@ class Importer {
 	}
 
 	public static function createTemplatePart( $slug, $content, $override = false, $source = 'theme' ) {
-
-		kubio_register_wp_theme_taxonomy();
-		kubio_register_wp_template_part_area_taxonomy();
 
 		if ( ! static::entityExists( $slug, 'wp_template_part' ) ) {
 			$area = WP_TEMPLATE_PART_AREA_UNCATEGORIZED;

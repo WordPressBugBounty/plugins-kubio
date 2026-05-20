@@ -17,21 +17,25 @@ function kubio_woocommerce_support_template_include( $template ) {
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 	if ( $post_type === 'product' && $is_displaying_products ) {
-		$pathinfo     = pathinfo( $template );
-		$default_file = isset( $pathinfo['filename'] ) ? $pathinfo['filename'] : null;
 
-		if ( ! $default_file ) {
-			return $template;
+		if ( !empty($template) && strpos( $template, 'template-canvas' ) === false ) {
+			$pathinfo     = pathinfo( $template );
+			$default_file = isset( $pathinfo['filename'] ) ? $pathinfo['filename'] : null;
+
+			if ( ! $default_file ) {
+				return $template;
+			}
+
+			$default_file_with_extension = "$default_file.php";
+			$templates                   = is_archive() ? array( $default_file_with_extension, 'archive-product.php', 'archive.php' ) : array( $default_file_with_extension, 'single-product.php', 'single.php' );
+
+			if ( is_tax() ) {
+				$templates = array( 'archive-product.php', 'archive.php' );
+			}
+
+			$templates = array_unique( $templates );
+			$template  = locate_block_template( $default_file_with_extension, 'wp_template', $templates );
 		}
-
-		$templates = is_archive() ? array( "$default_file.php", 'archive-product.php', 'archive.php' ) : array( "$default_file.php", 'single-product.php', 'single.php' );
-
-		if ( is_tax() ) {
-			$templates = array( 'archive-product.php', 'archive.php' );
-		}
-
-		$templates = array_unique( $templates );
-		$template  = locate_block_template( "$default_file.php", 'wp_template', $templates );
 
 		global $_wp_current_template_content;
 

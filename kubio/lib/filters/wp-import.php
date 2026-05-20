@@ -54,9 +54,6 @@ class WPImportFilters {
 		$template           = get_stylesheet();
 		$is_supported_theme = kubio_theme_has_kubio_block_support();
 
-		kubio_register_wp_theme_taxonomy( true );
-		kubio_register_wp_template_part_area_taxonomy( true );
-
 		wp_insert_term( $template, 'wp_theme', array( 'slug' => $template ) );
 
 		$this->log( "Theme: {$template}" );

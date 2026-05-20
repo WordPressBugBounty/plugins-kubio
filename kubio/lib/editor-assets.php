@@ -255,7 +255,7 @@ function kubio_register_packages_styles() {
 
 		switch ( $handle ) {
 			case 'kubio-editor':
-				$dependencies = array( 'wp-edit-blocks' );
+				$dependencies = array( 'wp-edit-blocks');
 				break;
 
 			case 'kubio-format-library':

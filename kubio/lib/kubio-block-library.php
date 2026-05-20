@@ -134,7 +134,7 @@ function kubio_render_block_callback( $attributes, $content, $block ) {
 function kubio_no_block_manifest_notice() {
 
 	?>
-	<div class="notice notice-error">
+	<div class="kubio-notice notice notice-error">
 		<p><?php esc_html_e( 'Kubio Error: Blocks manifest file (blocks-manifest.php) does not exists. Please recompile the plugin', 'kubio' ); ?> </p>
 	</div>
 	<?php

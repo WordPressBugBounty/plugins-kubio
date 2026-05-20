@@ -79,7 +79,7 @@ class Typography extends PropertyBase {
 
 
 				if ( $selector === 'a' && $is_global_style ) {
-					$selector = 'a:not([class*=wp-block-button])';
+					$selector = 'a:not([class*=wp-block-button]):not([class*=wp-element-button])';
 				}
 
 				$selector_parts = array();

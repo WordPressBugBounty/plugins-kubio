@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('kubio-constants', 'kubio-core-hooks', 'lodash', 'react', 'wp-compose', 'wp-data', 'wp-element', 'wp-i18n', 'wp-polyfill', 'wp-url'), 'version' => 'daafc99e830c628fc4c2');
+<?php return array('dependencies' => array('kubio-constants', 'kubio-core-hooks', 'lodash', 'react', 'wp-compose', 'wp-data', 'wp-element', 'wp-i18n', 'wp-polyfill', 'wp-url'), 'version' => '76d325089c6a13283a1d');
