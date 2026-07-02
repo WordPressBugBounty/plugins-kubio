@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-18T11:43:28+03:00\n"
+"POT-Creation-Date: 2026-06-30T18:19:51+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -921,6 +921,26 @@ msgstr "O plugin de formulário de contato não está ativo!"
 msgid "Failed to create default contact form!"
 msgstr "Falha ao criar o formulário de contato padrão!"
 
+#: lib/api/recommendations/iconvert-email-marketer.php:30
+#: lib/api/recommendations/siteleads.php:71
+#: lib/api/recommendations/siteleads.php:149
+#: lib/api/recommendations/siteleads.php:212
+msgid "Required plugin is missing"
+msgstr "O plugin necessário está faltando"
+
+#: lib/api/recommendations/iconvert-email-marketer.php:36
+msgid "Invalid form id"
+msgstr "ID de formulário inválido"
+
+#: lib/api/recommendations/iconvert-email-marketer.php:67
+#, php-format
+msgid "%s - Confirmation Email"
+msgstr "%s - E-mail de confirmação"
+
+#: lib/api/recommendations/iconvert-email-marketer.php:76
+msgid "Thanks for contacting us"
+msgstr "Obrigado por entrar em contato"
+
 #: lib/api/recommendations/index.php:68
 #: lib/api/recommendations/index.php:74
 msgid "Page content not found for given plugin"
@@ -955,12 +975,6 @@ msgstr "Pelo menos uma das classes necessárias está faltando"
 #: lib/recommendations/contact-forms.php:80
 msgid "At least one of required functions is missing"
 msgstr "Pelo menos uma das funções necessárias está faltando"
-
-#: lib/api/recommendations/siteleads.php:71
-#: lib/api/recommendations/siteleads.php:149
-#: lib/api/recommendations/siteleads.php:212
-msgid "Required plugin is missing"
-msgstr "O plugin necessário está faltando"
 
 #: lib/api/recommendations/siteleads.php:79
 #: lib/api/recommendations/siteleads.php:156

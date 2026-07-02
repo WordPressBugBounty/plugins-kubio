@@ -860,4 +860,9 @@ class Utils {
 	public static function getIsImageHubPluginActive() {
 		return defined('IMAGE_HUB_PLUGIN_NAME');
 	}
+
+	public static function getIsIconvertEmailMarketerActive() {
+		return defined('ICONVERTEM_VERSION');
+	}
+
 }

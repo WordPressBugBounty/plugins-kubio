@@ -6,7 +6,7 @@ require_once __DIR__ . '/contact-forms.php';
 require_once __DIR__ . '/newsletter/index.php';
 require_once __DIR__ . '/fluent-booking.php';
 require_once __DIR__ . '/siteleads.php';
-
+require_once __DIR__ . '/iconvert-email-marketer.php';
 
 add_action(
 	'rest_api_init',

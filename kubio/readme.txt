@@ -5,7 +5,7 @@ Tags: page builder, landing page, website builder, blocks, gutenberg
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.8.1
+Stable tag: 2.8.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -158,6 +158,9 @@ You’ll find a growing online documentation for Kubio builder [here](https://ku
 
 
 == Changelog ==
+= 2.8.2 and 2.8.2-pro =
+- Added iConvert Email Marketing integration
+
 = 2.8.1 and 2.8.1-pro =
 - Updated tested up to Wordpress 7.0 in readme
 
