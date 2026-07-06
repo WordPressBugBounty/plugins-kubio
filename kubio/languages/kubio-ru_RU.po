@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-30T18:19:51+03:00\n"
+"POT-Creation-Date: 2026-07-02T16:34:10+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -72,7 +72,7 @@ msgstr "Извините! Страница не найдена!"
 #: build/block-library/blocks/page-title/index.php:25
 #, php-format
 msgid "Posts in %s"
-msgstr "Записи в %s - категория"
+msgstr "Записи в категории %s"
 
 #. translators: %s - author
 #: build/block-library/blocks/page-title/index.php:27
@@ -112,7 +112,7 @@ msgstr "Ежемесячный архив %s"
 #: build/block-library/blocks/page-title/index.php:82
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr "j F Y"
+msgstr "j F Y г."
 
 #: build/block-library/blocks/page-title/index.php:86
 msgctxt "post format archive title"
@@ -163,7 +163,7 @@ msgstr "Chats"
 #: build/block-library/blocks/page-title/index.php:106
 #, php-format
 msgid "Archives: %s"
-msgstr "Архив: %s"
+msgstr "Архивы: %s"
 
 #. translators: Taxonomy term archive title. 1: Taxonomy singular name, 2: Current taxonomy term
 #: build/block-library/blocks/page-title/index.php:110
@@ -177,7 +177,7 @@ msgstr "Архив"
 
 #: build/block-library/blocks/post-comments-form/index.php:26
 msgid "Comments are closed. This Post Comments Form block is still present here but is not visible on front-end."
-msgstr "Комментарии закрыты. Этот блок формы комментариев к сообщению все еще присутствует здесь, но не виден на фронт-енде."
+msgstr "Комментарии закрыты. Этот блок формы комментариев к сообщению все еще присутствует здесь, но не виден на переднем плане."
 
 #: build/block-library/blocks/post-comments/index.php:42
 #: build/block-library/index.js:37
@@ -202,7 +202,7 @@ msgstr "Обсуждение закрыто"
 #: build/block-library/blocks/post-excerpt/index.php:52
 #: build/block-library/index.js:37
 msgid "Pages do not support excerpt by default."
-msgstr "Страницы не поддерживают анонс по умолчанию."
+msgstr "Страницы не поддерживают выдержку по умолчанию."
 
 #: build/block-library/blocks/post-excerpt/index.php:53
 msgid "Edit this page and remove the current block or use it in a posts list."
@@ -394,6 +394,7 @@ msgid "Start editing"
 msgstr "Начать редактирование"
 
 #: lib/admin-pages/main-page/demo-sites.php:205
+#: lib/src/NotificationsManager.php:331
 #: build/block-library/index.js:27
 #: build/block-library/index.js:29
 #: build/block-library/index.js:33
@@ -403,15 +404,18 @@ msgid "Active"
 msgstr "Активирован"
 
 #: lib/admin-pages/main-page/demo-sites.php:206
+#: lib/src/NotificationsManager.php:332
 #: build/editor/index.js:21
 msgid "Installed"
 msgstr "Установлена"
 
 #: lib/admin-pages/main-page/demo-sites.php:207
+#: lib/src/NotificationsManager.php:333
 msgid "Not Installed"
 msgstr "Не установлен"
 
 #: lib/admin-pages/main-page/demo-sites.php:209
+#: lib/src/NotificationsManager.php:335
 msgid "Import stopped"
 msgstr "Импорт остановлен"
 

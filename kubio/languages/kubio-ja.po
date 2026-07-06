@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-30T18:19:51+03:00\n"
+"POT-Creation-Date: 2026-07-02T16:34:10+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -45,7 +45,7 @@ msgstr "このブロックにはメニューが割り当てられていません
 
 #: build/block-library/blocks/menu/menu-items/index.php:146
 msgid "Edit this page to select a menu or delete this block."
-msgstr "このページを編集してメニューを選択するか、このブロックを削除してください。"
+msgstr "このページを編集してメニューを選択するか、このブロックを削除します。"
 
 #: build/block-library/blocks/menu/offscreen/index.php:56
 msgid "Mobile Menu"
@@ -72,7 +72,7 @@ msgstr "申し訳ありません！ページが見つかりません！"
 #: build/block-library/blocks/page-title/index.php:25
 #, php-format
 msgid "Posts in %s"
-msgstr "%sの投稿 - カテゴリ"
+msgstr "%sの投稿"
 
 #. translators: %s - author
 #: build/block-library/blocks/page-title/index.php:27
@@ -106,7 +106,7 @@ msgstr "Y"
 #: build/block-library/blocks/page-title/index.php:78
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "%s の月次アーカイブ"
+msgstr "%s 月の月次アーカイブ"
 
 #. translators: Daily archive title. 1: Date
 #: build/block-library/blocks/page-title/index.php:82
@@ -394,6 +394,7 @@ msgid "Start editing"
 msgstr "編集を開始"
 
 #: lib/admin-pages/main-page/demo-sites.php:205
+#: lib/src/NotificationsManager.php:331
 #: build/block-library/index.js:27
 #: build/block-library/index.js:29
 #: build/block-library/index.js:33
@@ -403,15 +404,18 @@ msgid "Active"
 msgstr "有効"
 
 #: lib/admin-pages/main-page/demo-sites.php:206
+#: lib/src/NotificationsManager.php:332
 #: build/editor/index.js:21
 msgid "Installed"
 msgstr "インストール済み"
 
 #: lib/admin-pages/main-page/demo-sites.php:207
+#: lib/src/NotificationsManager.php:333
 msgid "Not Installed"
 msgstr "未インストール"
 
 #: lib/admin-pages/main-page/demo-sites.php:209
+#: lib/src/NotificationsManager.php:335
 msgid "Import stopped"
 msgstr "インポートが停止しました"
 
@@ -2018,7 +2022,7 @@ msgstr "ナビゲーション"
 #: build/block-library/blocks/navigation/blocks/navigation/block.json
 msgctxt "block description"
 msgid "If you've accidentally removed your navigation, you can re-add a navigation to your page with this block. The navigation block has 5 available layouts."
-msgstr "ナビゲーションを誤って削除した場合、このブロックを使用してページにナビゲーションを再追加できます。ナビゲーションブロックには5つのレイアウトが利用可能です。"
+msgstr "ナビゲーションを誤って削除した場合、このブロックを使用してページにナビゲーションを再追加できます。ナビゲーションブロックには5つのレイアウトがあります。"
 
 #: build/block-library/blocks/row/block.json
 msgctxt "block title"

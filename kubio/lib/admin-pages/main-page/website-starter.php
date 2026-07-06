@@ -6,6 +6,7 @@
 <div id="kubio-website-starter"></div>
 <?php
 
+wp_enqueue_script( 'kubio-editor' );
 wp_add_inline_script(
 	'kubio-admin-area',
 	sprintf(
@@ -16,3 +17,4 @@ wp_add_inline_script(
 	),
 	'after'
 );
+

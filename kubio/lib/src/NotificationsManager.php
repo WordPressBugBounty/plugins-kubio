@@ -8,6 +8,8 @@ class NotificationsManager {
 
 	private static $remote_data_url_base = 'https://kubiobuilder.com/wp-json/wp/v2/notification';
 
+	private static $plugins_to_install = array();
+
 	public static function load() {
 		add_action( 'admin_init', array( NotificationsManager::class, 'init' ) );
 		if ( ! wp_next_scheduled( NotificationsManager::class . '::onSchedule' ) ) {
@@ -42,6 +44,8 @@ class NotificationsManager {
 		}
 
 		static::displayNotifications( $notifications );
+
+		add_action('admin_footer', array( NotificationsManager::class, 'printNoticePluginInstallScript' ) );
 
 		add_action( 'wp_ajax_kubio-remote-notifications-retrieve', array( NotificationsManager::class, 'updateNotificationsData' ) );
 	}
@@ -162,6 +166,10 @@ class NotificationsManager {
 				continue;
 			}
 
+			if ( self::isPluginInstallNotice( $params ) && self::isPluginAlreadyInstalled( $params['plugin_slug'] ) ) {
+				continue;
+			}
+
 			$classnames    = 'kubio-remote-notification';
 			$allowed_types = array( 'info', 'warning', 'error', 'success' );
 
@@ -185,6 +193,28 @@ class NotificationsManager {
 		}
 	}
 
+
+	/**
+	 * Whether the given notification is a plugin-install notice.
+	 * Relies on the dedicated `is_plugin_install` / `plugin_slug` ACF fields.
+	 *
+	 * @param array $params Notification parameters.
+	 * @return bool
+	 */
+	private static function isPluginInstallNotice( $params ) {
+		return ! empty( $params['is_plugin_install'] ) && ! empty( $params['plugin_slug'] );
+	}
+
+	private static function isPluginAlreadyInstalled($plugin_slug){
+		static $active_plugin_slugs = null;
+
+		if($active_plugin_slugs === null){
+			$active_plugin_paths = get_option( 'active_plugins' );
+			$active_plugin_slugs = array_map('dirname', $active_plugin_paths);
+		}
+		return in_array($plugin_slug, $active_plugin_slugs);
+	}
+
 	/**
 	 * Prints the HTML of a notification for the given params.
 	 *
@@ -192,8 +222,6 @@ class NotificationsManager {
 	 * @return void
 	 */
 	public static function displayNotification( $params ) {
-		$link  = $params['primary_link'];
-		$slink = $params['secondary_link'];
 
 		$args = array(
 			'utm_theme'            => get_template(),
@@ -205,17 +233,46 @@ class NotificationsManager {
 			'utm_medium'           => 'wp',
 		);
 
-		if ( ! empty( $link ) ) {
-			$link['url'] = add_query_arg( $args, $link['url'] );
-		}
-
-		if ( ! empty( $slink ) ) {
-			$slink['url'] = add_query_arg( $args, $slink['url'] );
-		}
-
 		wp_enqueue_script( 'wp-util' ); // make sure to enqueue the admin ajax functions
+
+		$is_plugin_install = self::isPluginInstallNotice( $params );
+		$plugin_slug       = $is_plugin_install ? $params['plugin_slug'] : '';
+		$plugin_redirect   = $is_plugin_install && ! empty( $params['plugin_redirect'] ) ? $params['plugin_redirect'] : '';
+
+		if ( $is_plugin_install ) {
+			self::$plugins_to_install[ $plugin_slug ] = array(
+				'slug'     => $plugin_slug,
+				'label'    => $params['plugin_label'] ?? '',
+				'redirect' => $plugin_redirect,
+			);
+		}
+
+		$buttons_to_display = [
+			'primary' => [
+				'link' => $params['primary_link'] && isset($params['primary_link']['url']) ? add_query_arg( $args, $params['primary_link']['url'] ) : '',
+				'text' => $params['primary_link'] && isset($params['primary_link']['title']) ? $params['primary_link']['title'] : '',
+				'class' => 'kubio-remote-notification-primary',
+				// The plugin install/activate flow is driven by the primary button.
+				'plugin_slug'     => $plugin_slug,
+				'plugin_redirect' => $plugin_redirect,
+				'plugin_label'    => $is_plugin_install ? ( $params['plugin_label'] ?? '' ) : '',
+			],
+			'secondary' => [
+				'link' => $params['secondary_link'] && isset($params['secondary_link']['url']) ? add_query_arg( $args, $params['secondary_link']['url'] ) : '',
+				'text' => $params['secondary_link'] && isset($params['secondary_link']['title']) ? $params['secondary_link']['title'] : '',
+				'class' => 'kubio-remote-notification-secondary',
+				'plugin_slug'     => '',
+				'plugin_redirect' => '',
+				'plugin_label'    => '',
+			]
+		]
+
 		?>
-		<div class="kubio-remote-notification-wrapper" id="kubio-remote-notification-<?php echo esc_attr( $params['id'] ); ?>">
+		<div
+		    class="kubio-remote-notification-wrapper"
+		    id="kubio-remote-notification-<?php echo esc_attr( $params['id'] ); ?>"
+			<?php echo $is_plugin_install ? 'data-has-suggested-plugins="1"' : ''; ?>
+		>
 			<div class="kubio-remote-notification-icon">
 				<?php
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -231,18 +288,59 @@ class NotificationsManager {
 					</div>
 			<?php } ?>
 			<div class="kubio-remote-notification-buttons">
-				<?php if ( ! empty( $link ) ) { ?>
-					<a target="_blank" href="<?php echo esc_url( $link['url'] ); ?>" class="button button-large kubio-remote-notification-primary"><?php echo esc_html( $link['title'] ); ?></a>
-					<?php
-				}
-
-				if ( ! empty( $slink ) ) {
-					?>
-					<a target="_blank" href="<?php echo esc_url( $slink['url'] ); ?>" class="button button-link kubio-remote-notification-secondary"><?php echo esc_html( $slink['title'] ); ?></a>
+				<?php foreach($buttons_to_display as $button){ ?>
+					<?php if(!empty($button['link']) && !empty($button['text'])){ ?>
+						<a
+							href="<?php echo esc_url( $button['link'] ); ?>"
+							class="button button-large <?php echo esc_attr( $button['class'] ); ?>"
+							<?php if(!empty($button['plugin_slug'])){ ?>
+								data-suggested-plugin-slug="<?php echo esc_attr( $button['plugin_slug'] ); ?>"
+								<?php if(!empty($button['plugin_redirect'])){ ?>
+									data-plugin-redirect="<?php echo esc_url( $button['plugin_redirect'] ); ?>"
+									data-plugin-label="<?php echo esc_attr( $button['plugin_label'] ); ?>"
+								<?php } ?>
+							<?php } ?>
+						>
+							<?php echo esc_html( $button['text'] ); ?>
+						</a>
+					<?php } ?>
 				<?php } ?>
 			</div>
 		</div>
 		<?php
+	}
+
+	public static function printNoticePluginInstallScript(){
+
+		if(empty(static::$plugins_to_install)){
+			return;
+		}
+
+		$plugins_states = array();
+		foreach(array_keys(static::$plugins_to_install) as $plugin_slug){
+			$plugins_states[ $plugin_slug ] = PluginsManager::getInstance()->getPluginStatus( $plugin_slug );
+		}
+
+		wp_enqueue_script('kubio-admin-area');
+			$data = array(
+				'ajax_url'       => admin_url( 'admin-ajax.php' ),
+				'ajax_nonce'     => wp_create_nonce( 'kubio-ajax-demo-site-verification' ),
+				'texts'          => array(
+					'importing_template' => '%s',
+					'plugins_states'     => array(
+						'ACTIVE'        => esc_html__( 'Active', 'kubio' ),
+						'INSTALLED'     => esc_html__( 'Installed', 'kubio' ),
+						'NOT_INSTALLED' => esc_html__( 'Not Installed', 'kubio' ),
+					),
+					'import_stopped'     => esc_html__( 'Import stopped', 'kubio' ),
+				),
+				'plugins_states' => $plugins_states,
+			);
+			wp_add_inline_script(
+				'kubio-admin-area',
+				sprintf( 'kubio.adminArea.initNoticePluginInstall(%s)', wp_json_encode( $data ) ),
+				'after'
+			);
 	}
 
 	/**

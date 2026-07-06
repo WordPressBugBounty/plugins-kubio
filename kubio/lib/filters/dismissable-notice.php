@@ -18,6 +18,7 @@ function kubio_add_dismissable_notice( $name, $callback, $repeat_after = 0, $par
 		return;
 	}
 
+	wp_enqueue_script( 'wp-util' );
 	add_action(
 		'admin_notices',
 		function () use ( $name, $params, $callback, $classes ) {

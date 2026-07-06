@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-30T18:19:51+03:00\n"
+"POT-Creation-Date: 2026-07-02T16:34:10+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -41,7 +41,7 @@ msgstr "https://extendthemes.com"
 
 #: build/block-library/blocks/menu/menu-items/index.php:145
 msgid "This block has no menu assigned."
-msgstr "Este bloco não tem nenhum menu atribuído."
+msgstr "Este bloco não possui nenhum menu atribuído."
 
 #: build/block-library/blocks/menu/menu-items/index.php:146
 msgid "Edit this page to select a menu or delete this block."
@@ -55,7 +55,7 @@ msgstr "Menu para dispositivos móveis"
 #: build/block-library/blocks/page-title/index.php:16
 #, php-format
 msgid "Posts from %s"
-msgstr "Publicações de %s"
+msgstr "Postagens de %s"
 
 #. translators: %s - search term
 #: build/block-library/blocks/page-title/index.php:21
@@ -72,7 +72,7 @@ msgstr "Desculpe! Página não encontrada!"
 #: build/block-library/blocks/page-title/index.php:25
 #, php-format
 msgid "Posts in %s"
-msgstr "Postagens em %s - categoria"
+msgstr "Posts em %s"
 
 #. translators: %s - author
 #: build/block-library/blocks/page-title/index.php:27
@@ -112,7 +112,7 @@ msgstr "Arquivo mensal %s"
 #: build/block-library/blocks/page-title/index.php:82
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr "j F Y"
+msgstr "j \\\\de F \\\\de Y"
 
 #: build/block-library/blocks/page-title/index.php:86
 msgctxt "post format archive title"
@@ -177,7 +177,7 @@ msgstr "Arquivos"
 
 #: build/block-library/blocks/post-comments-form/index.php:26
 msgid "Comments are closed. This Post Comments Form block is still present here but is not visible on front-end."
-msgstr "Os comentários estão fechados. Este bloco de formulário de comentários da postagem ainda está presente aqui, mas não é visível no front-end."
+msgstr "Comentários estão fechados. Este bloco de formulário de comentários da postagem ainda está presente aqui, mas não é visível no front-end."
 
 #: build/block-library/blocks/post-comments/index.php:42
 #: build/block-library/index.js:37
@@ -394,6 +394,7 @@ msgid "Start editing"
 msgstr "Começar a editar"
 
 #: lib/admin-pages/main-page/demo-sites.php:205
+#: lib/src/NotificationsManager.php:331
 #: build/block-library/index.js:27
 #: build/block-library/index.js:29
 #: build/block-library/index.js:33
@@ -403,15 +404,18 @@ msgid "Active"
 msgstr "Ativo"
 
 #: lib/admin-pages/main-page/demo-sites.php:206
+#: lib/src/NotificationsManager.php:332
 #: build/editor/index.js:21
 msgid "Installed"
 msgstr "Instalado"
 
 #: lib/admin-pages/main-page/demo-sites.php:207
+#: lib/src/NotificationsManager.php:333
 msgid "Not Installed"
 msgstr "Não instalado"
 
 #: lib/admin-pages/main-page/demo-sites.php:209
+#: lib/src/NotificationsManager.php:335
 msgid "Import stopped"
 msgstr "Importação interrompida"
 

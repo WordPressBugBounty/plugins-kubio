@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-30T18:19:51+03:00\n"
+"POT-Creation-Date: 2026-07-02T16:34:10+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -45,7 +45,7 @@ msgstr "Ce bloc n'a aucun menu attribué."
 
 #: build/block-library/blocks/menu/menu-items/index.php:146
 msgid "Edit this page to select a menu or delete this block."
-msgstr "Modifiez cette page pour sélectionner un menu ou supprimer ce bloc."
+msgstr "Modifiez cette page pour choisir un menu ou supprimer ce bloc."
 
 #: build/block-library/blocks/menu/offscreen/index.php:56
 msgid "Mobile Menu"
@@ -72,7 +72,7 @@ msgstr "Désolé ! Page non trouvée !"
 #: build/block-library/blocks/page-title/index.php:25
 #, php-format
 msgid "Posts in %s"
-msgstr "Articles dans %s - catégorie"
+msgstr "Articles dans la catégorie %s"
 
 #. translators: %s - author
 #: build/block-library/blocks/page-title/index.php:27
@@ -394,6 +394,7 @@ msgid "Start editing"
 msgstr "Commencer l'édition"
 
 #: lib/admin-pages/main-page/demo-sites.php:205
+#: lib/src/NotificationsManager.php:331
 #: build/block-library/index.js:27
 #: build/block-library/index.js:29
 #: build/block-library/index.js:33
@@ -403,15 +404,18 @@ msgid "Active"
 msgstr "Actif"
 
 #: lib/admin-pages/main-page/demo-sites.php:206
+#: lib/src/NotificationsManager.php:332
 #: build/editor/index.js:21
 msgid "Installed"
 msgstr "Installé"
 
 #: lib/admin-pages/main-page/demo-sites.php:207
+#: lib/src/NotificationsManager.php:333
 msgid "Not Installed"
 msgstr "Non installé"
 
 #: lib/admin-pages/main-page/demo-sites.php:209
+#: lib/src/NotificationsManager.php:335
 msgid "Import stopped"
 msgstr "Import arrêté"
 
@@ -2038,4 +2042,4 @@ msgstr "Colonne latérale"
 #: build/block-library/blocks/sidebar/block.json
 msgctxt "block description"
 msgid "You can create separate sidebars for web pages, blog, and articles, in order to create different user journeys."
-msgstr "Vous pouvez créer des barres latérales séparées pour les pages web, les blogs et les articles, afin de créer des parcours utilisateur différents."
+msgstr "Vous pouvez créer des barres latérales séparées pour les pages web, les blogs et les articles, afin de créer différents parcours utilisateur."
