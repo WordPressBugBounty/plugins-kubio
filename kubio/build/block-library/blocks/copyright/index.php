@@ -30,12 +30,12 @@ class CopyrightBlock extends BlockBase {
 		// replace placeholders with actual values
 		$msg = str_replace( '{year}', gmdate( 'Y' ), $msg );
 		$msg = str_replace( '{site-name}', get_bloginfo( 'name' ), $msg );
-
+		$msg = html_entity_decode( $msg );
 		// sanitize the message to allow only post like content
 		$msg = wp_kses_post( $msg );
 
 		$msg = sprintf( '<p>%s</p>', $msg );
-		return html_entity_decode( $msg );
+		return $msg;
 	}
 }
 
