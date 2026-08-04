@@ -408,7 +408,6 @@ add_action(
 						'aiWizardDescriptionOptional'    => Flags::getSetting( 'aiWizardDescriptionOptional', false ),
 						'showFrontPageRevertNotice'      => KubioFrontPageRevertNotice::getShowNoticeInEditor(),
 						'frontPageRevertBackupData'      => KubioFrontPageRevertNotice::getInstance()->getFrontPageBackupData(),
-						'frontPageRevertNoticeNonce'     => wp_create_nonce( KubioFrontPageRevertNotice::$nonceKey ),
 						'allow3rdPartyBlogOverride'      => apply_filters( 'kubio/allow_3rd_party_blog_override', true ),
 						'kubioRecommendationSettings'    => (object) kubio_get_recommendations_settings(),
 						'multilanguage'                  => array(

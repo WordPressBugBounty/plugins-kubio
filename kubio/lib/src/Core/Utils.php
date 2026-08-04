@@ -800,7 +800,10 @@ class Utils {
 
 		return false;
 	}
-
+	public static function getCurrentUserIsAdmin()
+	{
+		return is_user_logged_in() && current_user_can('manage_options');
+	}
 	public static function getThemeTemplateParts() {
 		$default_language = apply_filters( 'wpml_default_language', null );
 		$query            = new \WP_Query(

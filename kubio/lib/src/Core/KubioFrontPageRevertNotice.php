@@ -24,9 +24,17 @@ class KubioFrontPageRevertNotice
         add_action('wp_ajax_kubio_front_page_revert_action', array($this, 'onKeepKubioFrontPage'));
         add_action('wp_ajax_kubio_restore_front_page', array($this, 'onRestoreUserFrontPage'));
         add_action('rest_api_init', array($this, 'initRestApi'));
+		add_filter('kubio/kubio-utils-data/extras', array($this, 'addKubioUtilsData'));
     }
 
 
+	public function addKubioUtilsData($data) {
+		if(!$this->getCurrentUserIsAdmin()) {
+			return $data;
+		}
+		$data['frontPageRevertNoticeNonce'] =wp_create_nonce( KubioFrontPageRevertNotice::$nonceKey );
+		return $data;
+	}
 
 	public function getFeatureIsEnabled() {
 		return apply_filters( 'kubio/front_page_revert_notice_is_enabled', false );
@@ -91,7 +99,7 @@ class KubioFrontPageRevertNotice
 
     public function getCurrentUserIsAdmin()
     {
-        return is_user_logged_in() && current_user_can('manage_options');
+        return Utils::getCurrentUserIsAdmin();
     }
 
     public function getShowNoticeKey()
@@ -142,6 +150,9 @@ class KubioFrontPageRevertNotice
 
     public function onKeepKubioFrontPage()
     {
+		if ( ! $this->getCurrentUserIsAdmin() ) {
+			return;
+		}
         check_ajax_referer(static::$nonceKey);
 		$this->cleanUpFlags();
         wp_send_json_success();
@@ -150,6 +161,9 @@ class KubioFrontPageRevertNotice
 
     public function onRestoreUserFrontPage()
     {
+		if ( ! $this->getCurrentUserIsAdmin() ) {
+			return;
+		}
         check_ajax_referer(static::$nonceKey);
         $this->updateShowNoticeFlag(false);
         $this->restoreWebsiteFrontPage();
