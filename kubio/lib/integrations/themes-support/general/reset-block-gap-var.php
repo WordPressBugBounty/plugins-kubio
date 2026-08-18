@@ -2,6 +2,9 @@
 function kubio_3rd_party_theme_print_zero_block_gap() {
 	?>
 	<style>
+		:root {
+			--old-wp-style-block-gap: var(--wp--style--block-gap);
+		}
 		body{
 			--wp--style--block-gap:0;
 		}

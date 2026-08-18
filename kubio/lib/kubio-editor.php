@@ -1384,41 +1384,19 @@ function kubio_load_block_bindings_sources() {
 
 add_action( 'enqueue_block_editor_assets', 'kubio_load_block_bindings_sources', 5 );
 
-//0057618: Button styles do not work in kubio editor
-//Make the classic theme as a depedency for the block style variations to load the styles in the correct order so the classic
-//theme css does not override the variation styles
-add_action(
-	'wp_enqueue_scripts',
-	function () {
-		$variation_handle = 'block-style-variation-styles';
-		$classic_handle   = 'classic-theme-styles';
-		// Ensure both styles are registered before modifying them
-		if ( wp_style_is( $classic_handle, 'registered' ) && wp_style_is( $variation_handle, 'registered' ) ) {
-
-			$style  = wp_styles()->registered[ $variation_handle ];
-			$handle = $style->handle;
-			$src    = $style->src;
-			$deps   = $style->deps;
-			$ver    = $style->ver;
-			$media  = $style->args;
-			$extra  = $style->extra;
-
-			if ( ! in_array( $classic_handle, $deps ) ) {
-				$deps[] = $classic_handle;
-			}
-
-			$inline_styles = LodashBasic::get( $extra, 'after', array() );
-
-			// Deregister and re-register the style with updated dependencies
-			wp_deregister_style( $handle );
-			wp_register_style( $handle, $src, $deps, $ver, $media );
-			wp_enqueue_style( $handle );
-
-			// Reapply the captured inline styles
-			foreach ( $inline_styles as $inline_style ) {
-				wp_add_inline_style( $handle, $inline_style );
-			}
+add_filter(
+	'doing_it_wrong_trigger_error',
+	static function ( $trigger, $function_name, $message ) {
+		if (
+			'WP_Styles::add' === $function_name
+			&& str_contains( $message, 'block-style-variation-styles' )
+			&& str_contains( $message, 'global-styles' )
+		) {
+			return false;
 		}
+
+		return $trigger;
 	},
-	100
+	10,
+	3
 );

@@ -3,9 +3,9 @@
 Contributors: ExtendThemes
 Tags: page builder, landing page, website builder, blocks, gutenberg
 Requires at least: 5.8
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.8.6
+Stable tag: 2.9.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -158,6 +158,11 @@ You’ll find a growing online documentation for Kubio builder [here](https://ku
 
 
 == Changelog ==
+= 2.9.0 and 2.9.0-pro =
+- Added support for WordPress 7.1
+- General bug fixes
+- Updated the Google Fonts library. Added support for custom Fonts.
+
 = 2.8.6 and 2.8.6-pro =
 - Minor bug fixes
 

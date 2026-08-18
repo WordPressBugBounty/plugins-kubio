@@ -99,6 +99,9 @@ function kubio_register_packages_scripts() {
 				: null;
 		$dependencies = isset( $asset['dependencies'] ) ? $asset['dependencies'] : array();
 
+		if ( Utils::wpVersionCompare( '7.0', '<' ) ) {
+			$dependencies = array_diff( $dependencies, array( 'wp-theme' ) );
+		}
 		if ( Utils::isDebug() ) {
 			$version = uniqid( time() . '-' );
 		} else {
@@ -202,6 +205,10 @@ function kubio_replace_default_scripts( $scripts ) {
 				? require $asset_file
 				: null;
 		$dependencies = isset( $asset['dependencies'] ) ? $asset['dependencies'] : array();
+		if ( Utils::wpVersionCompare( '7.0', '<' ) ) {
+			$dependencies = array_diff( $dependencies, array( 'wp-theme' ) );
+		}
+
 		$version      = isset( $asset['version'] ) ? $asset['version'] : filemtime( $script_path );
 
 		//For backward compatability to 6.1

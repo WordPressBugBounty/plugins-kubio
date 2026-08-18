@@ -332,6 +332,23 @@ class BlockBase extends DataHelper {
 	public function renderInnerBlocks( $wp_block ) {
 		$block_content = '';
 		foreach ( $wp_block->inner_blocks as $inner_block ) {
+			$inner_block_context = $inner_block->context;
+			$source_block        = $inner_block->parsed_block;
+
+			/** This filter is documented in wp-includes/blocks.php */
+			$inner_block->parsed_block = apply_filters( 'render_block_data', $inner_block->parsed_block, $source_block, $wp_block );
+
+			/** This filter is documented in wp-includes/blocks.php */
+			$inner_block->context = apply_filters( 'render_block_context', $inner_block->context, $inner_block->parsed_block, $wp_block );
+			/*
+			 * The `refresh_context_dependents()` method already calls `refresh_parsed_block_dependents()`.
+			 * Therefore the second condition is irrelevant if the first one is satisfied.
+			 */
+			if ( $inner_block->context !== $inner_block_context ) {
+				$inner_block->refresh_context_dependents();
+			} elseif ( $inner_block->parsed_block !== $source_block ) {
+				$inner_block->refresh_parsed_block_dependents();
+			}
 			$block_content .= $inner_block->render();
 		}
 

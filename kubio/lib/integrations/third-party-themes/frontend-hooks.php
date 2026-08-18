@@ -88,8 +88,14 @@ function kubio_dequeue_theme_styles() {
 	}
 
 	do_action( 'kubio/dequeue-theme-styles' );
+	add_filter( 'body_class', 'kubio_3rd_party_theme_add_no_theme_style_body_class' );
 }
 
+function kubio_3rd_party_theme_add_no_theme_style_body_class( $classes ) {
+	$classes[] = 'kubio-third-party-no-theme-style';
+
+	return $classes;
+}
 
 function kubio_maybe_dequeue_theme_styles() {
 
