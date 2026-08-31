@@ -517,6 +517,41 @@ class Utils {
 		return defined( 'KUBIO_DEBUG' ) && KUBIO_DEBUG;
 	}
 
+	/**
+	 * Check a build time flag constant, see plugin.php
+	 *
+	 * @param string $name - constant name
+	 * @return boolean
+	 */
+	public static function getConstantFlag( $name ) {
+		return defined( $name ) && static::isTrue( constant( $name ) );
+	}
+
+	/**
+	 * PHP version of getShowInternalFeatures() from @kubio/utils
+	 *
+	 * KUBIO_INTERNAL is the counterpart of the `// #if internal` build flag and it is also what
+	 * feeds the `showInternalFeatures` backend data read by the js side. KUBIO_CLOUD_INTERNALS and
+	 * KUBIO_AI_INTERNALS are the counterparts of KUBIO_ENV.CLOUD_INTERNALS / KUBIO_ENV.AI_INTERNALS.
+	 * All of them are baked in at build time in plugin.php and can be overridden from wp-config.php.
+	 *
+	 * @param string|null $feature - optional feature name, 'cloud' or 'ai'
+	 * @return boolean
+	 */
+	public static function getShowInternalFeatures( $feature = null ) {
+		$show_internal_features = static::getConstantFlag( 'KUBIO_INTERNAL' );
+
+		$feature_enabled = false;
+
+		// both features are gated by the same pair of flags, same as on the js side
+		if ( in_array( $feature, array( 'cloud', 'ai' ), true ) ) {
+			$feature_enabled = static::getConstantFlag( 'KUBIO_CLOUD_INTERNALS' ) ||
+				static::getConstantFlag( 'KUBIO_AI_INTERNALS' );
+		}
+
+		return $feature_enabled || $show_internal_features;
+	}
+
 	public static function isCLI() {
 		return defined( 'WP_CLI' ) && WP_CLI;
 	}

@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-13T16:03:13+03:00\n"
+"POT-Creation-Date: 2026-08-28T13:05:09+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -884,25 +884,25 @@ msgstr "La risposta dell'IA non è valida"
 msgid "AI response is invalid ( Empty response )"
 msgstr "La risposta dell'IA non è valida (Risposta vuota)"
 
-#: lib/api/colibri.php:107
-#: lib/api/colibri.php:168
+#: lib/api/colibri.php:79
+#: lib/api/colibri.php:140
 msgid "Zip Export not supported."
 msgstr "Esportazione Zip non supportata."
 
-#: lib/api/colibri.php:121
+#: lib/api/colibri.php:93
 msgid "Bad screenshot."
 msgstr "Cattura schermo non valida."
 
-#: lib/api/colibri.php:126
-#: lib/api/colibri.php:186
+#: lib/api/colibri.php:98
+#: lib/api/colibri.php:158
 msgid "Bad name."
 msgstr "Nome non valido."
 
-#: lib/api/colibri.php:181
+#: lib/api/colibri.php:153
 msgid "No id."
 msgstr "Nessun ID."
 
-#: lib/api/colibri.php:241
+#: lib/api/colibri.php:213
 msgid "Unable to open export file (archive) for writing."
 msgstr "Impossibile aprire il file di esportazione (archivio) per la scrittura."
 

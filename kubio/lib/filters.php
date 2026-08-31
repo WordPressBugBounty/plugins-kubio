@@ -349,6 +349,20 @@ add_filter('pre_get_block_templates', function( $template, $query, $template_typ
 	return $template;
 }, 9999, 3);
 
+//add_filter( 'wp_theme_json_data_theme', function( $theme_json ) {
+//	$custom_viewport_data = array(
+//		'settings' => array(
+//			'viewport' => array(
+//				'mobile' => '766px',
+//				'tablet' => '1022px',
+//			),
+//		),
+//	);
+//
+//	$theme_json->update_with( $custom_viewport_data );
+//
+//	return $theme_json;
+//} );
 
 require_once __DIR__ . '/filters/kubio-fresh-site.php';
 require_once __DIR__ . '/filters/dismissable-notice.php';

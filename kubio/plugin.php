@@ -6,7 +6,7 @@
  * Description: Using the power of AI, Kubio gives you a head start by generating a first draft of your website, which you can further customize to your liking.
  * Author: ExtendThemes
  * Author URI: https://extendthemes.com
- * Version: 2.9.0
+ * Version: 2.9.1
  * License: GPL3+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: kubio
@@ -50,8 +50,8 @@ if ( defined( 'KUBIO_VERSION' ) ) {
 	return;
 }
 
-define( 'KUBIO_VERSION', '2.9.0' );
-define( 'KUBIO_BUILD_NUMBER', '517' );
+define( 'KUBIO_VERSION', '2.9.1' );
+define( 'KUBIO_BUILD_NUMBER', '521' );
 
 define( 'KUBIO_ENTRY_FILE', __FILE__ );
 define( 'KUBIO_ROOT_DIR', plugin_dir_path( __FILE__ ) );
@@ -70,6 +70,22 @@ if ( ! defined( 'KUBIO_CLOUD_URL' ) ) {
 
 if ( ! defined( 'KUBIO_INCLUDE_TEST_SNIPPETS' ) ) {
 	define( 'KUBIO_INCLUDE_TEST_SNIPPETS', false );
+}
+
+// Build time feature flags, the tokens are replaced by the build script ( see the set_version target in build.xml ).
+// The tokens are kept inside strings so that an unreplaced token is still valid PHP. FILTER_VALIDATE_BOOLEAN
+// resolves them to false, which is what happens when the plugin runs directly from the source folder.
+// Note: wp_validate_boolean() cannot be used here, it returns true for any non empty string.
+if ( ! defined( 'KUBIO_INTERNAL' ) ) {
+	define( 'KUBIO_INTERNAL', filter_var( 'false', FILTER_VALIDATE_BOOLEAN ) );
+}
+
+if ( ! defined( 'KUBIO_AI_INTERNALS' ) ) {
+	define( 'KUBIO_AI_INTERNALS', filter_var( 'false', FILTER_VALIDATE_BOOLEAN ) );
+}
+
+if ( ! defined( 'KUBIO_CLOUD_INTERNALS' ) ) {
+	define( 'KUBIO_CLOUD_INTERNALS', filter_var( 'false', FILTER_VALIDATE_BOOLEAN ) );
 }
 
 

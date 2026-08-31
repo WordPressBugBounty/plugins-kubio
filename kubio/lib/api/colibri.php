@@ -9,88 +9,60 @@ add_action(
 	function () {
 		$namespace = 'kubio/v1';
 
-		register_rest_route(
-			$namespace,
-			'/enable-theme',
-			array(
-				'methods'             => 'GET',
-				'callback'            => 'kubio_enable_theme',
-				'permission_callback' => function () {
-					return current_user_can( 'edit_theme_options' );
-				},
-			)
-		);
+		// the ui for these two is behind getShowInternalFeatures( 'cloud' ) in with-save-block-preset.js,
+		// keep the routes behind the same flag so they are not registered at all on a public build
+		if ( Utils::getShowInternalFeatures( 'cloud' ) ) {
+			register_rest_route(
+				$namespace,
+				'/snippet',
+				array(
+					'methods'             => 'POST',
+					'callback'            => 'kubio_save_block_snippet',
+					'permission_callback' => function () {
+						return current_user_can( 'edit_theme_options' );
+					},
+				)
+			);
 
-		register_rest_route(
-			$namespace,
-			'/colibri-data-export',
-			array(
-				'methods'             => 'GET',
-				'callback'            => 'kubio_colibri_data_export',
-				'permission_callback' => function () {
-					return current_user_can( 'edit_theme_options' );
-				},
-			)
-		);
+			register_rest_route(
+				$namespace,
+				'/snippet/update',
+				array(
+					'methods'             => 'POST',
+					'callback'            => 'kubio_update_block_snippet',
+					'permission_callback' => function () {
+						return current_user_can( 'edit_theme_options' );
+					},
+				)
+			);
+		}
 
-		register_rest_route(
-			$namespace,
-			'/colibri-data-export-done',
-			array(
-				'methods'             => 'GET',
-				'callback'            => 'kubio_colibri_data_export_done',
-				'permission_callback' => function () {
-					return current_user_can( 'edit_theme_options' );
-				},
-			)
-		);
-
-		register_rest_route(
-			$namespace,
-			'/snippet',
-			array(
-				'methods'             => 'POST',
-				'callback'            => 'kubio_save_block_snippet',
-				'permission_callback' => function () {
-					return current_user_can( 'edit_theme_options' );
-				},
-			)
-		);
-
-		register_rest_route(
-			$namespace,
-			'/snippet/update',
-			array(
-				'methods'             => 'POST',
-				'callback'            => 'kubio_update_block_snippet',
-				'permission_callback' => function () {
-					return current_user_can( 'edit_theme_options' );
-				},
-			)
-		);
-
-		register_rest_route(
-			$namespace,
-			'/update-generated-ai-site-content',
-			array(
-				'methods'             => 'POST',
-				'callback'            => 'kubio_update_generated_ai_site_content',
-				'permission_callback' => function () {
-					return current_user_can( 'edit_theme_options' );
-				},
-			)
-		);
-		register_rest_route(
-			$namespace,
-			'/update-generated-ai-site-content-by-style',
-			array(
-				'methods'             => 'POST',
-				'callback'            => 'kubio_update_generated_ai_site_content_by_style',
-				'permission_callback' => function () {
-					return current_user_can( 'edit_theme_options' );
-				},
-			)
-		);
+		// same as above, the ui for these two is behind the kubio_is_ai_site_editor backend data
+		// in guest-ai-generated-sites-editor/utils.js, which is this very same check
+		if ( Utils::getIsAISiteEditor() ) {
+			register_rest_route(
+				$namespace,
+				'/update-generated-ai-site-content',
+				array(
+					'methods'             => 'POST',
+					'callback'            => 'kubio_update_generated_ai_site_content',
+					'permission_callback' => function () {
+						return current_user_can( 'edit_theme_options' );
+					},
+				)
+			);
+			register_rest_route(
+				$namespace,
+				'/update-generated-ai-site-content-by-style',
+				array(
+					'methods'             => 'POST',
+					'callback'            => 'kubio_update_generated_ai_site_content_by_style',
+					'permission_callback' => function () {
+						return current_user_can( 'edit_theme_options' );
+					},
+				)
+			);
+		}
 	}
 );
 
