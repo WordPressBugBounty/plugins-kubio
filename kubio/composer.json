@@ -2,7 +2,7 @@
 	"name": "extendthemes/kubio",
 	"require": {
 		"pragmarx/ia-arr": "^7.3",
-		"lodash-php/lodash-php": "0.0.9",
+		"lodash-php/lodash-php": "0.1.0",
 		"pragmarx/ia-str": "^7.3",
 		"wolfcast/browser-detection": "2.9.7",
 		"proteusthemes/wp-content-importer-v2": "^2.1",
@@ -32,7 +32,14 @@
 		}
 	},
 	"scripts": {
+		"post-install-cmd": [
+			"php ./bin/compile-lodash.php"
+		],
+		"post-update-cmd": [
+			"php ./bin/compile-lodash.php"
+		],
 		"format": "\"vendor/bin/phpcbf\" --standard=phpcs.xml ",
+		"format:lodashphp-compiled": "\"vendor/bin/phpcbf\" -q --standard=PSR12 vendor/lodash-php/lodash-php/src/compiled.php || true",
 		"lint": "\"vendor/bin/phpcs\" --standard=phpcs.xml --runtime-set ignore_warnings_on_exit 1",
 		"compatibility-check": "\"vendor/bin/phpcs\" -d memory_limit=1024M -p ./ --extensions=php  --ignore=\"./build/*,*/node_modules/*,*/vendor/*,*/.history/*\" --standard=PHPCompatibility --runtime-set testVersion 7.1"
 	},

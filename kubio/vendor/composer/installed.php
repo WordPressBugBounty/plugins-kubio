@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'lodash-php/lodash-php' => array(
-            'pretty_version' => '0.0.9',
-            'version' => '0.0.9.0',
-            'reference' => 'e3e02ac496f049e37159b99b266d77ae7f829880',
+            'pretty_version' => '0.1.0',
+            'version' => '0.1.0.0',
+            'reference' => 'e723bd76894e0504b1c0f3ccbdb3331e1b2919cc',
             'type' => 'library',
             'install_path' => __DIR__ . '/../lodash-php/lodash-php',
             'aliases' => array(),

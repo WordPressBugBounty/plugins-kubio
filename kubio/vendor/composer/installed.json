@@ -60,22 +60,22 @@
         },
         {
             "name": "lodash-php/lodash-php",
-            "version": "0.0.9",
-            "version_normalized": "0.0.9.0",
+            "version": "0.1.0",
+            "version_normalized": "0.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lodash-php/lodash-php.git",
-                "reference": "e3e02ac496f049e37159b99b266d77ae7f829880"
+                "reference": "e723bd76894e0504b1c0f3ccbdb3331e1b2919cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lodash-php/lodash-php/zipball/e3e02ac496f049e37159b99b266d77ae7f829880",
-                "reference": "e3e02ac496f049e37159b99b266d77ae7f829880",
+                "url": "https://api.github.com/repos/lodash-php/lodash-php/zipball/e723bd76894e0504b1c0f3ccbdb3331e1b2919cc",
+                "reference": "e723bd76894e0504b1c0f3ccbdb3331e1b2919cc",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0",
-                "sebastian/comparator": "^1.2 | ^2.0 | ^2.1 | ^3.0 | ^4.0 | ^5.0",
+                "sebastian/comparator": "^1.2 | ^2.0 | ^2.1 | ^3.0 | ^4.0 | ^5.0 | ^6.0",
                 "symfony/property-access": "^2.7 | ^3.0 | ^4.0 | ^5.0 | ^6.0"
             },
             "require-dev": {
@@ -85,7 +85,7 @@
                 "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^7.3 || ^8.4"
             },
-            "time": "2024-02-01T07:59:55+00:00",
+            "time": "2024-08-18T11:46:35+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -114,7 +114,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lodash-php/lodash-php/issues",
-                "source": "https://github.com/lodash-php/lodash-php/tree/0.09"
+                "source": "https://github.com/lodash-php/lodash-php/tree/0.1.0"
             },
             "install-path": "../lodash-php/lodash-php"
         },

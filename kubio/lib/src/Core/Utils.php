@@ -285,6 +285,52 @@ class Utils {
 	}
 
 	/**
+	 * Escapes a URL that is about to be emitted as an href or a src, and holds
+	 * it to http/https.
+	 *
+	 * esc_url() alone is not enough for an attribute the browser navigates or
+	 * fetches: the element serializer only applies esc_attr(), which encodes
+	 * quotes and angle brackets and says nothing about the scheme, so anything
+	 * esc_url() lets through reaches the browser as written. Attacker supplied
+	 * values arrive through block attributes rather than as markup, so
+	 * WordPress' own filtering never sees them.
+	 *
+	 * A value with no scheme is left alone -- esc_url() has already resolved
+	 * anything that looks like a bare host, so what is left is a path, a query
+	 * or a fragment, none of which can carry a scheme.
+	 *
+	 * @param mixed $url            URL to escape, from attacker controlled input. Anything but a string is refused.
+	 * @param bool  $allow_relative Keep scheme-less URLs; false returns '' for them.
+	 * @return string The escaped URL, or '' when the scheme is not allowed.
+	 */
+	public static function escapeUrl( $url, $allow_relative = true ) {
+		// Block attributes are not type checked on the server, so a tampered
+		// block can hand over an array here; esc_url() would fatal on it.
+		if ( ! is_string( $url ) ) {
+			return '';
+		}
+
+		$url = esc_url( $url );
+
+		if ( empty( $url ) ) {
+			return '';
+		}
+
+		$scheme = wp_parse_url( $url, PHP_URL_SCHEME );
+
+		// false means the URL could not be parsed at all; null means it has no scheme.
+		if ( false === $scheme ) {
+			return '';
+		}
+
+		if ( empty( $scheme ) ) {
+			return $allow_relative ? $url : '';
+		}
+
+		return in_array( strtolower( $scheme ), array( 'http', 'https' ), true ) ? $url : '';
+	}
+
+	/**
 	 * Check if the execution time has enough remaining seconds
 	 *
 	 * @param integer $compare_to_time - necessary time in seconds

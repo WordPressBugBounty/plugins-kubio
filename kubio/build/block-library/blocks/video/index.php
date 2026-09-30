@@ -6,6 +6,7 @@ use Kubio\AssetsDependencyInjector;
 use Kubio\Core\Blocks\BlockBase;
 use Kubio\Core\LodashBasic;
 use Kubio\Core\Registry;
+use Kubio\Core\Utils;
 
 class VideoBlock extends BlockBase {
 
@@ -68,20 +69,11 @@ class VideoBlock extends BlockBase {
 		);
 	}
 
+	// Kept as the block's own entry point, but the check itself lives in Utils
+	// so every href and src in the plugin validates schemes the same way.
+	// Relative URLs are refused here, as this has always done.
 	public function getEscapedUrl($url) {
-		$url = esc_url($url);
-
-		// Allow only http/https
-		if (! empty($url)) {
-			$parsed = wp_parse_url($url);
-			if (! isset($parsed['scheme']) || ! in_array($parsed['scheme'], ['http', 'https'], true)) {
-				$url = '';
-			}
-		} else {
-			$url = '';
-		}
-
-		return $url;
+		return Utils::escapeUrl($url, false);
 	}
 	public function getVideoParameters() {
 		$paramList = array( 'internalUrl', 'youtubeUrl', 'vimeoUrl', 'videoCategory', 'displayAs', 'playerOptions' );

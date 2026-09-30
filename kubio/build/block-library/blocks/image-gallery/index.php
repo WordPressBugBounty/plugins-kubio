@@ -157,6 +157,19 @@ class ImageGalleryItemBlock extends BlockBase {
 			$link = $url;
 		}
 
+		// Both can hold the `url` attribute, which is a plain block attribute a
+		// contributor sets freely: it travels as attribute JSON rather than as
+		// markup, so WordPress' own filtering never sees it, and the element
+		// serializer only adds esc_attr(), which says nothing about the scheme.
+		// A rejected URL falls back to null so no attribute is emitted at all.
+		$link = empty( $link ) ? null : Utils::escapeUrl( $link );
+		$src  = empty( $src ) ? null : Utils::escapeUrl( $src );
+
+		// escapeUrl() returns an empty string for a scheme it refuses. Null
+		// leaves the attribute off the element instead of emitting an empty one.
+		$link = empty( $link ) ? null : $link;
+		$src  = empty( $src ) ? null : $src;
+
 		return array(
 			self::IMAGE_CONTAINER => array(
 				'className' => $image_classnames,
@@ -166,7 +179,7 @@ class ImageGalleryItemBlock extends BlockBase {
 				'className' => $link_classname,
 			),
 			self::IMAGE           => array(
-				'src'       => esc_url( $src ),
+				'src'       => $src,
 				'alt'       => esc_attr( $alt ),
 				'className' => array( esc_attr( 'wp-image-' . $id ) ),
 			),

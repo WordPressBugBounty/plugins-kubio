@@ -53,12 +53,22 @@ class ImageBlock extends BlockContainerBase {
 		if ( ! $src ) {
 			$src = $default_img;
 		}
+
+		// The `url` attribute above is set freely by whoever edits the block and
+		// never passes through WordPress' markup filtering, so the scheme is
+		// validated here rather than relying on the serializer's esc_attr().
+		$src = Utils::escapeUrl( $src );
+
+		if ( ! $src ) {
+			$src = $default_img;
+		}
+
 		$outer_classes = array( "size-$size_slug", $this->getAlignClasses( $align ) );
 
 		$map[ self::OUTER ]       = array( 'className' => $outer_classes );
 		$map[ self::IMAGE ]       = array(
 			'alt'       => esc_attr( $this->getAttribute( 'alt', '' ) ),
-			'src'       => esc_attr( $src ),
+			'src'       => $src,
 			'className' => $image_classes,
 		);
 		$map[ self::FRAME_IMAGE ] = array(

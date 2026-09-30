@@ -5,7 +5,7 @@ Tags: page builder, landing page, website builder, blocks, gutenberg
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.9.1
+Stable tag: 2.9.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -158,6 +158,12 @@ You’ll find a growing online documentation for Kubio builder [here](https://ku
 
 
 == Changelog ==
+
+= 2.9.3 and 2.9.3-pro =
+- Security: fixed a stored XSS. The SVG elements Kubio adds to the allowed HTML list were added in every filtering context, including the ones used for comment content and for the user profile biography, instead of only where Kubio renders SVG. Reported by Jakub Herman.
+- Security: fixed a stored XSS in the image gallery item link. A URL taken from the block attributes was escaped for the attribute but its scheme was never validated. Reported by Artus KG.
+- Fixes on the lodash-php library - now it uses the compiled version
+
 = 2.9.0 and 2.9.0-pro =
 - Added support for WordPress 7.1
 - General bug fixes
