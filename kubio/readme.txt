@@ -5,7 +5,7 @@ Tags: page builder, landing page, website builder, blocks, gutenberg
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.9.3
+Stable tag: 2.9.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -158,6 +158,10 @@ You’ll find a growing online documentation for Kubio builder [here](https://ku
 
 
 == Changelog ==
+
+= 2.9.4 and 2.9.4-pro =
+- Security: fixed a reflected XSS in the Kubio editor. The `pageURL` editor link parameter was loaded in the editor preview without validating it, so a crafted link could run scripts in the admin. Only http(s) URLs of the site are loaded now.
+- Security: fixed a stored XSS in the down arrow script. Its scroll target selector, which can be set from the element's data attributes, was passed to jQuery, which builds HTML from a string starting with `<`. It is evaluated only as a selector now.
 
 = 2.9.3 and 2.9.3-pro =
 - Security: fixed a stored XSS. The SVG elements Kubio adds to the allowed HTML list were added in every filtering context, including the ones used for comment content and for the user profile biography, instead of only where Kubio renders SVG. Reported by Jakub Herman.
