@@ -5,7 +5,7 @@ Tags: page builder, landing page, website builder, blocks, gutenberg
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.9.4
+Stable tag: 2.9.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -158,6 +158,9 @@ You’ll find a growing online documentation for Kubio builder [here](https://ku
 
 
 == Changelog ==
+
+= 2.9.5 and 2.9.5-pro =
+- Security fix.
 
 = 2.9.4 and 2.9.4-pro =
 - Security: fixed a reflected XSS in the Kubio editor. The `pageURL` editor link parameter was loaded in the editor preview without validating it, so a crafted link could run scripts in the admin. Only http(s) URLs of the site are loaded now.

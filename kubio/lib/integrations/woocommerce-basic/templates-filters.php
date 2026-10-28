@@ -41,9 +41,7 @@ function kubio_woocommerce_support_template_include( $template ) {
 
 		if ( ! empty( $_wp_current_template_content ) ) {
 
-			$content = kubio_get_woocommerce_content();
-			// escape the dollar sign so preg_replace will not think it's a backreference
-			$content = addcslashes( $content, '$' );
+			kubio_woocommerce_set_template_content( kubio_get_woocommerce_content() );
 
 			if ( is_single() ) {
 				add_theme_support( 'wc-product-gallery-zoom' );
@@ -51,10 +49,15 @@ function kubio_woocommerce_support_template_include( $template ) {
 				add_theme_support( 'wc-product-gallery-slider' );
 			}
 
-			// replace the 'post-content' block with the <!-- wp:html --> block to display the woocommerce content
+			// Replace the 'post-content' block with an html block that only carries a fixed
+			// placeholder. The real WooCommerce HTML is swapped in later, in a render_block
+			// filter, after the template has been parsed into blocks. Pasting the WooCommerce
+			// HTML into the template source (as previous versions did) made the block parser
+			// and do_shortcode() run over user-controlled text such as product reviews, so a
+			// review containing a block delimiter could inject an executable block.
 			$_wp_current_template_content = preg_replace(
 				'#<!-- wp:post-content(.*)/-->#',
-				'<!-- wp:html -->' . $content . '<!-- /wp:html -->',
+				'<!-- wp:html -->' . KUBIO_WOOCOMMERCE_CONTENT_PLACEHOLDER . '<!-- /wp:html -->',
 				$_wp_current_template_content
 			);
 		}
@@ -62,6 +65,59 @@ function kubio_woocommerce_support_template_include( $template ) {
 
 	return $template;
 }
+
+// Unique, non-block token that marks where the WooCommerce HTML is injected. It is plain
+// text (not a block delimiter), so the block parser leaves it untouched inside the html block.
+const KUBIO_WOOCOMMERCE_CONTENT_PLACEHOLDER = 'kubio-woocommerce-rendered-content-7f3a9c2e';
+
+/**
+ * Store (or read back) the WooCommerce HTML that replaces the template's post-content block.
+ *
+ * @param string|null $content
+ *
+ * @return string|null
+ */
+function kubio_woocommerce_set_template_content( $content = null ) {
+	static $stored = null;
+
+	if ( func_num_args() > 0 ) {
+		$stored = $content;
+	}
+
+	return $stored;
+}
+
+/**
+ * Swap the placeholder for the stored WooCommerce HTML.
+ *
+ * This runs on render_block, i.e. after parse_blocks()/do_blocks() have already turned the
+ * template into blocks, so the injected HTML is final output and is never parsed as blocks or
+ * run through do_shortcode(). That is what keeps stored review text from injecting new blocks.
+ *
+ * @param string $block_content
+ * @param array  $block
+ *
+ * @return string
+ */
+function kubio_woocommerce_inject_rendered_content( $block_content, $block ) {
+	if ( empty( $block['blockName'] ) || 'core/html' !== $block['blockName'] ) {
+		return $block_content;
+	}
+
+	if ( strpos( $block_content, KUBIO_WOOCOMMERCE_CONTENT_PLACEHOLDER ) === false ) {
+		return $block_content;
+	}
+
+	$content = kubio_woocommerce_set_template_content();
+
+	return str_replace(
+		KUBIO_WOOCOMMERCE_CONTENT_PLACEHOLDER,
+		null === $content ? '' : (string) $content,
+		$block_content
+	);
+}
+
+add_filter( 'render_block', 'kubio_woocommerce_inject_rendered_content', 10, 2 );
 
 function kubio_woocommerce_support_rendered_content( $content ) {
 	$post_type              = get_post_type();
